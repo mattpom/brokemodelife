@@ -1,11 +1,20 @@
 
-body { margin: 0; font-family: Arial, sans-serif; background: #111; color: #fff; }
-header { background: #e91e63; padding: 1em; text-align: center; }
-header h1 { margin: 0; color: white; }
-nav { margin-top: 10px; }
-nav a { color: yellow; margin: 0 10px; text-decoration: none; font-weight: bold; }
+body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #111; color: #fff; }
+header { background: #e91e63; padding: 1em 0; text-align: center; }
+header h1 { margin: 0; font-size: 2.5em; color: #fff; }
+nav { margin-top: 0.5em; }
+nav a { color: yellow; margin: 0 12px; text-decoration: none; font-weight: bold; font-size: 1.1em; }
 main { padding: 2em; }
-.hero { background: #222; padding: 1em; border-radius: 10px; margin-bottom: 2em; }
-.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1em; }
-.features div { background: #333; padding: 1em; border-radius: 10px; }
-footer { text-align: center; padding: 1em; background: #000; margin-top: 2em; color: #777; }
+.hero { background: #222; padding: 2em; border-radius: 10px; margin-bottom: 2em; text-align: center; }
+.hero h2 { font-size: 2em; margin-bottom: 0.5em; color: #ffea00; }
+.hero p { font-size: 1.2em; color: #ccc; }
+.features { display: flex; flex-wrap: wrap; gap: 1.5em; justify-content: center; }
+.features div { background: #333; padding: 1em; border-radius: 12px; width: 250px; text-align: center; }
+.features h3 { margin-top: 0; font-size: 1.3em; color: #ffcc00; }
+.features p { font-size: 1em; color: #bbb; }
+footer { text-align: center; padding: 1.2em; background: #000; margin-top: 2em; color: #777; font-size: 0.9em; }
+
+@media (max-width: 600px) {
+    nav a { display: block; margin: 10px 0; }
+    .features { flex-direction: column; align-items: center; }
+}
