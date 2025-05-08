@@ -1,22 +1,49 @@
 
 <!DOCTYPE html>
 <html>
-<head><link rel="stylesheet" href="styles.css"></head>
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
 <body>
 <section class="section">
-    <h1>⛽ I’ve Got Gas – Find the Cheapest Fuel Fast</h1>
-    <p>🚗 You’re broke, the tank’s empty, and every penny counts. Use the links below to instantly check gas prices near you.</p>
+    <h1>⛽ I’ve Got Gas – Your Cheap Fuel Finder</h1>
+    <p>💸 Type your <strong>city</strong> or <strong>zip code</strong> below and we’ll show you where to start your hunt for the cheapest gas.</p>
 </section>
 
 <section class="section highlight">
-    <h2>🔎 Search by City or Zip Code</h2>
-    <ul>
-        <li><a href="https://www.gasbuddy.com" target="_blank">💰 GasBuddy – Gas Prices Near Me</a></li>
-        <li><a href="https://gasprices.aaa.com" target="_blank">🚨 AAA Gas Price Finder</a></li>
-        <li><a href="https://www.waze.com/livemap" target="_blank">🗺️ Waze Live Fuel Map</a></li>
-    </ul>
-    <p>🧠 Tip: Bookmark these or add to your phone’s home screen for quick access on the go.</p>
+    <h2>🔍 Enter Location</h2>
+    <form onsubmit="handleSearch(); return false;" style="text-align:center;">
+        <input type="text" id="locationInput" placeholder="Enter city or ZIP" style="padding: 10px; font-size: 1em; width: 250px; border-radius: 8px; border: 1px solid #ccc;">
+        <button type="submit" style="padding: 10px 20px; font-size: 1em; background-color: #e91e63; color: #fff; border: none; border-radius: 8px;">Search</button>
+    </form>
 </section>
+
+<section class="section" id="results" style="display:none;">
+    <h2>📍 Start with These:</h2>
+    <ul>
+        <li><strong>GasBuddy:</strong> <span id="gbLink"></span></li>
+        <li><strong>AAA:</strong> <span id="aaaLink"></span></li>
+        <li><strong>Waze Fuel Map:</strong> <span id="wazeLink"></span></li>
+    </ul>
+    <p>🔗 Copy these links into your browser for exact gas listings in your area.</p>
+</section>
+
+<script>
+function handleSearch() {
+    const loc = document.getElementById("locationInput").value;
+    if (!loc) return;
+
+    document.getElementById("results").style.display = "block";
+
+    const gasBuddyURL = `https://www.gasbuddy.com/home?search=${encodeURIComponent(loc)}`;
+    const aaaURL = `https://gasprices.aaa.com/?search=${encodeURIComponent(loc)}`;
+    const wazeURL = `https://www.waze.com/live-map/directions?to=gas+station+near+${encodeURIComponent(loc)}`;
+
+    document.getElementById("gbLink").innerHTML = `<code>${gasBuddyURL}</code>`;
+    document.getElementById("aaaLink").innerHTML = `<code>${aaaURL}</code>`;
+    document.getElementById("wazeLink").innerHTML = `<code>${wazeURL}</code>`;
+}
+</script>
 
 <div style='text-align:center; margin: 30px;'>
     <a href="index.html" class="return-btn">⬅️ Return to Home</a>
