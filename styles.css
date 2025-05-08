@@ -1,72 +1,47 @@
 
 body {
     font-family: 'Segoe UI', sans-serif;
-    background: #fff8f0;
-    color: #333;
+    background: #fff0f5;
+    color: #222;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
 }
 header.banner {
-    background: linear-gradient(to right, #ffd6e0, #ffe4e1);
-    padding: 40px 20px;
+    background: linear-gradient(to right, #ffb6c1, #ffe4e1);
+    padding: 30px 20px;
     text-align: center;
-    color: #333;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-}
-header.banner nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-    margin-top: 25px;
+    color: #222;
 }
 header.banner nav a {
+    margin: 0 15px;
     font-weight: bold;
-    font-size: 1.15em;
-    color: #444;
+    color: #222;
     text-decoration: none;
-    background-color: #fff;
-    padding: 10px 16px;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-size: 1.2em;
 }
 header.banner nav a:hover {
-    background-color: #ffe4ec;
     color: #e91e63;
 }
 .section {
-    background: #fff;
-    margin: 30px auto;
-    padding: 30px;
-    border-radius: 16px;
-    max-width: 900px;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+    padding: 30px 20px;
+    border-bottom: 2px solid #ddd;
+    background: #ffffff;
+    margin: 20px;
+    border-radius: 10px;
 }
 .section.highlight {
-    background: #fff0f5;
+    background: #ffe4e1;
 }
 h1, h2 {
     color: #d6336c;
-    margin-top: 0;
 }
 ul {
-    list-style: none;
+    list-style-type: none;
     padding-left: 0;
 }
 ul li {
     margin: 10px 0;
     font-size: 1.1em;
-    padding-left: 1.2em;
-    position: relative;
-}
-ul li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: #e91e63;
-    font-weight: bold;
 }
 a {
     color: #d6336c;
@@ -76,23 +51,9 @@ a:hover {
     text-decoration: underline;
 }
 footer {
-    background: #f3f3f3;
-    padding: 20px;
+    background: #f8f8f8;
+    padding: 15px;
     text-align: center;
     font-size: 0.9em;
-    color: #777;
-}
-.return-btn {
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: #e91e63;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: background-color 0.3s ease;
-}
-.return-btn:hover {
-    background-color: #c2185b;
+    color: #666;
 }
