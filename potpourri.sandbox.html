@@ -3,90 +3,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Potpourri for $1000, Alex!</title>
+    <title>Potpourri – Broke Mode Life</title>
     <style>
         body {
-            background: linear-gradient(to right, #fddde6, #ffe4ec);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #222;
-            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #fff0f5, #ffffff);
+            margin: 0;
+            padding: 0;
         }
-        h1 {
+        header {
+            background-color: #ff66b2;
+            color: white;
             text-align: center;
-            font-size: 2.8em;
-            margin-bottom: 10px;
+            padding: 20px 10px;
+        }
+        section {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
         }
         h2 {
-            text-align: center;
-            margin-top: 0;
-            font-weight: normal;
-            font-size: 1.2em;
+            color: #cc0066;
         }
-        .mashup {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: space-around;
-            margin-top: 40px;
-        }
-        .section {
-            width: 300px;
-            background-color: #fff5f8;
-            border: 2px dashed #ff69b4;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 3px 3px 8px rgba(0,0,0,0.1);
-        }
-        .section h3 {
-            margin-top: 0;
-            font-size: 1.3em;
+        .chunk {
+            background-color: #ffe6f2;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
         }
     </style>
-    <script>
-        function randomQuote() {
-            const quotes = [
-                "I know you were hoping for more.",
-                "This is the end of the internet.",
-                "Congratulations, you've found... nothing.",
-                "Aren't you glad you clicked?",
-                "You can't unsee this.",
-                "You expected treasure. You got me.",
-                "One of us is confused. It's not me."
-            ];
-            const msg = quotes[Math.floor(Math.random() * quotes.length)];
-            alert(msg);
-        }
-    </script>
 </head>
 <body>
-    <h1>🌀 Potpourri for $1000, Alex!</h1>
-    <h2>“What is… a chaotic buffet of Broke Mode?”</h2>
-    <div class="mashup">
-        <div class="section"><h3>🎁 Freebies</h3><p>Snag birthday deals, digital goodies, and samples from mysterious brands that may or may not exist.</p></div>
-        <div class="section"><h3>✈️ Ciao</h3><p>Travel hacks that don’t suck! Learn how to sleep in airports, survive on granola bars, and hack the hostel system.</p></div>
-        <div class="section"><h3>🚗 Start Your Engines</h3><p>Cheap car repairs, road trip playlists, and duct tape solutions you’ll probably regret later.</p></div>
-        <div class="section"><h3>🍽️ All You Can Eat</h3><p>Buffet rankings, gas station sushi reviews, and a questionable lasagna recipe submitted by a raccoon.</p></div>
-        <div class="section"><h3>🏠 Home Stand</h3><p>Decorate your place for $3 or less using string, glue, and ambition. No actual furniture required.</p></div>
-        <div class="section"><h3>🥾 Take a Hike</h3><p>Find trails, urban walks, and alleys that feel adventurous if you squint hard enough.</p></div>
-        <div class="section"><h3>🍷 Cheers, Mate</h3><p>The cheapest drinkables in every aisle, including boxed wine with vintage corks for no reason.</p></div>
-        <div class="section"><h3>🧺 Fold the Laundry</h3><p>Affiliate links for fashion you can nap in. Soft pants, sketchy socks, and shirts with slogans no one understands.</p></div>
-        <div class="section"><h3>🎧 Are You Listening?</h3><p>Money-saving podcasts, free streaming tips, and music playlists for emotionally unstable savings plans.</p></div>
-        <div class="section"><h3>🧍‍♀️ Do As I Say</h3><p>Unsolicited advice. From us. To you. With love, probably.</p></div>
-        <div class="section"><h3>🍎 An Apple a Day</h3><p>Holistic remedies, witchy potions, and DIY solutions to avoid doctors and common sense.</p></div>
-    </div>
-
-    <div style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
-        <a href="#" onclick="randomQuote()" title="Do not open" style="font-size: 36px; text-decoration: none;">
-            🌞
-        </a>
-    </div>
-
-    <div style="text-align: center; margin-top: 60px;">
-        <a href="index.html" style="display: inline-block; background-color: #ffe3ed; padding: 12px 28px;
-        border-radius: 12px; font-weight: bold; font-size: 18px; color: #b03060; text-decoration: none;
-        box-shadow: 2px 2px 6px rgba(0,0,0,0.1);">
-            ⬅️ Return to Home
-        </a>
-    </div>
+    <header>
+        <h1>🌀 Potpourri</h1>
+        <p>A little bit of this, a little bit of that — for living smart on the cheap.</p>
+    </header>
+    <section>
+        <div class="chunk">
+            <h2>💡 Smart Life Hacks</h2>
+            <p>Tricks for doing more with less — from toothpaste on scuffed shoes to lemon as a deodorizer.</p>
+        </div>
+        <div class="chunk">
+            <h2>🛠 DIY on a Dime</h2>
+            <p>Fix it, build it, glam it — with almost no money. Yes, you can.</p>
+        </div>
+        <div class="chunk">
+            <h2>🪴 Chill Vibes</h2>
+            <p>Meditation, incense, and homemade lavender spray. Breathe in... broke doesn’t mean busted.</p>
+        </div>
+        <div class="chunk">
+            <h2>🧹 Clean Living</h2>
+            <p>Minimalist hacks, detox drinks, and why vinegar might be your new best friend.</p>
+        </div>
+    </section>
 </body>
 </html>
