@@ -5,95 +5,40 @@
   <meta charset="UTF-8">
   <title>Potpourri for $1000, Alex</title>
   <style>
-    body { font-family: Arial, sans-serif; background-color: #fff5f7; color: #4b0a29; margin: 0; padding: 20px; }
-    h1 { text-align: center; font-size: 2em; margin-bottom: 30px; }
-    .board {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
+    body { font-family: Arial, sans-serif; background-color: #fff5f7; color: #4b0a29; padding: 20px; }
+    h1 { text-align: center; margin-bottom: 30px; }
+    .board { max-width: 800px; margin: 0 auto; }
     .category {
-      background-color: #f5d7dd;
-      border-radius: 12px;
-      padding: 15px 20px;
-      font-size: 1.2em;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .home-button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 40px auto 10px;
-      padding: 10px 20px;
-      background-color: transparent;
-      border: none;
-      color: #4b0a29;
-      font-size: 1.2em;
-      text-decoration: none;
-    }
-    .home-button::before { content: "⬅️"; margin-right: 10px; }
-    .sun-icon {
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-      font-size: 24px;
-      cursor: pointer;
-    }
-    .sun-popup {
-      position: fixed;
-      bottom: 50px;
-      right: 20px;
       background: #f5d7dd;
-      color: #4b0a29;
-      padding: 10px 15px;
+      padding: 15px;
       border-radius: 10px;
-      font-size: 1em;
-      display: none;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin: 10px 0;
+      font-size: 1.2em;
+    }
+    .home-link {
+      display: block;
+      text-align: center;
+      margin-top: 40px;
+      font-size: 1.1em;
+      text-decoration: none;
+      color: #4b0a29;
     }
   </style>
-  <script>
-    function talkToSun() {
-      const messages = [
-        "The sun says: Stay cool 😎",
-        "The sun says: Shade is for the weak!",
-        "The sun says: SPF? Never heard of her.",
-        "The sun says: Budget harder, shine brighter.",
-        "The sun says: Don't burn out — cash in!",
-        "The sun says: Broke but radiant.",
-        "The sun says: Frugal is the new fabulous.",
-        "The sun says: Turn up the heat on those savings.",
-        "The sun says: Keep your coins and your cool."
-      ];
-      const pick = messages[Math.floor(Math.random() * messages.length)];
-      const popup = document.getElementById("sunPopup");
-      popup.textContent = pick;
-      popup.style.display = "block";
-      setTimeout(() => { popup.style.display = "none"; }, 3000);
-    }
-  </script>
 </head>
 <body>
   <h1>Potpourri for $1000, Alex</h1>
   <div class="board">
-    <div class="category">🎂 Birthday Freebies</div>
-    <div class="category">💊 CVS Coupon Stacks</div>
-    <div class="category">🪙 Find Lost Money</div>
-    <div class="category">⛽ Gas Perks</div>
-    <div class="category">🛒 Best Time to Buy</div>
-    <div class="category">📺 Stream Free Media</div>
-    <div class="category">🎵 Free Streaming Music</div>
-    <div class="category">📰 Podcast Picks</div>
-    <div class="category">🧽 Frugal Cleaning Hacks</div>
-    <div class="category">🔥 Hot Deals of the Week</div>
+    <div class="category">Birthday Freebies</div>
+    <div class="category">CVS Coupon Stacks</div>
+    <div class="category">Find Lost Money</div>
+    <div class="category">Gas Perks</div>
+    <div class="category">Best Time to Buy</div>
+    <div class="category">Stream Free Media</div>
+    <div class="category">Free Streaming Music</div>
+    <div class="category">Podcast Picks</div>
+    <div class="category">Frugal Cleaning Hacks</div>
+    <div class="category">Hot Deals of the Week</div>
   </div>
-  <a href="index.html" class="home-button">Return to Home</a>
-  <div class="sun-icon" onclick="talkToSun()">😎</div>
-  <div id="sunPopup" class="sun-popup"></div>
+  <a href="index.html" class="home-link">⬅️ Return to Home</a>
 </body>
 </html>
