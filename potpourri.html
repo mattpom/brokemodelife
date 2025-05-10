@@ -1,101 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🌸 Potpourri</title>
-  
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 2em;
-    background-color: #fff;
-  }
-  .banner {
-    background: #fde6e9;
-    padding: 1em;
-    text-align: center;
-    border-bottom: 2px solid #cc3366;
-  }
-  .banner h1 {
-    margin: 0;
-    color: #cc3366;
-    font-size: 2em;
-  }
-  .banner p {
-    margin: 0.5em 0 0;
-    color: #b03060;
-    font-weight: bold;
-  }
-  .section {
-    background-color: #fde6e9;
-    padding: 1em;
-    margin: 1.5em 0;
-    border-radius: 8px;
-  }
-  .section h2 {
-    font-size: 1.4em;
-    color: #cc3366;
-    margin-top: 0;
-  }
-  ul {
-    padding-left: 1.2em;
-  }
-  ul li {
-    margin-bottom: 0.5em;
-  }
-  .return-home {
-    margin-top: 2em;
-    text-align: center;
-    padding: 1em;
-  }
-  .return-home a {
-    text-decoration: none;
-    color: #cc3366;
-    font-size: 1.4em;
-    font-weight: bold;
-  }
-</style>
-
+  <title>Potpourri for $1000, Alex</title>
+  <style>
+    body {
+      background-color: #fef6f8;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+      margin: 0;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 28px;
+      color: #b30059;
+      margin-bottom: 30px;
+    }
+    .jeopardy-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto 40px auto;
+    }
+    .cell {
+      background-color: #fae2e2;
+      border-radius: 10px;
+      padding: 25px;
+      font-weight: bold;
+      color: #880e4f;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .cell:hover {
+      background-color: #fcd1d1;
+    }
+    .sun {
+      font-size: 42px;
+      margin: 30px 0;
+      cursor: pointer;
+    }
+    .return-home {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 12px 18px;
+      background-color: #fce4ec;
+      color: #b30059;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 16px;
+      border: 1px solid #e1bee7;
+    }
+    .return-home::before {
+      content: "⬅️ ";
+    }
+  </style>
 </head>
 <body>
+  <h1>Potpourri for $1000, Alex</h1>
 
-<div class="banner">
-  <h1>💸 Broke Mode Life</h1>
-  <p>Survival Never Looked So Good</p>
-</div>
-<h1>🌸 Potpourri</h1>
-<div class="section">
-<h2>🎯 Random Brilliance</h2>
-<ul>
-<li>🧻 Toilet paper math hacks</li>
-<li>📺 Cereal boxes as drawer dividers</li>
-<li>💡 Binder clips for cable management</li>
-<li>📦 Amazon boxes as storage bins</li>
-<li>🧴 Lotion bottle life extenders</li>
-</ul>
-</div>
-<div class="section">
-<h2>🧠 Budget Genius</h2>
-<ul>
-<li>🎨 DIY wall art with junk mail</li>
-<li>🥫 Pantry meal hacks</li>
-<li>🖼️ Thrift store photo frame flips</li>
-<li>🛋️ Rearrange rooms for free therapy</li>
-<li>🧽 Sponge trick to clean without cleaner</li>
-</ul>
-</div>
-<div class="section">
-<h2>🤪 Strange But Smart</h2>
-<ul>
-<li>🧦 Coffee cozies from old socks</li>
-<li>🪞 Mirrors to light dark rooms</li>
-<li>📎 Paperclip phone stands</li>
-<li>🎲 Game night with dollar store junk</li>
-<li>💬 Fake coupons that actually work (sometimes)</li>
-</ul>
-</div>
-<div class="return-home"><a href="index.html">⬅️ Return to Home</a></div>
+  <div class="jeopardy-grid">
+    <div class="cell" onclick="alert('🎂 Free meals at Denny\'s, IHOP, & Firehouse Subs on your birthday')">🎂 Birthday Freebies</div>
+    <div class="cell" onclick="alert('💊 Stack CVS coupons + ExtraBucks for double savings')">💊 CVS Coupon Stacks</div>
+    <div class="cell" onclick="alert('💰 Use missingmoney.com to claim refunds')">💰 Find Lost Money</div>
+    <div class="cell" onclick="alert('⛽ Loyalty programs: Shell, Speedway, BP')">⛽ Gas Perks</div>
+    <div class="cell" onclick="alert('🛒 Best months: September (appliances), May (mattresses)')">🛒 Best Time to Buy</div>
+    <div class="cell" onclick="alert('📚 Hoopla, Libby, Kanopy — free with your library card')">📚 Stream Free Media</div>
+    <div class="cell" onclick="alert('🎵 Spotify Free, Pandora, YouTube Music (w/ blocker)')">🎵 Free Streaming Music</div>
+    <div class="cell" onclick="alert('🎙️ Ramsey Show, Frugal Friends, ChooseFI')">🎙️ Podcast Picks</div>
+    <div class="cell" onclick="alert('🧼 Vinegar, baking soda, and elbow grease — cleaner home, fuller wallet.')">🧼 Frugal Cleaning Hacks</div>
+    <div class="cell" onclick="alert('🧃 Discount drinks: birthday shakes, refill clubs, and more')">🧃 Cheap Sips</div>
+    <div class="cell" onclick="alert('📦 Free samples from major brands, just sign up!')">📦 Free Stuff by Mail</div>
+  <div class="cell" onclick="alert('🛏️ Airbnb hacks, hotel points stacking, and free stays from referral credits')">🛏️ Travel & Stay Cheap</div>
+  </div>
+
+  <div class="sun" onclick="alert('😎 Now this is what I call diversified saving.')">😎</div>
+
+  <a href="index.html" class="return-home">Return to Home</a>
 </body>
 </html>
