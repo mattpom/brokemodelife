@@ -1,1 +1,80 @@
-<html><head><title>potpurri.html</title></head><body><h1>potpurri.html</h1><a href='index.html'>Return to Home</a></body></html>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Potpourri for $1000, Alex</title>
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #fff5f7; color: #55002b; padding: 40px; }
+    h1 { font-size: 2.5em; text-align: center; margin-bottom: 40px; }
+    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .box {
+      background: #fae0e4;
+      padding: 20px;
+      border-radius: 12px;
+      font-size: 1.2em;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: background 0.2s ease-in-out;
+    }
+    .box:hover { background-color: #ffe3ec; }
+    .sun {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      cursor: pointer;
+      font-size: 2em;
+    }
+    .return-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 60px;
+    }
+    a.return {
+      font-size: 24px;
+      font-family: system-ui, sans-serif;
+      color: #b03060;
+      text-decoration: none;
+      background: transparent;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    a.return:hover {
+      text-decoration: underline;
+    }
+    a.return::before {
+      content: "⬅️";
+      font-size: 24px;
+    }
+  </style>
+  <script>
+    function talk() {
+      alert("You're broke, but at least you clicked me. 😎");
+    }
+  </script>
+</head>
+<body>
+  <h1>Potpourri for $1000, Alex</h1>
+  <div class="grid">
+    <div class="box">🎂 Birthday Freebies</div>
+    <div class="box">💊 CVS Coupon Stacks</div>
+    <div class="box">💰 Find Lost Money</div>
+    <div class="box">🛢️ Gas Perks</div>
+    <div class="box">🛒 Best Time to Buy</div>
+    <div class="box">📺 Stream Free Media</div>
+    <div class="box">🎵 Free Streaming Music</div>
+    <div class="box">🎙️ Podcast Picks</div>
+    <div class="box">🧽 Frugal Cleaning Hacks</div>
+    <div class="box">🥤 Cheap Sips</div>
+    <div class="box">📦 Free Stuff by Mail</div>
+    <div class="box">🔥 Hot Deals of the Week</div>
+  </div>
+  <div class="sun" onclick="talk()">😎</div>
+  <div class="return-container">
+    <a class="return" href="index.sandbox.html">Return to Home</a>
+  </div>
+</body>
+</html>
