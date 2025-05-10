@@ -1,33 +1,122 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Listen Here</title>
   <style>
-    body { font-family: Arial, sans-serif; background-color: #fff5f7; color: #4b0a29; margin: 0; padding: 20px; }
-    h1 { text-align: center; margin-top: 40px; }
-    .content { max-width: 800px; margin: 0 auto; font-size: 1.1em; line-height: 1.6; }
-    .home-button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 40px auto 10px;
-      padding: 10px 20px;
-      background-color: transparent;
-      border: none;
-      color: #4b0a29;
-      font-size: 1.2em;
-      text-decoration: none;
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #fbe3e9, #fdded7);
+      margin: 0;
+      padding: 0;
+      color: #3c3c3c;
+      text-align: center;
     }
-    .home-button::before { content: "⬅️"; margin-right: 10px; }
+    h1 {
+      color: #c03c6e;
+      padding: 20px;
+      font-size: 28px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      padding: 30px;
+    }
+    .box {
+      background-color: #c03c6e;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      font-size: 18px;
+    }
+    .return {
+      text-align: left;
+      padding-left: 20px;
+      margin-top: 40px;
+    }
+    .return a {
+      color: #c03c6e;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    .return a span.arrow {
+      color: #004aad;
+    }
+    .sun {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      font-size: 30px;
+      cursor: pointer;
+    }
+    .quote-box {
+      font-size: 13px;
+      background: white;
+      padding: 6px 8px;
+      border-radius: 6px;
+      margin-top: 4px;
+      color: #b03864;
+    }
   </style>
+  
+<script>
+  function randomSunQuote() {
+    const quotes = [
+      "The sun says: 'Click it or ticket!'",
+      "The sun says: 'You're hotter when you save.'",
+      "The sun says: 'Budget like your life depends on it.'",
+      "The sun says: 'No shame in broke mode.'",
+      "The sun says: 'Frugal is fabulous.'",
+      "The sun says: 'Savings > status.'",
+      "The sun says: 'Don’t sweat the cents — stack the wins.'",
+      "The sun says: 'Broke is temporary. Sass is forever.'",
+      "The sun says: 'DIY it, don’t buy it.'",
+      "The sun says: 'Your wallet deserves this.'",
+      "The sun says: 'Smarter, not poorer.'",
+      "The sun says: 'Hustle hard, hydrate harder.'",
+      "The sun says: 'I shine — you save.'",
+      "The sun says: 'That freebie hit different.'",
+      "The sun says: 'Spend less, flex more.'",
+      "The sun says: 'It’s called broke MODE, not broke forever.'"
+    ];
+    document.getElementById("sunquote").innerText = quotes[Math.floor(Math.random() * quotes.length)];
+  }
+  window.onload = randomSunQuote;
+</script>
+
 </head>
 <body>
-  <h1>Listen Here</h1>
-  <div class="content">
-    <p>Enjoy curated lists of free and cheap music streaming platforms, podcasts about saving money, financial hacks, and more. Music for your mood and wallet.</p>
+  <h1>🎧 Listen Here</h1>
+  <div class="grid">
+    <div class="box">🎧 Spotify Free Tier Tips</div>
+<div class="box">📻 Best Public Radio</div>
+<div class="box">🎙️ Budget Podcasts</div>
+<div class="box">🎶 YouTube Playlists</div>
+<div class="box">📼 SoundCloud Gems</div>
+<div class="box">📲 Music Apps That Don’t Suck</div>
+<div class="box">📢 Comedy Podcasts</div>
+<div class="box">💸 Free Audiobooks</div>
+<div class="box">🎤 Motivational Speeches</div>
+<div class="box">🛏️ Sleep Sounds</div>
+<div class="box">🏋️ Workout Mixes</div>
+<div class="box">📱 Offline Music Tricks</div>
+<div class="box">🎧 Spotify Free Tier Tips (Part 2)</div>
+<div class="box">📻 Best Public Radio (Part 2)</div>
+<div class="box">🎙️ Budget Podcasts (Part 2)</div>
+<div class="box">🎶 YouTube Playlists (Part 2)</div>
+<div class="box">📼 SoundCloud Gems (Part 2)</div>
+<div class="box">📲 Music Apps That Don’t Suck (Part 2)</div>
+<div class="box">📢 Comedy Podcasts (Part 2)</div>
+<div class="box">💸 Free Audiobooks (Part 2)</div>
+<div class="box">🎤 Motivational Speeches (Part 2)</div>
+<div class="box">🛏️ Sleep Sounds (Part 2)</div>
+<div class="box">🏋️ Workout Mixes (Part 2)</div>
+<div class="box">📱 Offline Music Tricks (Part 2)</div>
   </div>
-  <a href="index.html" class="home-button">Return to Home</a>
+  <div class="return">
+    <a href="index.html"><span class="arrow">←</span><span> Return to Home</span></a>
+  </div>
+  <div class="sun" onclick="randomSunQuote()">😎<div id="sunquote" class="quote-box"></div></div>
 </body>
 </html>
