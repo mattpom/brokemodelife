@@ -7,72 +7,73 @@
     body {
       font-family: Arial, sans-serif;
       background: linear-gradient(to bottom, #fbe3e9, #fdded7);
+      color: #3c3c3c;
       margin: 0;
       padding: 0;
-      color: #3c3c3c;
       text-align: center;
     }
     h1 {
       color: #c03c6e;
-      padding: 20px;
       font-size: 28px;
+      margin-top: 20px;
     }
-    .grid {
+    .tiles {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
       padding: 30px;
     }
-    .box {
+    .tile {
       background-color: #c03c6e;
       color: white;
       padding: 20px;
-      border-radius: 10px;
+      border-radius: 12px;
       font-size: 18px;
     }
     .return {
       text-align: left;
-      padding-left: 20px;
-      margin-top: 40px;
+      padding: 40px 0 30px 20px;
     }
     .return a {
-      color: #c03c6e;
       text-decoration: none;
       font-size: 16px;
     }
-    .return a span.arrow {
+    .return a .arrow {
       color: #004aad;
+    }
+    .return a .text {
+      color: #c03c6e;
     }
     .sun {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      font-size: 30px;
+      font-size: 34px;
     }
   </style>
 </head>
 <body>
   <h1>🎛️ Portpurri for $1000, Alex</h1>
 
-  <div class="grid">
-    <div class="box">🍜 Cheap Eats</div>
-    <div class="box">🛠 DIY Repairs</div>
-    <div class="box">🌍 Budget Travel</div>
-    <div class="box">🎁 Free Stuff</div>
-    <div class="box">💼 Job Hacks</div>
-    <div class="box">🧘 Health Tips</div>
-    <div class="box">🎬 Entertainment</div>
-    <div class="box">🏃‍♀️ Frugal Fitness</div>
-    <div class="box">🛒 Smart Shopping</div>
-    <div class="box">🚨 Survival Tricks</div>
-    <div class="box">💡 Power Bill Hacks</div>
-    <div class="box">🧼 Homemade Products</div>
-    <div class="box">🍿 Stream for Free</div>
-    <div class="box">🧰 Used Tools Guide</div>
+  <div class="tiles">
+    <div class="tile">🍜 Cheap Eats</div>
+    <div class="tile">🛠 DIY Repairs</div>
+    <div class="tile">🌍 Budget Travel</div>
+    <div class="tile">🎁 Free Stuff</div>
+    <div class="tile">💼 Job Hacks</div>
+    <div class="tile">🧘 Health Tips</div>
+    <div class="tile">🎬 Entertainment</div>
+    <div class="tile">🏃‍♀️ Frugal Fitness</div>
+    <div class="tile">🛒 Smart Shopping</div>
+    <div class="tile">🚨 Survival Tricks</div>
+    <div class="tile">💡 Power Bill Hacks</div>
+    <div class="tile">🧼 Homemade Products</div>
+    <div class="tile">🍿 Stream for Free</div>
+    <div class="tile">🧰 Used Tools Guide</div>
   </div>
 
   <div class="return">
-    <a href="index.html"><span class="arrow">←</span><span> Return to Home</span></a>
+    <a href="index.html"><span class="arrow">←</span><span class="text"> Return to Home</span></a>
   </div>
 
   <div class="sun">😎</div>
