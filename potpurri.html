@@ -44,7 +44,39 @@
       font-size: 24px;
       cursor: pointer;
     }
+    .sun-popup {
+      position: fixed;
+      bottom: 50px;
+      right: 20px;
+      background: #f5d7dd;
+      color: #4b0a29;
+      padding: 10px 15px;
+      border-radius: 10px;
+      font-size: 1em;
+      display: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
   </style>
+  <script>
+    function talkToSun() {
+      const messages = [
+        "The sun says: Stay cool 😎",
+        "The sun says: Shade is for the weak!",
+        "The sun says: SPF? Never heard of her.",
+        "The sun says: Budget harder, shine brighter.",
+        "The sun says: Don't burn out — cash in!",
+        "The sun says: Broke but radiant.",
+        "The sun says: Frugal is the new fabulous.",
+        "The sun says: Turn up the heat on those savings.",
+        "The sun says: Keep your coins and your cool."
+      ];
+      const pick = messages[Math.floor(Math.random() * messages.length)];
+      const popup = document.getElementById("sunPopup");
+      popup.textContent = pick;
+      popup.style.display = "block";
+      setTimeout(() => { popup.style.display = "none"; }, 3000);
+    }
+  </script>
 </head>
 <body>
   <h1>Potpourri for $1000, Alex</h1>
@@ -61,6 +93,7 @@
     <div class="category">🔥 Hot Deals of the Week</div>
   </div>
   <a href="index.html" class="home-button">Return to Home</a>
-  <div class="sun-icon" onclick="alert('Stay cool 😎')">😎</div>
+  <div class="sun-icon" onclick="talkToSun()">😎</div>
+  <div id="sunPopup" class="sun-popup"></div>
 </body>
 </html>
