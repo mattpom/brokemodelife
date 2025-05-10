@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Portpurri for $1000, Alex</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #fbe3e9, #fdded7);
+      color: #3c3c3c;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      color: #004aad;
+      padding: 20px;
+      font-size: 28px;
+    }
+    .jeopardy-board {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      padding: 30px;
+      justify-items: center;
+    }
+    .category {
+      background-color: #c03c6e;
+      color: white;
+      padding: 20px;
+      border-radius: 12px;
+      font-size: 18px;
+      width: 80%;
+      max-width: 300px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .return-home {
+      margin: 50px 0 30px;
+    }
+    .return-home a {
+      background-color: #c03c6e;
+      color: white;
+      padding: 12px 26px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    .sun {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      font-size: 34px;
+      cursor: pointer;
+    }
+    .quote-box {
+      font-size: 13px;
+      background: white;
+      padding: 6px 8px;
+      border-radius: 6px;
+      margin-top: 4px;
+      color: #b03864;
+    }
+  </style>
+  <script>
+    function randomSunQuote() {
+      const quotes = [
+        "The sun says: 'Cheap thrills are still thrills!'",
+        "The sun says: 'This site is hot, just like me.'",
+        "The sun says: 'Click fast, I don’t shine forever.'",
+        "The sun says: 'Saving money looks good on you.'"
+      ];
+      document.getElementById('sunquote').innerText = quotes[Math.floor(Math.random() * quotes.length)];
+    }
+    window.onload = randomSunQuote;
+  </script>
+</head>
+<body>
+  <h1>$ Portpurri for $1000, Alex</h1>
+
+  <div class="jeopardy-board">
+    <div class="category">🍜 Cheap Eats</div>
+    <div class="category">🛠 DIY Repairs</div>
+    <div class="category">🌍 Budget Travel</div>
+    <div class="category">🎁 Free Stuff</div>
+    <div class="category">💼 Job Hacks</div>
+    <div class="category">🧘 Health Tips</div>
+    <div class="category">🎬 Entertainment</div>
+    <div class="category">🏃‍♀️ Frugal Fitness</div>
+    <div class="category">🛒 Smart Shopping</div>
+    <div class="category">🚨 Survival Tricks</div>
+    <div class="category">💡 Power Bill Hacks</div>
+    <div class="category">🧼 Homemade Products</div>
+    <div class="category">🍿 Stream for Free</div>
+    <div class="category">🧰 Used Tools Guide</div>
+  </div>
+
+  <div class="return-home">
+    <a href="index.html">← Return to Home</a>
+  </div>
+
+  <div class="sun" onclick="randomSunQuote()">😎<div id="sunquote" class="quote-box"></div></div>
+</body>
+</html>
