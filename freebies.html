@@ -1,65 +1,74 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Freebies</title>
-  <style>
+<head><!-- Last updated: 2025-05-10 23:26:14 -->
+<!-- Last updated: 2025-05-10 23:20:51 -->
+<meta charset="utf-8"/>
+<title>Freebies</title>
+<style>
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #fbe3e9, #fdded7);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #fff1f5, #ffe7e9);
       margin: 0;
       padding: 0;
-      color: #3c3c3c;
+      color: #2c2c2c;
       text-align: center;
     }
     h1 {
-      color: #c03c6e;
-      padding: 20px;
-      font-size: 28px;
+      color: #b30059;
+      padding: 30px 20px 10px;
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
     }
     .grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      padding: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 40px 40px 60px;
+      max-width: 1000px;
+      margin: auto;
     }
     .box {
-      background-color: #c03c6e;
-      color: white;
-      padding: 20px;
-      border-radius: 10px;
+      background: white;
+      border: 3px solid #c03c6e;
+      padding: 30px 20px;
       font-size: 18px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
     .return {
       text-align: left;
-      padding-left: 20px;
-      margin-top: 40px;
+      padding-left: 40px;
+      margin-top: 60px;
     }
     .return a {
-      color: #c03c6e;
+      color: #b30059;
       text-decoration: none;
-      font-size: 16px;
+      font-size: 18px;
+      font-weight: bold;
     }
     .return a span.arrow {
       color: #004aad;
+      font-weight: bold;
     }
     .sun {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      font-size: 30px;
+      font-size: 36px;
       cursor: pointer;
     }
     .quote-box {
-      font-size: 13px;
+      font-size: 14px;
       background: white;
-      padding: 6px 8px;
+      padding: 8px 10px;
       border-radius: 6px;
       margin-top: 4px;
       color: #b03864;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-  </style>
-  
+</style>
 <script>
   function randomSunQuote() {
     const quotes = [
@@ -84,39 +93,13 @@
   }
   window.onload = randomSunQuote;
 </script>
-
 </head>
 <body>
-  <h1>🎁 Freebies</h1>
-  <div class="grid">
-    <div class="box">🎁 Birthday Freebies</div>
-<div class="box">🍔 Free Fast Food</div>
-<div class="box">🎮 Free Gaming Trials</div>
-<div class="box">📺 Free Streaming Trials</div>
-<div class="box">📚 Free Books</div>
-<div class="box">🧴 Free Samples by Mail</div>
-<div class="box">👟 Shoe Giveaways</div>
-<div class="box">📬 Free Magazine Subscriptions</div>
-<div class="box">💄 Beauty Box Freebies</div>
-<div class="box">🍼 Baby Products</div>
-<div class="box">📦 Amazon Promo Codes</div>
-<div class="box">🛍️ Free Store Pickup Deals</div>
-<div class="box">🎁 Birthday Freebies (Part 2)</div>
-<div class="box">🍔 Free Fast Food (Part 2)</div>
-<div class="box">🎮 Free Gaming Trials (Part 2)</div>
-<div class="box">📺 Free Streaming Trials (Part 2)</div>
-<div class="box">📚 Free Books (Part 2)</div>
-<div class="box">🧴 Free Samples by Mail (Part 2)</div>
-<div class="box">👟 Shoe Giveaways (Part 2)</div>
-<div class="box">📬 Free Magazine Subscriptions (Part 2)</div>
-<div class="box">💄 Beauty Box Freebies (Part 2)</div>
-<div class="box">🍼 Baby Products (Part 2)</div>
-<div class="box">📦 Amazon Promo Codes (Part 2)</div>
-<div class="box">🛍️ Free Store Pickup Deals (Part 2)</div>
-  </div>
-  <div class="return">
-    <a href="index.html"><span class="arrow">←</span><span> Return to Home</span></a>
-  </div>
-  <div class="sun" onclick="randomSunQuote()">😎<div id="sunquote" class="quote-box"></div></div>
+<h1>🎁 Freebies</h1>
+<div class="grid"><div class="box">🎁 Birthday Freebies Your special day should be free.</div><div class="box">🍔 Free Fast Food Tasty savings from popular chains.</div><div class="box">📚 Free Books Binge words, not wallets.</div><div class="box">👟 Shoe Giveaways Step up for zero dollars.</div><div class="box">💄 Beauty Samples Glam it up for free.</div><div class="box">📦 Amazon Codes Crack the promo code vault.</div></div>
+<div class="return">
+<a href="index.html"><span class="arrow">←</span><span> Return to Home</span></a>
+</div>
+<div class="sun" onclick="randomSunQuote()">😎<div class="quote-box" id="sunquote"></div></div>
 </body>
 </html>
