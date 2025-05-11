@@ -2,80 +2,169 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Portpurri for $1000, Alex</title>
+  <title>Portpurri</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #fbe3e9, #fdded7);
-      color: #3c3c3c;
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 0;
+      background: #fff8e1;
+      color: #222;
+    }
+
+    header {
       text-align: center;
+      padding: 25px 15px;
+      font-size: 26px;
+      font-weight: bold;
+      background: #ffeb3b;
+      border-bottom: 4px solid #fdd835;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-    h1 {
-      color: #c03c6e;
-      font-size: 28px;
-      margin-top: 20px;
-    }
-    .tiles {
+
+    .grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 15px;
       padding: 30px;
+      justify-items: center;
     }
-    .tile {
-      background-color: #c03c6e;
-      color: white;
-      padding: 20px;
-      border-radius: 12px;
-      font-size: 18px;
+
+    .flip-card {
+      background-color: transparent;
+      width: 150px;
+      height: 100px;
+      perspective: 1000px;
     }
-    .return {
-      text-align: left;
-      padding: 40px 0 30px 20px;
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
     }
-    .return a {
-      text-decoration: none;
-      font-size: 16px;
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
     }
-    .return a .arrow {
-      color: #004aad;
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      backface-visibility: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 14px;
+      padding: 10px;
     }
-    .return a .text {
-      color: #c03c6e;
+
+    .flip-card-front {
+      background-color: #e3f2fd;
+      border: 3px solid #64b5f6;
     }
+
+    .flip-card-back {
+      background-color: #bbdefb;
+      border: 3px solid #64b5f6;
+      transform: rotateY(180deg);
+    }
+
     .sun {
       position: fixed;
-      bottom: 20px;
+      bottom: 100px;
       right: 20px;
-      font-size: 34px;
+      font-size: 36px;
+      cursor: pointer;
+      user-select: none;
     }
+
+    .quip-box {
+      text-align: center;
+      font-style: italic;
+      font-size: 16px;
+      background: #f0f4c3;
+      padding: 20px;
+      border-top: 3px solid #cddc39;
+      min-height: 40px;
+    }
+
+    .home-button {
+      display: block;
+      width: fit-content;
+      margin: 20px auto;
+      padding: 12px 20px;
+      background: #81c784;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      text-align: center;
+      transition: background 0.3s;
+    }
+
+    .home-button:hover {
+      background: #66bb6a;
+    }
+
   </style>
 </head>
 <body>
-  <h1>🎛️ Portpurri for $1000, Alex</h1>
 
-  <div class="tiles">
-    <div class="tile">🍜 Cheap Eats</div>
-    <div class="tile">🛠 DIY Repairs</div>
-    <div class="tile">🌍 Budget Travel</div>
-    <div class="tile">🎁 Free Stuff</div>
-    <div class="tile">💼 Job Hacks</div>
-    <div class="tile">🧘 Health Tips</div>
-    <div class="tile">🎬 Entertainment</div>
-    <div class="tile">🏃‍♀️ Frugal Fitness</div>
-    <div class="tile">🛒 Smart Shopping</div>
-    <div class="tile">🚨 Survival Tricks</div>
-    <div class="tile">💡 Power Bill Hacks</div>
-    <div class="tile">🧼 Homemade Products</div>
-    <div class="tile">🍿 Stream for Free</div>
-    <div class="tile">🧰 Used Tools Guide</div>
+  <header id="banner">Spin the wheel, stay for the deals.</header>
+
+  <div class="grid">
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">What’s a grocery tip?</div><div class="flip-card-back">Never shop hungry.</div></div></div>
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">Cheap vacation hack?</div><div class="flip-card-back">Travel midweek or off-season.</div></div></div>
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">How to cut streaming bills?</div><div class="flip-card-back">Rotate subscriptions monthly.</div></div></div>
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">Budgeting trick?</div><div class="flip-card-back">Use cash envelopes.</div></div></div>
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">What’s a frugal fun night?</div><div class="flip-card-back">Board games & potluck.</div></div></div>
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">Gas-saving idea?</div><div class="flip-card-back">Carpool or combine errands.</div></div></div>
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">Frugal gift idea?</div><div class="flip-card-back">DIY or thrift something fun.</div></div></div>
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">Save on pet care?</div><div class="flip-card-back">Look for free local clinics.</div></div></div>
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">Where to get freebies?</div><div class="flip-card-back">BrokeMode Freebies page!</div></div></div>
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">Low-cost date idea?</div><div class="flip-card-back">Picnic & local park stroll.</div></div></div>
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">Cheap meal hack?</div><div class="flip-card-back">Plan around sales + leftovers.</div></div></div>
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">Smart grocery swap?</div><div class="flip-card-back">Buy frozen veggies, not fresh.</div></div></div>
   </div>
 
-  <div class="return">
-    <a href="index.html"><span class="arrow">←</span><span class="text"> Return to Home</span></a>
-  </div>
+  <div class="sun" onclick="saySomething()">😎</div>
 
-  <div class="sun">😎</div>
+  <div class="quip-box" id="quip">Stay tuned for Final Jeopardy...</div>
+
+  <a href="index.html" class="home-button">Return to Home</a>
+
+  <script>
+    const banners = [
+      "Spin the wheel, stay for the deals.",
+      "Welcome to the broke-mode bonus round.",
+      "It’s not a game... it just feels like one.",
+      "Budget fun starts here — no trivia required.",
+      "Where frugal meets fabulous."
+    ];
+
+    const quips = [
+      "What, you were expecting Vanna White?",
+      "Big money, big money, big money...",
+      "I’m no Howie Mandel.",
+      "Survey says… click again.",
+      "Is that your final answer?",
+      "Come on down!",
+      "No whammies, no whammies!",
+      "Next time, bring Pat Sajak."
+    ];
+
+    document.getElementById("banner").innerText = banners[Math.floor(Math.random() * banners.length)];
+
+    function saySomething() {
+      const quip = quips[Math.floor(Math.random() * quips.length)];
+      document.getElementById("quip").innerText = quip;
+    }
+  </script>
+
 </body>
 </html>
