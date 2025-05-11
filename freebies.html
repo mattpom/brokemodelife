@@ -1,105 +1,81 @@
-<!DOCTYPE html>
 
-<html lang="en">
-<head><!-- Last updated: 2025-05-10 23:26:14 -->
-<!-- Last updated: 2025-05-10 23:20:51 -->
-<meta charset="utf-8"/>
-<title>Freebies</title>
-<style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom, #fff1f5, #ffe7e9);
-      margin: 0;
-      padding: 0;
-      color: #2c2c2c;
-      text-align: center;
-    }
-    h1 {
-      color: #b30059;
-      padding: 30px 20px 10px;
-      font-size: 36px;
-      font-weight: 800;
-      letter-spacing: 0.5px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      padding: 40px 40px 60px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .box {
-      background: white;
-      border: 3px solid #c03c6e;
-      padding: 30px 20px;
-      font-size: 18px;
-      border-radius: 16px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-    }
-    .return {
-      text-align: left;
-      padding-left: 40px;
-      margin-top: 60px;
-    }
-    .return a {
-      color: #b30059;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: bold;
-    }
-    .return a span.arrow {
-      color: #004aad;
-      font-weight: bold;
-    }
-    .sun {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      font-size: 36px;
-      cursor: pointer;
-    }
-    .quote-box {
-      font-size: 14px;
-      background: white;
-      padding: 8px 10px;
-      border-radius: 6px;
-      margin-top: 4px;
-      color: #b03864;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-</style>
-<script>
-  function randomSunQuote() {
-    const quotes = [
-      "The sun says: 'Click it or ticket!'",
-      "The sun says: 'You're hotter when you save.'",
-      "The sun says: 'Budget like your life depends on it.'",
-      "The sun says: 'No shame in broke mode.'",
-      "The sun says: 'Frugal is fabulous.'",
-      "The sun says: 'Savings > status.'",
-      "The sun says: 'Don’t sweat the cents — stack the wins.'",
-      "The sun says: 'Broke is temporary. Sass is forever.'",
-      "The sun says: 'DIY it, don’t buy it.'",
-      "The sun says: 'Your wallet deserves this.'",
-      "The sun says: 'Smarter, not poorer.'",
-      "The sun says: 'Hustle hard, hydrate harder.'",
-      "The sun says: 'I shine — you save.'",
-      "The sun says: 'That freebie hit different.'",
-      "The sun says: 'Spend less, flex more.'",
-      "The sun says: 'It’s called broke MODE, not broke forever.'"
-    ];
-    document.getElementById("sunquote").innerText = quotes[Math.floor(Math.random() * quotes.length)];
-  }
-  window.onload = randomSunQuote;
-</script>
-</head>
-<body>
-<h1>🎁 Freebies</h1>
-<div class="grid"><div class="box">🎁 Birthday Freebies Your special day should be free.</div><div class="box">🍔 Free Fast Food Tasty savings from popular chains.</div><div class="box">📚 Free Books Binge words, not wallets.</div><div class="box">👟 Shoe Giveaways Step up for zero dollars.</div><div class="box">💄 Beauty Samples Glam it up for free.</div><div class="box">📦 Amazon Codes Crack the promo code vault.</div></div>
-<div class="return">
-<a href="index.html"><span class="arrow">←</span><span> Return to Home</span></a>
-</div>
-<div class="sun" onclick="randomSunQuote()">😎<div class="quote-box" id="sunquote"></div></div>
-</body>
+<html>
+  <head>
+    <title>Freebies Galore</title>
+    <style>
+      body { background-color: #f4fff9; font-family: sans-serif; color: #2e5d45; padding: 20px; }
+      h1 { color: #17633c; }
+      .tagline { font-size: 1.2em; margin-bottom: 20px; }
+      .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+      .card { background: white; border-radius: 10px; padding: 20px; border: 2px solid #99dfc6; box-shadow: 2px 2px 10px rgba(0,0,0,0.05); }
+      .card strong { color: #17633c; }
+      a { display: inline-block; margin-top: 30px; color: #17633c; font-weight: bold; }
+      ul { padding-left: 20px; }
+    </style>
+  </head>
+  <body>
+    <h1>Freebies, Rewards & Birthday Bonuses</h1>
+    <div class="tagline">Real perks, real savings — every month, every birthday, every loyal swipe.</div>
+
+    <div class="grid">
+      <div class="card">
+        <strong>🎉 Birthday Freebies:</strong>
+        <ul>
+          <li><a href="https://www.dennys.com/rewards/" target="_blank">Denny’s</a> - Free Grand Slam on your birthday.</li>
+          <li><a href="https://www.starbucks.com/rewards" target="_blank">Starbucks</a> - Free drink or treat.</li>
+          <li><a href="https://www.sephora.com/beauty/beauty-insider-rewards-perks" target="_blank">Sephora</a> - Free gift with any purchase.</li>
+          <li><a href="https://www.panfamilyrewards.com/" target="_blank">Panda Express</a> - Surprise birthday offer via app.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <strong>🗓️ Free Day Calendar:</strong>
+        <ul>
+          <li><strong>National Donut Day:</strong> June — Free donuts from Krispy Kreme, Dunkin.</li>
+          <li><strong>National Coffee Day:</strong> Sept — Starbucks & Dunkin’ free coffee promos.</li>
+          <li><strong>Tax Day:</strong> April — Arby’s, Great American Cookies & more offer freebies.</li>
+          <li><strong>Slurpee Day (7/11):</strong> Free Slurpees at 7-Eleven stores nationwide.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <strong>🏆 Loyalty Rewards Worth It:</strong>
+        <ul>
+          <li><a href="https://www.chick-fil-a.com/one" target="_blank">Chick-fil-A One</a> - Points toward meals + birthday perks.</li>
+          <li><a href="https://www.target.com/circle" target="_blank">Target Circle</a> - Coupons, 1% back, birthday discounts.</li>
+          <li><a href="https://www.walgreens.com/register" target="_blank">Walgreens</a> - Cash rewards and monthly boosters.</li>
+          <li><a href="https://www.shell.us/fuelrewards" target="_blank">Fuel Rewards</a> - Save at the pump with everyday purchases.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <strong>👶 Kids Eat Free Nights:</strong>
+        <ul>
+          <li><strong>Tuesdays:</strong> IHOP & Bob Evans (select locations).</li>
+          <li><strong>Wednesdays:</strong> Firehouse Subs (with adult combo).</li>
+          <li>Use <a href="https://www.mykidseatfree.com/" target="_blank">MyKidsEatFree.com</a> to find current offers.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <strong>🎁 Hidden Freebies:</strong>
+        <ul>
+          <li><strong>Free Samples:</strong> <a href="https://www.freeflys.com/" target="_blank">FreeFlys.com</a>, <a href="https://www.pinchapenny.com/" target="_blank">PinchMe</a></li>
+          <li><strong>Birthday Clubs:</strong> <a href="https://www.freebie-depot.com/birthday-freebies/" target="_blank">Freebie Depot</a></li>
+          <li><strong>Beauty Boxes:</strong> Ulta & Target seasonal freebie packs with purchase.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <strong>📱 Apps to Score More:</strong>
+        <ul>
+          <li><a href="https://www.ibotta.com/" target="_blank">Ibotta</a> - Cashback from groceries & online shopping.</li>
+          <li><a href="https://fetch.com/" target="_blank">Fetch Rewards</a> - Scan receipts and earn gift cards.</li>
+          <li><a href="https://rakuten.com/" target="_blank">Rakuten</a> - Get paid for your purchases.</li>
+        </ul>
+      </div>
+    </div>
+
+    <a href="index.html">← Return to Home</a>
+  </body>
 </html>
