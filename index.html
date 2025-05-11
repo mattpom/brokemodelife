@@ -1,143 +1,93 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Broke Mode Life</title>
-    <style>
-        body {
-            background-color: #fceef4;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            color: #7a163b;
-            margin: 0;
-            padding: 0;
-        }
-        h1 {
-            font-size: 3em;
-            margin-top: 0.5em;
-        }
-        .section {
-            display: inline-block;
-            width: 30%;
-            vertical-align: top;
-            padding: 1em;
-        }
-        .section h2 {
-            font-size: 1.2em;
-            margin-bottom: 1em;
-            color: #444;
-        }
-        .link-block {
-            display: block;
-            background-color: #5a69c2;
-            color: white;
-            margin: 0.5em auto;
-            padding: 0.5em;
-            border-radius: 8px;
-            width: 80%;
-            text-decoration: none;
-            font-size: 1em;
-        }
-        .footer {
-            margin-top: 2em;
-            padding: 2em;
-            background-color: #f9d7e9;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1em;
-        }
-        .footer-box {
-            background-color: #ffffff;
-            border: 2px solid #7a163b;
-            border-radius: 10px;
-            padding: 1em;
-            width: 250px;
-        }
-        .footer-box h3 {
-            margin-top: 0;
-            color: #5a163b;
-        }
-        header {
-            background-color: #fad3e6;
-            padding: 1em 0;
-            box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
-        }
-        header p {
-            margin: 0;
-            font-size: 1.2em;
-        }
-        .legal {
-            background-color: #fcd5e5;
-            padding: 1.5em 1em;
-            font-size: 0.85em;
-            color: #333;
-        }
-        .legal a {
-            color: #000000;
-            text-decoration: none;
-            margin: 0 0.75em;
-        }
-        .legal a::after {
-            content: "";
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Broke Mode Life</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      color: #3c3c3c;
+    }
+    h1 {
+      font-size: 32px;
+      color: #b22222;
+      margin-top: 40px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+    .card {
+      background-color: #c03c6e;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      font-size: 18px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .card:hover {
+      background-color: #a02c5e;
+    }
+    .sun {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      font-size: 30px;
+      cursor: pointer;
+    }
+    .quote-box {
+      font-size: 13px;
+      background: white;
+      padding: 6px 8px;
+      border-radius: 6px;
+      margin-top: 4px;
+      color: #b03864;
+    }
+  </style>
+  <script>
+    function randomSunQuote() {
+      const quotes = [
+        "The sun says: 'Click it or ticket!'",
+        "The sun says: 'You're hotter when you save.'",
+        "The sun says: 'Budget like your life depends on it.'",
+        "The sun says: 'No shame in broke mode.'",
+        "The sun says: 'Frugal is fabulous.'",
+        "The sun says: 'Savings > status.'",
+        "The sun says: 'Don’t sweat the cents — stack the wins.'",
+        "The sun says: 'Broke is temporary. Sass is forever.'",
+        "The sun says: 'DIY it, don’t buy it.'",
+        "The sun says: 'Your wallet deserves this.'",
+        "The sun says: 'Smarter, not poorer.'",
+        "The sun says: 'Hustle hard, hydrate harder.'",
+        "The sun says: 'I shine — you save.'",
+        "The sun says: 'That freebie hit different.'",
+        "The sun says: 'Spend less, flex more.'",
+        "The sun says: 'It’s called broke MODE, not broke forever.'"
+      ];
+      document.getElementById("sunquote").innerText = quotes[Math.floor(Math.random() * quotes.length)];
+    }
+    window.onload = randomSunQuote;
+  </script>
 </head>
 <body>
-    <header>
-        <h1>💸 Broke Mode Life 💸</h1>
-        <p><strong>Survival Never Looked So Good</strong></p>
-    </header>
-
-    <div class="section">
-        <h2>🏡 Live Smart</h2>
-        <a class="link-block" href="#">🎁 Freebies</a>
-        <a class="link-block" href="#">🏠 Home Stand</a>
-        <a class="link-block" href="#">🧺 Fold the Laundry</a>
-        <a class="link-block" href="dolittle.html">🦒 Dr. Dolittle’s</a>
-    </div>
-
-    <div class="section">
-        <h2>🌍 Get Out There</h2>
-        <a class="link-block" href="#">✈️ Ciao</a>
-        <a class="link-block" href="#">🏖️ Take a Hike</a>
-        <a class="link-block" href="#">🛍️ What’s In Store</a>
-        <a class="link-block" href="#">🚗 Start Your Engines</a>
-    </div>
-
-    <div class="section">
-        <h2>🍴 Treat Yourself</h2>
-        <a class="link-block" href="food.html">🍽️ All You Can Eat</a>
-        <a class="link-block" href="#">🍎 An Apple a Day</a>
-        <a class="link-block" href="#">🍷 Cheers, Mate</a>
-        <a class="link-block" href="#">🎧 Listen Here</a>
-        <a class="link-block" href="#">🧠 Potpurri</a>
-    </div>
-
-    <div class="footer">
-        <div class="footer-box">
-            <h3>What We Do</h3>
-            <p>We help you survive and thrive on a tight budget with tips, deals, and laughs.</p>
-        </div>
-        <div class="footer-box">
-            <h3>Who We Are</h3>
-            <p>A scrappy crew of penny-pinchers, deal-finders, and DIY dreamers bringing value to your daily hustle.</p>
-        </div>
-        <div class="footer-box">
-            <h3>What's Up</h3>
-            <p>Latest updates, quirky stories, and survival hacks — because being broke doesn’t mean being boring.</p>
-        </div>
-    </div>
-
-    <div class="legal">
-        <p>© 2025 BrokeModeLife.com · All rights reserved</p>
-        <p>Content provided is for entertainment and informational purposes only.<br>
-        This site may earn commissions on affiliate links. Stay savvy.</p>
-        <p>
-            <a href="#">Privacy</a>
-            <a href="#">Terms</a>
-            <a href="#">Contact Us</a>
-        </p>
-    </div>
+  <h1>💸 Welcome to Broke Mode Life</h1>
+  <div class="grid">
+    <a href="apple.html" class="card">🍎 An Apple a Day</a>
+    <a href="listen.html" class="card">🎧 Listen Here</a>
+    <a href="portpurri.html" class="card">🎲 Portpurri</a>
+    <a href="ciao.html" class="card">✈️ Ciao — Travel Mode</a>
+    <a href="freebies.html" class="card">🎁 Freebies Galore</a>
+    <a href="all-you-can-eat.html" class="card">🍽️ All You Can Eat</a>
+  </div>
+  <div class="sun" onclick="randomSunQuote()">😎<div id="sunquote" class="quote-box"></div></div>
 </body>
 </html>
