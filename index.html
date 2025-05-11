@@ -1,165 +1,143 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Broke Mode Life</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom, #fff1f5, #ffe7e9);
-      margin: 0;
-      padding: 0;
-      color: #2c2c2c;
-      text-align: center;
-    }
-    h1 {
-      color: #b30059;
-      font-size: 42px;
-      margin-top: 30px;
-      font-weight: 800;
-    }
-    p {
-      font-size: 18px;
-      color: #444;
-      margin-top: -10px;
-    }
-    .nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin: 40px 20px;
-      font-size: 22px;
-    }
-    .nav a {
-      text-decoration: none;
-      color: #1e1e1e;
-      font-weight: 600;
-      transition: color 0.2s ease;
-    }
-    .nav a:hover {
-      color: #c03c6e;
-    }
-    .section {
-      padding: 40px 20px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .section h2 {
-      color: #b30059;
-      font-size: 28px;
-      margin-bottom: 20px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      padding-bottom: 40px;
-    }
-    .box {
-      background: white;
-      border: 3px solid #c03c6e;
-      padding: 30px 20px;
-      font-size: 18px;
-      border-radius: 16px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-    }
-    .box a {
-      color: #004aad;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    .sun {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      font-size: 36px;
-      cursor: pointer;
-    }
-    .quote-box {
-      font-size: 14px;
-      background: white;
-      padding: 8px 10px;
-      border-radius: 6px;
-      margin-top: 4px;
-      color: #b03864;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    footer {
-      font-size: 13px;
-      color: #666;
-      background-color: #f6c9d6;
-      padding: 30px 20px;
-      margin-top: 40px;
-    }
-  </style>
-  <script>
-    function randomSunQuote() {
-      const quotes = [
-        "The sun says: 'Spend less, flex more.'",
-        "The sun says: 'Frugal is fabulous!'",
-        "The sun says: 'DIY it, don’t buy it.'",
-        "The sun says: 'Your wallet deserves this.'"
-      ];
-      document.getElementById("sunquote").innerText = quotes[Math.floor(Math.random() * quotes.length)];
-    }
-    window.onload = randomSunQuote;
-  </script>
+    <meta charset="UTF-8">
+    <title>Broke Mode Life</title>
+    <style>
+        body {
+            background-color: #fceef4;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: #7a163b;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-size: 3em;
+            margin-top: 0.5em;
+        }
+        .section {
+            display: inline-block;
+            width: 30%;
+            vertical-align: top;
+            padding: 1em;
+        }
+        .section h2 {
+            font-size: 1.2em;
+            margin-bottom: 1em;
+            color: #444;
+        }
+        .link-block {
+            display: block;
+            background-color: #5a69c2;
+            color: white;
+            margin: 0.5em auto;
+            padding: 0.5em;
+            border-radius: 8px;
+            width: 80%;
+            text-decoration: none;
+            font-size: 1em;
+        }
+        .footer {
+            margin-top: 2em;
+            padding: 2em;
+            background-color: #f9d7e9;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1em;
+        }
+        .footer-box {
+            background-color: #ffffff;
+            border: 2px solid #7a163b;
+            border-radius: 10px;
+            padding: 1em;
+            width: 250px;
+        }
+        .footer-box h3 {
+            margin-top: 0;
+            color: #5a163b;
+        }
+        header {
+            background-color: #fad3e6;
+            padding: 1em 0;
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+        }
+        header p {
+            margin: 0;
+            font-size: 1.2em;
+        }
+        .legal {
+            background-color: #fcd5e5;
+            padding: 1.5em 1em;
+            font-size: 0.85em;
+            color: #333;
+        }
+        .legal a {
+            color: #000000;
+            text-decoration: none;
+            margin: 0 0.75em;
+        }
+        .legal a::after {
+            content: "";
+        }
+    </style>
 </head>
 <body>
-  <h1>💸 Broke Mode Life 💸</h1>
-  <p>Survival Never Looked So Good</p>
+    <header>
+        <h1>💸 Broke Mode Life 💸</h1>
+        <p><strong>Survival Never Looked So Good</strong></p>
+    </header>
 
-  <div class="nav">
-    <a href="freebies.html">🎁 Freebies</a>
-    <a href="ciao.html">✈️ Ciao</a>
-    <a href="engines.html">🚗 Start Your Engines</a>
-    <a href="eat.html">🍽️ All You Can Eat</a>
-    <a href="home.html">🏡 Home Stand</a>
-    <a href="hike.html">🚠 Take a Hike</a>
-    <a href="store.html">🛍️ What’s In Store</a>
-    <a href="cheers.html">🍷 Cheers, Mate</a>
-    <a href="laundry.html">🧺 Fold the Laundry</a>
-    <a href="apple.html">🍎 An Apple a Day</a>
-    <a href="listen.html">🎧 Listen Here</a>
-    <a href="portpurri.html">🧠 Potpurri</a>
-  </div>
-
-  <div class="section">
-    <h2>☀️ What We Do</h2>
-    <div class="grid">
-      <div class="box">💡 Daily drops of survival magic — coupon coups and dollar-store gold.</div>
-      <div class="box">💎 Luxury tricks for broke babes, hustlers, and dreamers chasing glow-up goals.</div>
-      <div class="box">🧾 Honest, gritty, and sometimes hilarious ways to make it all work.</div>
+    <div class="section">
+        <h2>🏡 Live Smart</h2>
+        <a class="link-block" href="#">🎁 Freebies</a>
+        <a class="link-block" href="#">🏠 Home Stand</a>
+        <a class="link-block" href="#">🧺 Fold the Laundry</a>
+        <a class="link-block" href="dolittle.html">🦒 Dr. Dolittle’s</a>
     </div>
-  </div>
 
-  <div class="section">
-    <h2>👀 What’s Up</h2>
-    <div class="grid">
-      <div class="box">🎉 <a href="freebies.html">2025 birthday freebies you didn’t know existed</a></div>
-      <div class="box">🌍 <a href="ciao.html">How to travel without money (seriously)</a></div>
-      <div class="box">🔧 <a href="engines.html">Make your car last longer for free</a></div>
+    <div class="section">
+        <h2>🌍 Get Out There</h2>
+        <a class="link-block" href="#">✈️ Ciao</a>
+        <a class="link-block" href="#">🏖️ Take a Hike</a>
+        <a class="link-block" href="#">🛍️ What’s In Store</a>
+        <a class="link-block" href="#">🚗 Start Your Engines</a>
     </div>
-  </div>
 
-  <div class="section">
-    <h2>📖 Who We Are</h2>
-    <div class="grid">
-      <div class="box">🛍️ Raised on hand-me-downs and half-off bins — and we thrived.</div>
-      <div class="box">🔥 This isn’t about just surviving — it’s about flexing with nothing.</div>
-      <div class="box">💪 We turned struggle into swagger and made an empire from scraps.</div>
+    <div class="section">
+        <h2>🍴 Treat Yourself</h2>
+        <a class="link-block" href="food.html">🍽️ All You Can Eat</a>
+        <a class="link-block" href="#">🍎 An Apple a Day</a>
+        <a class="link-block" href="#">🍷 Cheers, Mate</a>
+        <a class="link-block" href="#">🎧 Listen Here</a>
+        <a class="link-block" href="#">🧠 Potpurri</a>
     </div>
-  </div>
 
-  <footer>
-    &copy; 2025 BrokeModeLife.com · All rights reserved<br>
-    Content provided is for entertainment and informational purposes only.<br>
-    This site may earn commissions on affiliate links. Stay savvy.<br><br>
-    Privacy · Terms · Contact Us
-  </footer>
+    <div class="footer">
+        <div class="footer-box">
+            <h3>What We Do</h3>
+            <p>We help you survive and thrive on a tight budget with tips, deals, and laughs.</p>
+        </div>
+        <div class="footer-box">
+            <h3>Who We Are</h3>
+            <p>A scrappy crew of penny-pinchers, deal-finders, and DIY dreamers bringing value to your daily hustle.</p>
+        </div>
+        <div class="footer-box">
+            <h3>What's Up</h3>
+            <p>Latest updates, quirky stories, and survival hacks — because being broke doesn’t mean being boring.</p>
+        </div>
+    </div>
 
-  <div class="sun" onclick="randomSunQuote()">😎<div id="sunquote" class="quote-box"></div></div>
+    <div class="legal">
+        <p>© 2025 BrokeModeLife.com · All rights reserved</p>
+        <p>Content provided is for entertainment and informational purposes only.<br>
+        This site may earn commissions on affiliate links. Stay savvy.</p>
+        <p>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Contact Us</a>
+        </p>
+    </div>
 </body>
 </html>
