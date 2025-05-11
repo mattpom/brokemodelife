@@ -2,57 +2,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Start Your Engines</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 40px; background: #fff8f0; color: #333; }
-        h1 { color: #d35400; }
-        .section { margin-bottom: 30px; }
-        .home-link {
-            display: block; text-align: center; margin-top: 40px;
-            font-weight: bold; font-size: 18px; text-decoration: none; color: #d35400;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <title>Start Your Engines</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff3f6;
+      color: #2c003e;
+      margin: 0;
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+      color: #8e005a;
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+    }
+    .subtitle {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #b3005a;
+      margin-bottom: 2rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .card {
+      background: #fff;
+      padding: 1rem;
+      border: 2px solid #f5cce6;
+      border-radius: 12px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.03);
+    }
+    .card strong {
+      font-weight: bold;
+      color: #8e005a;
+    }
+    .card a {
+      color: #8e005a;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .home-link {
+      display: block;
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: #8e005a;
+    }
+  </style>
 </head>
 <body>
-    <h1>Start Your Engines</h1>
 
-    <div class="section">
-        <h2>🚗 DIY Car Maintenance Tips</h2>
-        <ul>
-            <li>Change your own oil — save $40-$70 each time.</li>
-            <li>Check and refill fluids (brake, transmission, coolant).</li>
-            <li>Use YouTube to replace headlights, air filters, and wipers.</li>
-        </ul>
+  <h1>Start Your Engines</h1>
+  <div class="subtitle">🚗 Hustles built around wheels, not excuses.</div>
+
+  <div class="grid">
+    <div class="card">
+      <strong>🧼 Mobile Car Wash:</strong> Buy $5 soap + $1 spray bottle at Dollar Tree. Offer $15 drive-up washes at parks and lots.
     </div>
-
-    <div class="section">
-        <h2>🛠️ Budget Auto Tools You Should Own</h2>
-        <ul>
-            <li>OBD-II scanner — diagnose check engine lights for under $30.</li>
-            <li>Portable tire inflator — avoid gas station fees.</li>
-            <li>Socket wrench set — basics for under-the-hood work.</li>
-        </ul>
+    <div class="card">
+      <strong>🚗 Flip Cars:</strong> Search <a href="https://facebook.com/marketplace" target="_blank">Facebook Marketplace</a> for &lt;$1,000 cars with minor issues. Clean, fix, and resell for profit.
     </div>
-
-    <div class="section">
-        <h2>⛽ Apps to Save on Gas</h2>
-        <ul>
-            <li><strong>GasBuddy</strong> – Find cheapest stations near you.</li>
-            <li><strong>Upside</strong> – Earn cashback on gas purchases.</li>
-            <li><strong>GetUpside + Grocery Points</strong> – Stack rewards.</li>
-        </ul>
+    <div class="card">
+      <strong>⛽ Gas Delivery:</strong> Join <a href="https://driver.gasbuddy.com" target="_blank">GasBuddy Driver</a> or Roadie to deliver emergency fuel. $15–$20 per trip.
     </div>
-
-    <div class="section">
-        <h2>🔧 Frugal Auto Repair Resources</h2>
-        <ul>
-            <li><a href="https://repairpal.com" target="_blank">RepairPal</a> – Estimate auto repair costs fairly.</li>
-            <li><a href="https://yourmechanic.com" target="_blank">YourMechanic</a> – Mobile repair services.</li>
-            <li><a href="https://youtube.com" target="_blank">YouTube Mechanics</a> – Find tutorials by car model.</li>
-        </ul>
+    <div class="card">
+      <strong>🛞 Flat Tire Fix:</strong> Use a $7 plug kit from Amazon. Offer $20 roadside repairs. Add inflator for speed.
     </div>
+    <div class="card">
+      <strong>🧽 Interior Detailing:</strong> Vinegar + brush removes stains fast. Offer $25 car cleanouts from your driveway.
+    </div>
+    <div class="card">
+      <strong>🚘 Alt-Rideshare:</strong> No Uber? Try <a href="https://hopskipdrive.com" target="_blank">HopSkipDrive</a> or Roadie to drive kids or packages.
+    </div>
+    <div class="card">
+      <strong>⚡ Jumpstart Hero:</strong> Buy $30 jumper kit. List on Craigslist & Facebook for $10–$20 local calls.
+    </div>
+    <div class="card">
+      <strong>🚚 Rent Your Ride:</strong> Use <a href="https://turo.com" target="_blank">Turo</a> or <a href="https://fetchtruck.com" target="_blank">FetchTruck</a> to rent unused trucks/SUVs daily.
+    </div>
+  </div>
 
-    <a href="index.html" class="home-link">⬅ Return to Home</a>
+  <a class="home-link" href="index.html">⬅ Return to Home</a>
+
 </body>
 </html>
