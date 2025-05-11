@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Broke Mode Life</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
+      color: #3c3c3c;
+    }
+    h1 {
+      font-size: 36px;
+      color: #b22222;
+      padding: 30px 20px 10px;
+      text-align: center;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      padding: 30px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .card {
+      background-color: #c03c6e;
+      color: white;
+      padding: 20px;
+      border-radius: 12px;
+      font-size: 18px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: background 0.3s;
+      text-align: center;
+    }
+    .card:hover {
+      background-color: #9b2a56;
+    }
+    .info-section {
+      background-color: #fff8fa;
+      border-top: 4px solid #c03c6e;
+      padding: 50px 30px;
+      text-align: center;
+    }
+    .info-section h2 {
+      color: #c03c6e;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    .info-section p {
+      max-width: 800px;
+      margin: 0 auto 25px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    footer {
+      background-color: #f2f2f2;
+      color: #222;
+      font-size: 13px;
+      padding: 40px 20px;
+      border-top: 4px solid #c03c6e;
+      text-align: center;
+    }
+    footer p {
+      max-width: 850px;
+      margin: 12px auto;
+      line-height: 1.5;
+    }
+    footer strong {
+      color: #9b2a56;
+    }
+    .sun {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      font-size: 30px;
+      cursor: pointer;
+    }
+    .quote-box {
+      font-size: 13px;
+      background: white;
+      padding: 6px 8px;
+      border-radius: 6px;
+      margin-top: 4px;
+      color: #b03864;
+    }
+  </style>
+  <script>
+    function randomSunQuote() {
+      const quotes = [
+        "The sun says: 'Click it or ticket!'",
+        "The sun says: 'You're hotter when you save.'",
+        "The sun says: 'Budget like your life depends on it.'",
+        "The sun says: 'No shame in broke mode.'",
+        "The sun says: 'Frugal is fabulous.'",
+        "The sun says: 'Savings > status.'",
+        "The sun says: 'Don’t sweat the cents — stack the wins.'",
+        "The sun says: 'Broke is temporary. Sass is forever.'",
+        "The sun says: 'DIY it, don’t buy it.'",
+        "The sun says: 'Your wallet deserves this.'",
+        "The sun says: 'Smarter, not poorer.'",
+        "The sun says: 'Hustle hard, hydrate harder.'",
+        "The sun says: 'I shine — you save.'",
+        "The sun says: 'That freebie hit different.'",
+        "The sun says: 'Spend less, flex more.'",
+        "The sun says: 'It’s called broke MODE, not broke forever.'"
+      ];
+      document.getElementById("sunquote").innerText = quotes[Math.floor(Math.random() * quotes.length)];
+    }
+    window.onload = randomSunQuote;
+  </script>
+</head>
+<body>
+  <h1>💸 Welcome to Broke Mode Life</h1>
+
+  <div class="grid">
+    <a href="home-stand.html" class="card">🏡 Home Stand</a>
+    <a href="fold-the-laundry.html" class="card">🧺 Fold the Laundry</a>
+    <a href="take-a-hike.html" class="card">🥾 Take a Hike</a>
+    <a href="whats-in-store.html" class="card">🛒 What’s In Store</a>
+    <a href="start-your-engines.html" class="card">🚗 Start Your Engines</a>
+    <a href="an-apple-a-day.html" class="card">🍎 An Apple a Day</a>
+    <a href="cheers-mate.html" class="card">🍷 Cheers Mate</a>
+    <a href="listen.html" class="card">🎧 Listen Here</a>
+    <a href="freebies.html" class="card">🎁 Freebies</a>
+    <a href="all-you-can-eat.html" class="card">🍽️ All You Can Eat</a>
+    <a href="dr-dolittle.html" class="card">🐾 Dr. Dolittle</a>
+    <a href="portpurri.html" class="card">🧠 Potpurri</a>
+    <a href="ciao.html" class="card">🌈 Ciao — Travel Mode</a>
+  </div>
+
+  <div class="info-section">
+    <h2>What We Do</h2>
+    <p>We don’t just clip coupons — we flip the script on what it means to live well when your wallet says otherwise. Broke Mode Life delivers real hacks, real deals, and ridiculous ways to win without spending a fortune.</p>
+    <h2>Who We Are</h2>
+    <p>A team of brutally honest budgeteers, side-hustlers, and digital creators. We live the broke life — loud, smart, and unfiltered. Everything you see here? Created with hustle and heart.</p>
+    <h2>What’s Up</h2>
+    <p>Fresh content drops constantly — from new tools to free stuff to community cash-saving challenges. If it’s cheap, clever, or chaos, we’re on it and bringing it to you with no BS.</p>
+  </div>
+
+  <footer>
+    <p><strong>Legal Notice:</strong> All content © Broke Mode Life. This site is designed for entertainment and educational purposes only. We make no guarantees about outcomes. Use your judgment — and your budget.</p>
+    <p>Reproduction, copying, or redistribution of site materials is prohibited without written consent. Broke Mode Life may participate in affiliate programs and earn commissions. Transparency is our policy. Hustle smart. Protect your neck.</p>
+    <p>By using this site, you agree to our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</p>
+  </footer>
+
+  <div class="sun" onclick="randomSunQuote()">😎<div id="sunquote" class="quote-box"></div></div>
+</body>
+</html>
