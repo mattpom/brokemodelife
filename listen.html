@@ -1,74 +1,65 @@
 <!DOCTYPE html>
-
 <html lang="en">
-<head><!-- Last updated: 2025-05-10 23:26:14 -->
-<!-- Last updated: 2025-05-10 23:20:51 -->
-<meta charset="utf-8"/>
-<title>Listen Here</title>
-<style>
+<head>
+  <meta charset="UTF-8">
+  <title>Listen Here</title>
+  <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom, #fff1f5, #ffe7e9);
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #fbe3e9, #fdded7);
       margin: 0;
       padding: 0;
-      color: #2c2c2c;
+      color: #3c3c3c;
       text-align: center;
     }
     h1 {
-      color: #b30059;
-      padding: 30px 20px 10px;
-      font-size: 36px;
-      font-weight: 800;
-      letter-spacing: 0.5px;
+      color: #c03c6e;
+      padding: 20px;
+      font-size: 28px;
     }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      padding: 40px 40px 60px;
-      max-width: 1000px;
-      margin: auto;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      padding: 30px;
     }
     .box {
-      background: white;
-      border: 3px solid #c03c6e;
-      padding: 30px 20px;
+      background-color: #c03c6e;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
       font-size: 18px;
-      border-radius: 16px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
     .return {
       text-align: left;
-      padding-left: 40px;
-      margin-top: 60px;
+      padding-left: 20px;
+      margin-top: 40px;
     }
     .return a {
-      color: #b30059;
+      color: #c03c6e;
       text-decoration: none;
-      font-size: 18px;
-      font-weight: bold;
+      font-size: 16px;
     }
     .return a span.arrow {
       color: #004aad;
-      font-weight: bold;
     }
     .sun {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      font-size: 36px;
+      font-size: 30px;
       cursor: pointer;
     }
     .quote-box {
-      font-size: 14px;
+      font-size: 13px;
       background: white;
-      padding: 8px 10px;
+      padding: 6px 8px;
       border-radius: 6px;
       margin-top: 4px;
       color: #b03864;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-</style>
+  </style>
+  
 <script>
   function randomSunQuote() {
     const quotes = [
@@ -93,13 +84,39 @@
   }
   window.onload = randomSunQuote;
 </script>
+
 </head>
 <body>
-<h1>🎧 Listen Here</h1>
-<div class="grid"><div class="box">🎧 Spotify Free Tier Tips Unlock music without unlocking your wallet.</div><div class="box">🎙️ Budget Podcasts Learn, laugh, and save — all for free.</div><div class="box">📻 Best Public Radio Old-school waves with new-school value.</div><div class="box">📲 Music Apps Stream smarter with these free options.</div><div class="box">💸 Free Audiobooks Stories that cost nothing but your time.</div><div class="box">🛏️ Sleep Sounds Unwind without subscriptions.</div></div>
-<div class="return">
-<a href="index.html"><span class="arrow">←</span><span> Return to Home</span></a>
-</div>
-<div class="sun" onclick="randomSunQuote()">😎<div class="quote-box" id="sunquote"></div></div>
+  <h1>🎧 Listen Here</h1>
+  <div class="grid">
+    <div class="box">🎧 Spotify Free Tier Tips</div>
+<div class="box">📻 Best Public Radio</div>
+<div class="box">🎙️ Budget Podcasts</div>
+<div class="box">🎶 YouTube Playlists</div>
+<div class="box">📼 SoundCloud Gems</div>
+<div class="box">📲 Music Apps That Don’t Suck</div>
+<div class="box">📢 Comedy Podcasts</div>
+<div class="box">💸 Free Audiobooks</div>
+<div class="box">🎤 Motivational Speeches</div>
+<div class="box">🛏️ Sleep Sounds</div>
+<div class="box">🏋️ Workout Mixes</div>
+<div class="box">📱 Offline Music Tricks</div>
+<div class="box">🎧 Spotify Free Tier Tips (Part 2)</div>
+<div class="box">📻 Best Public Radio (Part 2)</div>
+<div class="box">🎙️ Budget Podcasts (Part 2)</div>
+<div class="box">🎶 YouTube Playlists (Part 2)</div>
+<div class="box">📼 SoundCloud Gems (Part 2)</div>
+<div class="box">📲 Music Apps That Don’t Suck (Part 2)</div>
+<div class="box">📢 Comedy Podcasts (Part 2)</div>
+<div class="box">💸 Free Audiobooks (Part 2)</div>
+<div class="box">🎤 Motivational Speeches (Part 2)</div>
+<div class="box">🛏️ Sleep Sounds (Part 2)</div>
+<div class="box">🏋️ Workout Mixes (Part 2)</div>
+<div class="box">📱 Offline Music Tricks (Part 2)</div>
+  </div>
+  <div class="return">
+    <a href="index.html"><span class="arrow">←</span><span> Return to Home</span></a>
+  </div>
+  <div class="sun" onclick="randomSunQuote()">😎<div id="sunquote" class="quote-box"></div></div>
 </body>
 </html>
