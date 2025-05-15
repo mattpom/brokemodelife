@@ -2,152 +2,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Broke Mode Life</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: Arial, sans-serif;
       margin: 0;
-      background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
-      color: #3c3c3c;
+      background-color: #f6f6f6;
+      color: #000;
     }
-    h1 {
-      font-size: 36px;
-      color: #b22222;
-      padding: 30px 20px 10px;
-      text-align: center;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-      padding: 30px;
-      max-width: 1100px;
-      margin: auto;
-    }
-    .card {
-      background-color: #c03c6e;
+    .header {
+      background-color: #000;
       color: white;
+      text-align: center;
       padding: 20px;
-      border-radius: 12px;
-      font-size: 18px;
+      font-size: 32px;
+    }
+    .tagline {
+      background-color: #fff3cd;
+      text-align: center;
+      padding: 15px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    nav {
+      background-color: #000;
+      padding: 10px 5px;
+      text-align: center;
+      white-space: nowrap;
+      overflow-x: auto;
+    }
+    nav a {
+      color: white;
+      margin: 0 8px;
       text-decoration: none;
       font-weight: bold;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: background 0.3s;
+      font-size: 14px;
+      display: inline-block;
+    }
+    .adsense {
       text-align: center;
+      padding: 30px 0;
+      border-top: 1px dashed #ccc;
+      border-bottom: 1px dashed #ccc;
+      margin: 30px 0;
     }
-    .card:hover {
-      background-color: #9b2a56;
+    .adsense p {
+      font-weight: bold;
     }
-    .info-section {
-      background-color: #fff8fa;
-      border-top: 4px solid #c03c6e;
-      padding: 50px 30px;
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .box {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 280px;
       text-align: center;
+      font-weight: bold;
     }
-    .info-section h2 {
-      color: #c03c6e;
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-    .info-section p {
-      max-width: 800px;
-      margin: 0 auto 25px;
-      font-size: 16px;
-      line-height: 1.6;
+    .box a {
+      color: #000;
+      text-decoration: none;
+      font-size: 18px;
     }
     footer {
-      background-color: #f2f2f2;
-      color: #222;
-      font-size: 13px;
-      padding: 40px 20px;
-      border-top: 4px solid #c03c6e;
+      background-color: #000;
+      color: white;
       text-align: center;
+      padding: 20px;
+      margin-top: 40px;
     }
-    footer p {
-      max-width: 850px;
-      margin: 12px auto;
-      line-height: 1.5;
-    }
-    footer strong {
-      color: #9b2a56;
-    }
-    .sun {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      font-size: 30px;
-      cursor: pointer;
-    }
-    .quote-box {
-      font-size: 13px;
-      background: white;
-      padding: 6px 8px;
-      border-radius: 6px;
-      margin-top: 4px;
-      color: #b03864;
+    .disclaimer {
+      font-size: 12px;
+      color: #999;
+      text-align: center;
+      padding-bottom: 20px;
     }
   </style>
-  <script>
-    function randomSunQuote() {
-      const quotes = [
-        "The sun says: 'Click it or ticket!'",
-        "The sun says: 'You're hotter when you save.'",
-        "The sun says: 'Budget like your life depends on it.'",
-        "The sun says: 'No shame in broke mode.'",
-        "The sun says: 'Frugal is fabulous.'",
-        "The sun says: 'Savings > status.'",
-        "The sun says: 'Don’t sweat the cents — stack the wins.'",
-        "The sun says: 'Broke is temporary. Sass is forever.'",
-        "The sun says: 'DIY it, don’t buy it.'",
-        "The sun says: 'Your wallet deserves this.'",
-        "The sun says: 'Smarter, not poorer.'",
-        "The sun says: 'Hustle hard, hydrate harder.'",
-        "The sun says: 'I shine — you save.'",
-        "The sun says: 'That freebie hit different.'",
-        "The sun says: 'Spend less, flex more.'",
-        "The sun says: 'It’s called broke MODE, not broke forever.'"
-      ];
-      document.getElementById("sunquote").innerText = quotes[Math.floor(Math.random() * quotes.length)];
-    }
-    window.onload = randomSunQuote;
-  </script>
 </head>
 <body>
-  <h1>💸 Welcome to Broke Mode Life</h1>
+  <div class="header">Broke Mode Life</div>
+  <div class="tagline">Survive. Thrive. Repeat. Welcome to life in Broke Mode.</div>
+  <nav>
+    <a href="freebies.html">Freebies</a>
+    <a href="apple_a_day.html">Apple a Day</a>
+    <a href="go_out_and_play.html">Go Out and Play</a>
+    <a href="fill_the_closet.html">Fill the Closet</a>
+    <a href="start_engines.html">Start Your Engines</a>
+    <a href="listen_here.html">Listen Here</a>
+    <a href="potpourri.html">Potpourri</a>
+    <a href="all_you_can_eat.html">All You Can Eat</a>
+    <a href="cheers_mate.html">Cheers Mate</a>
+    <a href="travel_tips.html">Travel Tips</a>
+  </nav>
 
-  <div class="grid">
-    <a href="home-stand.html" class="card">🏡 Home Stand</a>
-    <a href="fold-the-laundry.html" class="card">🧺 Fold the Laundry</a>
-    <a href="take-a-hike.html" class="card">🥾 Take a Hike</a>
-    <a href="whats-in-store.html" class="card">🛒 What’s In Store</a>
-    <a href="start-your-engines.html" class="card">🚗 Start Your Engines</a>
-    <a href="an-apple-a-day.html" class="card">🍎 An Apple a Day</a>
-    <a href="cheers-mate.html" class="card">🍷 Cheers Mate</a>
-    <a href="listen.html" class="card">🎧 Listen Here</a>
-    <a href="freebies.html" class="card">🎁 Freebies</a>
-    <a href="all-you-can-eat.html" class="card">🍽️ All You Can Eat</a>
-    <a href="dr-dolittle.html" class="card">🐾 Dr. Dolittle</a>
-    <a href="portpurri.html" class="card">🧠 Potpurri</a>
-    <a href="ciao.html" class="card">🌈 Ciao — Travel Mode</a>
+  <div class="adsense">
+    <p>Ad Placeholder</p>
+    <em>(Insert your Google AdSense code here)</em>
+    <div style="width: 300px; height: 250px; background-color: #eee; margin: 20px auto;"></div>
   </div>
 
-  <div class="info-section">
-    <h2>What We Do</h2>
-    <p>We don’t just clip coupons — we flip the script on what it means to live well when your wallet says otherwise. Broke Mode Life delivers real hacks, real deals, and ridiculous ways to win without spending a fortune.</p>
-    <h2>Who We Are</h2>
-    <p>A team of brutally honest budgeteers, side-hustlers, and digital creators. We live the broke life — loud, smart, and unfiltered. Everything you see here? Created with hustle and heart.</p>
-    <h2>What’s Up</h2>
-    <p>Fresh content drops constantly — from new tools to free stuff to community cash-saving challenges. If it’s cheap, clever, or chaos, we’re on it and bringing it to you with no BS.</p>
+  <div class="grid">
+    <div class="box"><a href="go_out_and_play.html">Go Out and Play</a></div>
+    <div class="box"><a href="all_you_can_eat.html">All You Can Eat</a></div>
+    <div class="box"><a href="travel_tips.html">Travel Tips</a></div>
+    <div class="box"><a href="listen_here.html">Listen Here</a></div>
+    <div class="box"><a href="fill_the_closet.html">Fill the Closet</a></div>
+    <div class="box"><a href="start_engines.html">Start Your Engines</a></div>
+    <div class="box"><a href="apple_a_day.html">An Apple a Day</a></div>
+    <div class="box"><a href="potpourri.html">Potpourri</a></div>
+    <div class="box"><a href="cheers_mate.html">Cheers Mate</a></div>
+    <div class="box"><a href="freebies.html">Freebies</a></div>
   </div>
 
   <footer>
-    <p><strong>Legal Notice:</strong> All content © Broke Mode Life. This site is designed for entertainment and educational purposes only. We make no guarantees about outcomes. Use your judgment — and your budget.</p>
-    <p>Reproduction, copying, or redistribution of site materials is prohibited without written consent. Broke Mode Life may participate in affiliate programs and earn commissions. Transparency is our policy. Hustle smart. Protect your neck.</p>
-    <p>By using this site, you agree to our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</p>
+    © Broke Mode Life 2025 - All Rights Reserved
   </footer>
-
-  <div class="sun" onclick="randomSunQuote()">😎<div id="sunquote" class="quote-box"></div></div>
+  <div class="disclaimer">
+    This site contains affiliate links. We may earn a commission at no cost to you.
+  </div>
 </body>
 </html>
