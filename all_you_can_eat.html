@@ -1,6 +1,18 @@
 <html>
 <head>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+<style>
+@media (max-width: 768px) {
+    div[style*="display:flex"] {
+        flex-direction: column !important;
+        align-items: stretch;
+    }
+    div[style*="padding:20px"] {
+        margin-bottom: 15px;
+    }
+}
+</style>
 </head>
 <body style="font-family:sans-serif;margin:0;padding:0;background:#f4f4f4;">
 <div style="background:black;color:white;padding:20px;text-align:center;font-size:28px;">All You Can Eat</div>
@@ -23,7 +35,7 @@
 <p>Feast your eyes before your wallet!</p>
 <div style="width:300px;height:250px;background:#eee;margin:auto;"></div>
 </div>
-<div style="display:flex;justify-content:space-around;gap:20px;margin-top:30px;">
+<div style="display:flex;justify-content:space-around;gap:20px;margin-top:30px; flex-wrap:wrap; gap:20px;">
 <div style="flex:1;padding:20px;border:1px solid #ccc;border-radius:10px;background:white;box-shadow:0 0 10px #ddd;">
 <h3>Grocery Hacks</h3>
 <p>Use store apps like Kroger, Aldi, and Safeway to stack digital coupons and weekly BOGO deals.</p>
@@ -43,6 +55,12 @@
 <li>📦 Batch cook and freeze leftovers — saves time, electricity, and food waste.</li>
 <li>🍽️ Tuesday is the new Friday — most chain restaurants run their best deals midweek.</li>
 </ul>
+</div>
+<div style="text-align:center;margin-top:30px;">
+<a href="https://example.com/deal-of-the-day" style="background:#dc3545;color:white;padding:12px 24px;
+            text-decoration:none;border-radius:6px;font-size:16px;" target="_blank">
+    🔥 Today’s Hot Deal
+  </a>
 </div>
 <div style="text-align:center;margin:30px 0;">
 <a href="index.html" style="background:black;color:white;padding:10px 20px;text-decoration:none;border-radius:5px;">Return Home</a>

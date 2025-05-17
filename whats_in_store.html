@@ -1,58 +1,72 @@
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+<style>
+@media (max-width: 768px) {
+    div[style*="display:flex"] {
+        flex-direction: column !important;
+        align-items: stretch;
+    }
+    div[style*="padding:20px"] {
+        margin-bottom: 15px;
+    }
+}
+</style>
 </head>
 <body style="font-family:sans-serif;margin:0;padding:0;background:#f4f4f4;">
-<div style='background:black;color:white;padding:20px;text-align:center;font-size:28px;'>What's in Store</div>
-<div style='background:#fff3cd;padding:20px;text-align:center;'><h2 style='margin:0;'>Electronics and Home Goods That Won’t Blow Your Budget.</h2></div>
-
+<div style="background:black;color:white;padding:20px;text-align:center;font-size:28px;">What's in Store</div>
+<div style="background:#fff3cd;padding:20px;text-align:center;"><h2 style="margin:0;">Electronics and Home Goods That Won’t Blow Your Budget.</h2></div>
 <div style="background:#1a1a1a;color:white;padding:10px;text-align:center;font-size:0;">
-  <a href="freebies.html" style="display:inline-block;margin:0 10px;color:white;text-decoration:none;font-size:14px;">Freebies</a>
-  <a href="apple_a_day.html" style="display:inline-block;margin:0 10px;color:white;text-decoration:none;font-size:14px;">Apple a Day</a>
-  <a href="go_out_and_play.html" style="display:inline-block;margin:0 10px;color:white;text-decoration:none;font-size:14px;">Go Out and Play</a>
-  <a href="style.html" style="display:inline-block;margin:0 10px;color:white;text-decoration:none;font-size:14px;">Style</a>
-  <a href="listen_here.html" style="display:inline-block;margin:0 10px;color:white;text-decoration:none;font-size:14px;">Listen Here</a>
-  <a href="cheers_mate.html" style="display:inline-block;margin:0 10px;color:white;text-decoration:none;font-size:14px;">Cheers Mate</a>
-  <a href="travel_tips.html" style="display:inline-block;margin:0 10px;color:white;text-decoration:none;font-size:14px;">Travel Tips</a>
-  <a href="pets.html" style="display:inline-block;margin:0 10px;color:white;text-decoration:none;font-size:14px;">Pets</a>
-  <a href="whats_in_store.html" style="display:inline-block;margin:0 10px;color:white;text-decoration:none;font-size:14px;">What's in Store</a>
-  <a href="index.html" style="display:inline-block;margin:0 10px;color:white;text-decoration:none;font-size:14px;">All You Can Eat</a>
+<a href="freebies.html" style="display:inline-block;margin:0 10px;color:white;text-decoration:none;font-size:14px;">Freebies</a>
+<a href="apple_a_day.html" style="display:inline-block;margin:0 10px;color:white;text-decoration:none;font-size:14px;">Apple a Day</a>
+<a href="go_out_and_play.html" style="display:inline-block;margin:0 10px;color:white;text-decoration:none;font-size:14px;">Go Out and Play</a>
+<a href="style.html" style="display:inline-block;margin:0 10px;color:white;text-decoration:none;font-size:14px;">Style</a>
+<a href="listen_here.html" style="display:inline-block;margin:0 10px;color:white;text-decoration:none;font-size:14px;">Listen Here</a>
+<a href="cheers_mate.html" style="display:inline-block;margin:0 10px;color:white;text-decoration:none;font-size:14px;">Cheers Mate</a>
+<a href="travel_tips.html" style="display:inline-block;margin:0 10px;color:white;text-decoration:none;font-size:14px;">Travel Tips</a>
+<a href="pets.html" style="display:inline-block;margin:0 10px;color:white;text-decoration:none;font-size:14px;">Pets</a>
+<a href="whats_in_store.html" style="display:inline-block;margin:0 10px;color:white;text-decoration:none;font-size:14px;">What's in Store</a>
+<a href="index.html" style="display:inline-block;margin:0 10px;color:white;text-decoration:none;font-size:14px;">All You Can Eat</a>
 </div>
-
 <div style="padding:20px;">
 <div style="border:1px dashed gray; padding:10px; margin-top:20px; text-align:center;">
-  <h3>Ad Placeholder</h3>
-  <p><em>(Insert your Google AdSense code here)</em></p>
-  <div style="width:300px;height:250px;background:#eee;margin:auto;"></div>
+<h3>Ad Placeholder</h3>
+<p><em>(Insert your Google AdSense code here)</em></p>
+<div style="width:300px;height:250px;background:#eee;margin:auto;"></div>
 </div>
-<div style="display:flex;justify-content:space-around;gap:20px;margin-top:30px;">
-  <div style="flex:1;padding:20px;border:1px solid #ccc;border-radius:10px;background:white;box-shadow:0 0 10px #ddd;">
-    <h3>Tech Deals</h3>
-    <p>Snag electronics from Amazon Renewed, Walmart Rollbacks, and Micro Center open-box specials.</p>
-  </div>
-  <div style="flex:1;padding:20px;border:1px solid #ccc;border-radius:10px;background:white;box-shadow:0 0 10px #ddd;">
-    <h3>Home Essentials</h3>
-    <p>Stock up at Aldi, Dollar General, and IKEA for quality basics that don’t break the bank.</p>
-  </div>
-  <div style="flex:1;padding:20px;border:1px solid #ccc;border-radius:10px;background:white;box-shadow:0 0 10px #ddd;">
-    <h3>Flash Sales</h3>
-    <p>Use apps like Slickdeals and CamelCamelCamel to catch lightning deals and deep discounts.</p>
-  </div>
+<div style="display:flex;justify-content:space-around;gap:20px;margin-top:30px; flex-wrap:wrap; gap:20px;">
+<div style="flex:1;padding:20px;border:1px solid #ccc;border-radius:10px;background:white;box-shadow:0 0 10px #ddd;">
+<h3>Tech Deals</h3>
+<p>Snag electronics from Amazon Renewed, Walmart Rollbacks, and Micro Center open-box specials.</p>
+</div>
+<div style="flex:1;padding:20px;border:1px solid #ccc;border-radius:10px;background:white;box-shadow:0 0 10px #ddd;">
+<h3>Home Essentials</h3>
+<p>Stock up at Aldi, Dollar General, and IKEA for quality basics that don’t break the bank.</p>
+</div>
+<div style="flex:1;padding:20px;border:1px solid #ccc;border-radius:10px;background:white;box-shadow:0 0 10px #ddd;">
+<h3>Flash Sales</h3>
+<p>Use apps like Slickdeals and CamelCamelCamel to catch lightning deals and deep discounts.</p>
+</div>
 </div>
 <h2>Stretch Your Shopping Power</h2>
 <ul>
-  <li>📱 Consider refurbished or previous-gen devices for huge savings without sacrificing performance.</li>
-  <li>🛋️ Buy furniture flat-packed to avoid shipping fees or check local “buy nothing” groups.</li>
-  <li>💡 Replace old bulbs with LEDs — they last longer and lower your electric bill.</li>
+<li>📱 Consider refurbished or previous-gen devices for huge savings without sacrificing performance.</li>
+<li>🛋️ Buy furniture flat-packed to avoid shipping fees or check local “buy nothing” groups.</li>
+<li>💡 Replace old bulbs with LEDs — they last longer and lower your electric bill.</li>
 </ul>
 </div>
-
-<div style="text-align:center;margin:30px 0;">
-  <a href="index.html" style="background:black;color:white;padding:10px 20px;text-decoration:none;border-radius:5px;">Return Home</a>
+<div style="text-align:center;margin-top:30px;">
+<a href="https://example.com/deal-of-the-day" style="background:#dc3545;color:white;padding:12px 24px;
+            text-decoration:none;border-radius:6px;font-size:16px;" target="_blank">
+    🔥 Today’s Hot Deal
+  </a>
 </div>
-
+<div style="text-align:center;margin:30px 0;">
+<a href="index.html" style="background:black;color:white;padding:10px 20px;text-decoration:none;border-radius:5px;">Return Home</a>
+</div>
 <footer style="margin:0;padding:20px;text-align:center;background:#000;color:white;">
-<p>&copy; Broke Mode Life 2025 - All Rights Reserved</p>
+<p>© Broke Mode Life 2025 - All Rights Reserved</p>
 <p><a href="terms.html" style="color:white;">Terms of Use</a> | <a href="privacy.html" style="color:white;">Privacy Policy</a> | <a href="disclaimer.html" style="color:white;">Affiliate Disclaimer</a></p>
 </footer>
 </body>
