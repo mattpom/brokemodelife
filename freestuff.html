@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cheers Mate — Broke Mode Life</title>
-<meta name="description" content="Happy hour every hour when you know the hacks. Budget cocktails, cheap wine finds, and bar alternatives.">
+<title>Free Stuff — Broke Mode Life</title>
+<meta name="description" content="There's no shame in the free game. Samples, birthday freebies, loyalty rewards, and everything in between.">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
   <!-- Google Analytics -->
@@ -35,9 +35,9 @@
 </nav>
 
 <div class="page-hero fade-up">
-  <p class="eyebrow">Budget Drinks & Cocktails</p>
-  <h1>🍻 Cheers Mate</h1>
-  <p>Happy hour every hour when you know the hacks. Budget cocktails, cheap wine finds, and bar alternatives.</p>
+  <p class="eyebrow">Freebies, Samples & No-Cost Deals</p>
+  <h1>🎁 Free Stuff</h1>
+  <p>There's no shame in the free game. Samples, birthday freebies, loyalty rewards, and everything in between.</p>
 </div>
 
 <div class="marquee-wrap">
@@ -51,13 +51,36 @@
 
   <div style="margin-bottom:2rem">
     <p class="section-label">AI-Powered — Updates Every Visit</p>
-    <h2 class="section-title">Budget Cocktails & Cheap Drinks</h2>
-    <button class="btn-refresh" onclick="refreshcheersmate()">↻ Refresh Content</button>
-    <div id="cheersmate-ai"></div>
+    <h2 class="section-title">Best Freebies & Samples This Week</h2>
+    <button class="btn-refresh" onclick="refreshfreestuff()">↻ Refresh Content</button>
+    <div id="freestuff-ai"></div>
   </div>
 
   
   
+<div style="margin-bottom:3rem">
+  <p class="section-label">Related Guides</p>
+  <h2 class="section-title" style="margin-bottom:1.5rem">Keep Going</h2>
+  <div class="card-grid">
+    <a class="card" href="coupon_stack.html">
+      <div class="card-title">💸 Coupon Stack</div>
+      <div class="card-body">Stack deals like a pro</div>
+      <span class="card-tag">Explore →</span>
+    </a>
+
+    <a class="card" href="budget_beauty.html">
+      <div class="card-title">💅 Budget Beauty</div>
+      <div class="card-body">Free beauty samples and trials</div>
+      <span class="card-tag">Explore →</span>
+    </a>
+
+    <a class="card" href="quick_meals.html">
+      <div class="card-title">⚡ Quick Meals</div>
+      <div class="card-body">Fast free food hacks</div>
+      <span class="card-tag">Explore →</span>
+    </a>
+  </div>
+</div>
 
 </div>
 
@@ -82,12 +105,12 @@
 
 <script src="main.js"></script>
 <script>
-const cheersmatePrompt = `You are a budget bartender for BrokeModeLife.com. Generate 5 budget drink tips and cheap cocktail ideas. Return ONLY valid JSON:
-{"title":"This Week's Broke Mode Bar Cart","intro":"Five ways to drink well and spend less.","items":[{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"}],"tip":"Bold insight about budget drinking."}`;
-function refreshcheersmate() {
-  loadAIContent('cheersmate-ai', 'Budget Cocktails & Cheap Drinks', cheersmatePrompt);
+const freestuffPrompt = `You are a freebie expert for BrokeModeLife.com. Generate 5 ways to score free stuff this week. Return ONLY valid JSON:
+{"title":"This Week's Free Score Guide","intro":"Five legit ways to get something for nothing.","items":[{"title":"freebie","desc":"one action sentence on how to get it"},{"title":"freebie","desc":"one action sentence"},{"title":"freebie","desc":"one action sentence"},{"title":"freebie","desc":"one action sentence"},{"title":"freebie","desc":"one action sentence"}],"tip":"Bold insight about the freebie mindset."}`;
+function refreshfreestuff() {
+  loadAIContent('freestuff-ai', 'Best Freebies & Samples This Week', freestuffPrompt);
 }
-refreshcheersmate();
+refreshfreestuff();
 </script>
 </body>
 </html>
