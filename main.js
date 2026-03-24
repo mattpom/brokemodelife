@@ -165,6 +165,37 @@ const CONTENT_BANKS = {
         { title: "Family plans split six ways", desc: "Spotify Family split 6 ways costs under $3/month each. Find 5 people and make it happen." }
       ], tip: "The best music is the music that moves you. Most of it is free if you know where to look." }
   ],
+
+  beauty: [
+    { title: "Broke Mode Beauty Playbook", intro: "Five ways to glow up without paying up.",
+      items: [
+        { title: "Vitamin C serum is the cheat code", desc: "The one skincare ingredient dermatologists universally agree on. Find it for $12–15 and skip the $80 branded version." },
+        { title: "Drugstore dupes are real", desc: "e.l.f., Wet n Wild, and NYX consistently beat prestige brands in blind tests. Learn 3 dupes for your most-used products." },
+        { title: "SPF every single day", desc: "The most anti-aging thing you can do costs $8 and takes 30 seconds. Skipping it costs thousands in treatments later." },
+        { title: "Vaseline is a luxury dupe", desc: "High-end lip treatments, cuticle creams, and skin balms are mostly petrolatum. Vaseline does the same thing for $3." },
+        { title: "Request samples before buying", desc: "Sephora, Ulta, and most beauty counters will give samples on request. Test before spending $40 on something that breaks you out." }
+      ], tip: "The beauty industry is built on convincing you that price equals quality. It rarely does." }
+  ],
+  meals: [
+    { title: "5 Quick Meals Under $5 Per Serving", intro: "Fast, cheap, and actually good.",
+      items: [
+        { title: "Fried rice 10-minute version", desc: "Day-old rice, egg, soy sauce, frozen peas, sesame oil. Under $1.50/serving and better than takeout." },
+        { title: "Bean and cheese quesadillas", desc: "Canned beans, shredded cheese, flour tortillas. $1.20/serving, ready in 8 minutes, customizable infinitely." },
+        { title: "Pasta with canned tomatoes", desc: "Pasta, canned crushed tomatoes, garlic, olive oil, basil. $0.90/serving and tastes like you actually cooked." },
+        { title: "Loaded baked potato", desc: "Potato, canned chili, shredded cheese, sour cream. $1.80/serving and filling enough to skip dessert." },
+        { title: "Scrambled egg tacos", desc: "Eggs, corn tortillas, salsa, whatever cheese you have. $1.10/serving and works for breakfast, lunch, or dinner." }
+      ], tip: "The fastest meal you can make is the one with ingredients already in your kitchen. Shop your pantry first." }
+  ],
+  coupons: [
+    { title: "Stack These Deals This Week", intro: "Five ways to legally pay less for everything.",
+      items: [
+        { title: "The triple stack method", desc: "Store sale + manufacturer coupon + cashback app = paying almost nothing. Ibotta + store circular + paper coupon is the trifecta." },
+        { title: "Cashback credit cards on everything", desc: "If you pay it off monthly, a 2% cashback card on all spending is $240/year back on $12,000 in normal expenses." },
+        { title: "Price match guarantee stacking", desc: "Show Target a lower price, get it matched, then use your Target Circle coupon on top. Most stores allow this." },
+        { title: "Ibotta before every grocery run", desc: "Check Ibotta before your list is final. Build your list around what has cashback this week. Saves $15–30 per trip." },
+        { title: "Browser extensions are passive money", desc: "Honey and Rakuten run in the background and find codes automatically. Install once, save forever." }
+      ], tip: "Couponing isn't about clipping paper. It's about building a system that runs while you shop normally." }
+  ],
   fun: [
     { title: "This Weekend's Free Fun Ideas", intro: "Five things to do that cost next to nothing.",
       items: [
@@ -194,6 +225,9 @@ function loadAIContent(containerId, topic, promptText) {
   else if (t.includes('drink') || t.includes('cocktail') || t.includes('bar'))   bank = CONTENT_BANKS.drinks;
   else if (t.includes('music') || t.includes('audio') || t.includes('listen'))   bank = CONTENT_BANKS.music;
   else if (t.includes('fun') || t.includes('entertain') || t.includes('activ'))  bank = CONTENT_BANKS.fun;
+  else if (t.includes('beauty') || t.includes('skincare') || t.includes('makeup'))   bank = CONTENT_BANKS.beauty;
+  else if (t.includes('meal') || t.includes('quick') || t.includes('recipe'))         bank = CONTENT_BANKS.meals;
+  else if (t.includes('coupon') || t.includes('stack') || t.includes('deal hunt'))    bank = CONTENT_BANKS.coupons;
 
   const data = bank[Math.floor(Math.random() * bank.length)];
   renderAIContent(container, data, topic);
