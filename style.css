@@ -54,11 +54,13 @@ nav {
 
 .nav-logo {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   letter-spacing: 0.05em;
   color: var(--lime);
   text-decoration: none;
   flex-shrink: 0;
+  white-space: nowrap;
+  min-width: fit-content;
 }
 
 .nav-links {
