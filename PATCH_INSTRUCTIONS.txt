@@ -1,18 +1,10 @@
-BrokeModeLife.com — Patch Instructions
-=======================================
+BrokeModeLife.com Patch Instructions
+=====================================
+UPLOAD THESE 4 FILES (replace existing on GitHub):
+  all_you_can_eat.html, budget_beauty.html, shop.html, freestuff.html
 
-FULLY REBUILT FILES (upload these to GitHub, replacing existing):
-  all_you_can_eat.html
-  budget_beauty.html
-  shop.html
-  freestuff.html
-
-PAGES NEEDING ONLY COPYRIGHT FIX (edit directly on GitHub):
+COPYRIGHT FIX ONLY (edit directly on GitHub - find 2025, change to 2026):
   apple_a_day.html, go_out_and_play.html, style.html, travel.html,
   cheers_mate.html, pets.html, blog.html, listen_here.html
 
-  For each: open file on GitHub > click pencil > find "2025" > change to "2026" > commit.
-
-REMAINING MANUAL TASK:
-  All email forms have YOUR_FORM_ID placeholder.
-  Get your ID from formspree.io and replace in each file.
+REMAINING TASK: Replace YOUR_FORM_ID in all email forms with your Formspree ID.
