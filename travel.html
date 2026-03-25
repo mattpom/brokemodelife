@@ -4,28 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Travel — Broke Mode Life</title>
-<meta name="description" content="The world is more accessible than you think. Cheap flights, free lodging hacks, and road trip strategy.">
+<meta name="description" content="The world is more accessible than you think. Cheap flights, free lodging, road trip strategy.">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-486684955"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-486684955');
-  </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-486684955"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-486684955');</script>
 </head>
-<body>
-
-<nav>
+<body><nav>
   <a class="nav-logo" href="index.html">BML</a>
   <ul class="nav-links">
     <li><a href="all_you_can_eat.html">Food</a></li>
     <li><a href="apple_a_day.html">Health</a></li>
     <li><a href="go_out_and_play.html">Fun</a></li>
     <li><a href="style.html">Style</a></li>
-    <li><a href="travel.html">Travel</a></li>
+    <li><a href="travel.html" class="active">Travel</a></li>
     <li><a href="listen_here.html">Music</a></li>
     <li><a href="freestuff.html">Free Stuff</a></li>
     <li><a href="shop.html">Shop</a></li>
@@ -33,93 +25,86 @@
     <li><a href="index.html#email-section" class="nav-cta">Join Free</a></li>
   </ul>
   <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
-</nav>
-
-<div class="page-hero fade-up">
+</nav><div class="page-hero fade-up">
   <p class="eyebrow">Budget Travel & Escapes</p>
   <h1>✈️ Travel</h1>
   <p>The world is more accessible than you think. Cheap flights, free lodging hacks, and road trip strategy.</p>
-</div>
-
-<div class="marquee-wrap">
-  <div class="marquee-track">
-    <span>Cheap Flights</span><span class="sep">·</span><span>Google Flights</span><span class="sep">·</span><span>Travel Hacks</span><span class="sep">·</span><span>Carry-On Only</span><span class="sep">·</span><span>Housesitting</span><span class="sep">·</span><span>Budget Hotels</span><span class="sep">·</span><span>Free Accommodation</span><span class="sep">·</span><span>Baggage Fee Savings</span><span class="sep">·</span><span>Travel Cheap</span><span class="sep">·</span>
-    <span>Cheap Flights</span><span class="sep">·</span><span>Google Flights</span><span class="sep">·</span><span>Travel Hacks</span><span class="sep">·</span><span>Carry-On Only</span><span class="sep">·</span><span>Housesitting</span><span class="sep">·</span><span>Budget Hotels</span><span class="sep">·</span><span>Free Accommodation</span><span class="sep">·</span><span>Baggage Fee Savings</span><span class="sep">·</span><span>Travel Cheap</span><span class="sep">·</span>
-  </div>
-</div>
-
+</div><div class="marquee-wrap"><div class="marquee-track"><span>Cheap Flights</span><span class="sep">·</span><span>Google Flights</span><span class="sep">·</span><span>Travel Hacks</span><span class="sep">·</span><span>Carry-On Only</span><span class="sep">·</span><span>Housesitting</span><span class="sep">·</span><span>Budget Hotels</span><span class="sep">·</span><span>Free Accommodation</span><span class="sep">·</span><span>Baggage Fee Savings</span><span class="sep">·</span><span>Travel Cheap</span><span class="sep">·</span><span>Cheap Flights</span><span class="sep">·</span><span>Google Flights</span><span class="sep">·</span><span>Travel Hacks</span><span class="sep">·</span><span>Carry-On Only</span><span class="sep">·</span><span>Housesitting</span><span class="sep">·</span><span>Budget Hotels</span><span class="sep">·</span><span>Free Accommodation</span><span class="sep">·</span><span>Baggage Fee Savings</span><span class="sep">·</span><span>Travel Cheap</span><span class="sep">·</span></div></div>
 <div class="main-content">
-
-  <div style="margin-bottom:2rem">
-    <p class="section-label">AI-Powered — Updates Every Visit</p>
+<div style="margin-bottom:2rem">
+    <p class="section-label">AI-Powered &mdash; Updates Every Visit</p>
     <h2 class="section-title">Budget Travel Tips & Hacks</h2>
-    <button class="btn-refresh" onclick="refreshtravel()">↻ Refresh Content</button>
+    <button class="btn-refresh" onclick="refreshtravel()">&#8635; Refresh Content</button>
     <div id="travel-ai"></div>
-  </div>
-
-  
-
-  
-
-<div style="margin-bottom:3rem">
-  <p class="section-label">Broke Mode Picks</p>
-  <h2 class="section-title" style="margin-bottom:1.5rem">Worth Every Penny</h2>
-  <div class="product-grid">
-    <a class="product-card" href="https://www.amazon.com/s?k=packing+cubes+set&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$18</div>
-      <div class="product-name">Packing Cubes 6-Set</div>
-      <div class="product-desc">Travel organized, skip checked baggage fees. Never dig through your bag again.</div>
-      <div class="product-link">View on Amazon →</div>
-    </a>
-    <a class="product-card" href="https://www.amazon.com/s?k=compact+power+bank&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$22</div>
-      <div class="product-name">Compact Power Bank</div>
-      <div class="product-desc">Keep your phone alive anywhere. A travel non-negotiable.</div>
-      <div class="product-link">View on Amazon →</div>
-    </a>
-    <a class="product-card" href="https://www.amazon.com/s?k=tsa+approved+luggage+lock&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$10</div>
-      <div class="product-name">TSA Lock Set</div>
-      <div class="product-desc">Secure your bag without airport drama. TSA-approved so they can inspect without cutting it.</div>
-      <div class="product-link">View on Amazon →</div>
-    </a>
-    <a class="product-card" href="https://www.amazon.com/s?k=neck+pillow+travel+memory+foam&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$16</div>
-      <div class="product-name">Neck Pillow Memory Foam</div>
-      <div class="product-desc">Arrive rested instead of wrecked. One good flight sleep changes your whole trip.</div>
-      <div class="product-link">View on Amazon →</div>
-    </a>
-  </div>
-  <p style="font-size:0.75rem;color:#444;font-family:'Barlow Condensed',sans-serif;letter-spacing:0.06em;margin-top:0.8rem">As an Amazon Associate, BML earns from qualifying purchases.</p>
-</div>
-
-  <div style="margin-bottom:3rem">
-    <p class="section-label">Related Categories</p>
-    <h2 class="section-title" style="margin-bottom:1.5rem">Keep Exploring</h2>
-    <div class="card-grid">
-      <a class="card" href="go_out_and_play.html">
-        <div class="card-icon">🎯</div>
-        <div class="card-title">Go Out & Play</div>
-        <div class="card-body">Free local entertainment when you're staying close to home.</div>
-        <span class="card-tag">Explore →</span>
+  </div>  <div style="margin-bottom:3rem">
+    <p class="section-label">Flight Hacks</p>
+    <h2 class="section-title" style="margin-bottom:1.5rem">Pay Less to Get There</h2>
+    <div class="ai-block">
+      <span class="ai-badge">&#10022; Always True</span>
+      <h3>Five Moves That Cut Your Flight Cost Significantly</h3>
+      <ul style="margin:1rem 0;padding-left:1.2rem">
+        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Google Flights Explore map</strong> — Click Explore and enter your home airport. It shows the cheapest destinations available right now. Let price decide where you go.</li>
+        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Fly Tuesday and Wednesday</strong> — Statistically 20 to 30 percent cheaper than weekends. Flexibility is the single best travel hack you have available.</li>
+        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Book 6 to 8 weeks out for domestic</strong> — The sweet spot for US flights. Too early and prices are inflated. Too late and they spike again before departure.</li>
+        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Carry-on only every time</strong> — Baggage fees average $35 to $70 per bag per flight. Master packing light and save $100 or more on every round trip.</li>
+        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Set price alerts on Google Flights</strong> — Click the bell icon on any route. Google emails you when the price drops. Check it, book it, done.</li>
+      </ul>
+      <p style="color:var(--lime);margin-top:1.2rem">&#128161; The best travel hack is going where it is cheap right now, not where your bucket list says.</p>
+    </div>
+  </div>  <div style="margin-bottom:3rem">
+    <p class="section-label">Free Accommodation</p>
+    <h2 class="section-title" style="margin-bottom:1.5rem">Sleep for Nothing</h2>
+    <div class="ai-block">
+      <span class="ai-badge">&#10022; Always True</span>
+      <h3>How to Travel Without Paying for a Hotel</h3>
+      <ul style="margin:1rem 0;padding-left:1.2rem">
+        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">TrustedHousesitters</strong> — Connect with homeowners who need someone to watch their home. You stay free in exchange for caring for the place and pets.</li>
+        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Extended hotel stays negotiate</strong> — Staying 7 or more nights? Call and ask for a weekly rate. Most hotels give 20 to 30 percent off to guests who simply ask.</li>
+        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Loyalty programs add up fast</strong> — Marriott, Hilton, and IHG give free nights after enough points. Use one travel card for all spending and redeem annually.</li>
+        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Airbnb long-stay discounts</strong> — Booking 28 or more days unlocks monthly pricing, often 40 to 60 percent less than nightly rates in the same city.</li>
+        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Housesit internationally</strong> — TrustedHousesitters has listings in 130 countries. Travel the world and pay only for flights.</li>
+      </ul>
+      <p style="color:var(--lime);margin-top:1.2rem">&#128161; Accommodation is often the biggest travel cost. Eliminate it and you can afford to go almost anywhere.</p>
+    </div>
+  </div>  <div style="margin-bottom:3rem">
+    <p class="section-label">Broke Mode Picks</p>
+    <h2 class="section-title" style="margin-bottom:1.5rem">Worth Every Penny</h2>
+    <div class="product-grid">
+      <a class="product-card" href="https://www.amazon.com/s?k=packing+cubes+set&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+        <div class="product-price">~$18</div>
+        <div class="product-name">Packing Cubes 6-Set</div>
+        <div class="product-desc">Travel organized and skip checked baggage fees. Never dig through your bag again.</div>
+        <div class="product-link">View on Amazon &rarr;</div>
       </a>
-      <a class="card" href="freestuff.html">
-        <div class="card-icon">🎁</div>
-        <div class="card-title">Free Stuff</div>
-        <div class="card-body">Travel freebies — loyalty programs, free hotel nights, and airport lounge hacks.</div>
-        <span class="card-tag">Explore →</span>
+      <a class="product-card" href="https://www.amazon.com/s?k=compact+power+bank&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+        <div class="product-price">~$22</div>
+        <div class="product-name">Compact Power Bank</div>
+        <div class="product-desc">Keep your phone alive anywhere. A travel non-negotiable.</div>
+        <div class="product-link">View on Amazon &rarr;</div>
       </a>
-      <a class="card" href="shop.html">
-        <div class="card-icon">📦</div>
-        <div class="card-title">Shop</div>
-        <div class="card-body">Budget travel gear — packing cubes, power banks, and carry-on essentials.</div>
-        <span class="card-tag">Explore →</span>
+      <a class="product-card" href="https://www.amazon.com/s?k=tsa+approved+luggage+lock&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+        <div class="product-price">~$10</div>
+        <div class="product-name">TSA Lock Set</div>
+        <div class="product-desc">Secure your bag without drama. TSA-approved so they can inspect without cutting.</div>
+        <div class="product-link">View on Amazon &rarr;</div>
+      </a>
+      <a class="product-card" href="https://www.amazon.com/s?k=neck+pillow+travel+memory+foam&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+        <div class="product-price">~$16</div>
+        <div class="product-name">Neck Pillow Memory Foam</div>
+        <div class="product-desc">Arrive rested instead of wrecked. One good flight sleep changes your whole trip.</div>
+        <div class="product-link">View on Amazon &rarr;</div>
       </a>
     </div>
-  </div>
-
-</div>
-
+    <p style="font-size:0.75rem;color:#444;font-family:'Barlow Condensed',sans-serif;letter-spacing:0.06em;margin-top:0.8rem">As an Amazon Associate, BML earns from qualifying purchases.</p>
+  </div>  <div style="margin-bottom:3rem">
+    <p class="section-label">Related Guides</p>
+    <h2 class="section-title" style="margin-bottom:1.5rem">Keep Going</h2>
+    <div class="card-grid">
+      <a class="card" href="go_out_and_play.html"><div class="card-title">🎯 Go Out & Play</div><div class="card-body">Free local entertainment</div><span class="card-tag">Explore &rarr;</span></a>
+      <a class="card" href="freestuff.html"><div class="card-title">🎁 Free Stuff</div><div class="card-body">Travel freebies and loyalty hacks</div><span class="card-tag">Explore &rarr;</span></a>
+      <a class="card" href="shop.html"><div class="card-title">🛒 Shop</div><div class="card-body">Budget travel gear essentials</div><span class="card-tag">Explore &rarr;</span></a>
+    </div>
+  </div></div>
 <section class="email-strip">
   <h2>Stay in the Loop</h2>
   <p>Get updates, deals, and broke-mode strategy direct to your inbox.</p>
@@ -129,24 +114,17 @@
   </form>
   <p class="email-note" id="form-status">No spam. Unsubscribe any time.</p>
 </section>
-
 <footer>
   <div><div class="footer-brand">Broke Mode Life</div><div class="footer-tagline">Live Large on a Lean Budget</div></div>
   <div class="footer-links">
     <a href="terms.html">Terms</a><a href="privacy.html">Privacy</a>
     <a href="affiliate.html">Affiliate</a><a href="contact.html">Contact</a><a href="cookie.html">Cookies</a>
   </div>
-  <p class="footer-copy">© Broke Mode Life 2026 — All Rights Reserved</p>
+  <p class="footer-copy">&copy; Broke Mode Life 2026 &mdash; All Rights Reserved</p>
 </footer>
-
 <script src="main.js"></script>
 <script>
-const travelPrompt = `You are a budget travel expert for BrokeModeLife.com. Generate 5 money-saving travel tips. Return ONLY valid JSON:
-{"title":"Broke Mode Travel Playbook","intro":"Five ways to go further and spend less.","items":[{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"}],"tip":"Bold insight about traveling broke but bold."}`;
-function refreshtravel() {
-  loadAIContent('travel-ai', 'Budget Travel Tips & Hacks', travelPrompt);
-}
+function refreshtravel() { loadAIContent('travel-ai', 'Budget Travel Tips & Hacks', ''); }
 refreshtravel();
 </script>
-</body>
-</html>
+</body></html>

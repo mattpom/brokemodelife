@@ -4,25 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Apple a Day — Broke Mode Life</title>
-<meta name="description" content="Stay healthy without a gym membership or a nutritionist. Real wellness on a broke budget.">
+<meta name="description" content="Stay healthy without a gym membership. Real wellness on a broke budget.">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-486684955"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-486684955');
-  </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-486684955"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-486684955');</script>
 </head>
 <body>
-
 <nav>
   <a class="nav-logo" href="index.html">BML</a>
   <ul class="nav-links">
     <li><a href="all_you_can_eat.html">Food</a></li>
-    <li><a href="apple_a_day.html">Health</a></li>
+    <li><a href="apple_a_day.html" class="active">Health</a></li>
     <li><a href="go_out_and_play.html">Fun</a></li>
     <li><a href="style.html">Style</a></li>
     <li><a href="travel.html">Travel</a></li>
@@ -34,102 +27,95 @@
   </ul>
   <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
-
 <div class="page-hero fade-up">
   <p class="eyebrow">Budget Health & Wellness</p>
   <h1>🍎 Apple a Day</h1>
   <p>Stay healthy without a gym membership or a nutritionist. Real wellness on a broke budget.</p>
 </div>
-
-<div class="marquee-wrap">
-  <div class="marquee-track">
-    <span>Free Workouts</span><span class="sep">·</span><span>Budget Wellness</span><span class="sep">·</span><span>Home Fitness</span><span class="sep">·</span><span>Mental Health</span><span class="sep">·</span><span>Bodyweight</span><span class="sep">·</span><span>Sleep Hacks</span><span class="sep">·</span><span>Cheap Nutrition</span><span class="sep">·</span><span>Walk Daily</span><span class="sep">·</span><span>No Gym Needed</span><span class="sep">·</span>
-    <span>Free Workouts</span><span class="sep">·</span><span>Budget Wellness</span><span class="sep">·</span><span>Home Fitness</span><span class="sep">·</span><span>Mental Health</span><span class="sep">·</span><span>Bodyweight</span><span class="sep">·</span><span>Sleep Hacks</span><span class="sep">·</span><span>Cheap Nutrition</span><span class="sep">·</span><span>Walk Daily</span><span class="sep">·</span><span>No Gym Needed</span><span class="sep">·</span>
-  </div>
-</div>
-
+<div class="marquee-wrap"><div class="marquee-track">
+  <span>Free Workouts</span><span class="sep">·</span><span>Budget Wellness</span><span class="sep">·</span><span>Home Fitness</span><span class="sep">·</span><span>Mental Health</span><span class="sep">·</span><span>Bodyweight</span><span class="sep">·</span><span>Sleep Hacks</span><span class="sep">·</span><span>Cheap Nutrition</span><span class="sep">·</span><span>Walk Daily</span><span class="sep">·</span><span>No Gym Needed</span><span class="sep">·</span>
+  <span>Free Workouts</span><span class="sep">·</span><span>Budget Wellness</span><span class="sep">·</span><span>Home Fitness</span><span class="sep">·</span><span>Mental Health</span><span class="sep">·</span><span>Bodyweight</span><span class="sep">·</span><span>Sleep Hacks</span><span class="sep">·</span><span>Cheap Nutrition</span><span class="sep">·</span><span>Walk Daily</span><span class="sep">·</span><span>No Gym Needed</span><span class="sep">·</span>
+</div></div>
 <div class="main-content">
-
   <div style="margin-bottom:2rem">
-    <p class="section-label">AI-Powered — Updates Every Visit</p>
+    <p class="section-label">AI-Powered &mdash; Updates Every Visit</p>
     <h2 class="section-title">Budget Health & Wellness Tips</h2>
-    <button class="btn-refresh" onclick="refreshappleaday()">↻ Refresh Content</button>
+    <button class="btn-refresh" onclick="refreshappleaday()">&#8635; Refresh Content</button>
     <div id="appleaday-ai"></div>
   </div>
-
-  
-  
-<div style="margin-bottom:3rem">
-  <p class="section-label">Broke Mode Picks</p>
-  <h2 class="section-title" style="margin-bottom:1.5rem">Worth Every Penny</h2>
-  <div class="product-grid">
-    <a class="product-card" href="https://www.amazon.com/s?k=resistance+bands+set&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$28</div>
-      <div class="product-name">Resistance Bands Set</div>
-      <div class="product-desc">Full gym in a bag. Cancel the membership. These 5 bands replace a rack of weights.</div>
-      <div class="product-link">View on Amazon →</div>
-    </a>
-    <a class="product-card" href="https://www.amazon.com/s?k=foam+roller+muscle&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$22</div>
-      <div class="product-name">Foam Roller</div>
-      <div class="product-desc">Recovery tool that actually works. Skip the $80 massage and roll it out instead.</div>
-      <div class="product-link">View on Amazon →</div>
-    </a>
-    <a class="product-card" href="https://www.amazon.com/s?k=yoga+mat+non+slip&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$18</div>
-      <div class="product-name">Yoga Mat Non-Slip</div>
-      <div class="product-desc">Work out at home, no gym floor needed. Works for yoga, HIIT, stretching — all of it.</div>
-      <div class="product-link">View on Amazon →</div>
-    </a>
-    <a class="product-card" href="https://www.amazon.com/s?k=speed+jump+rope&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$14</div>
-      <div class="product-name">Jump Rope Speed Cable</div>
-      <div class="product-desc">Best cardio per dollar on the market. 15 minutes beats most gym sessions.</div>
-      <div class="product-link">View on Amazon →</div>
-    </a>
+  <div style="margin-bottom:3rem">
+    <p class="section-label">Free First</p>
+    <h2 class="section-title" style="margin-bottom:1.5rem">The No-Cost Health Stack</h2>
+    <div class="ai-block">
+      <span class="ai-badge">&#10022; Always True</span>
+      <h3>Five Interventions That Cost Nothing and Actually Work</h3>
+      <ul style="margin:1rem 0;padding-left:1.2rem">
+        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Walk 30 minutes daily</strong> — Free, no equipment, burns calories, drops cortisol, and improves sleep. The most underrated health move you have available.</li>
+        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Sleep is your cheapest medicine</strong> — 7 to 9 hours improves immune function, metabolism, mood, and performance. It costs nothing and most people chronically skip it.</li>
+        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Drink water before anything else</strong> — Most people are mildly dehydrated constantly. An extra 32 ounces daily improves energy, focus, and appetite control for free.</li>
+        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Bodyweight training at home</strong> — Push-ups, squats, lunges, and planks. Zero equipment needed. YouTube has thousands of free guided workouts at every fitness level.</li>
+        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">4-7-8 breathing for stress</strong> — Inhale 4 counts, hold 7, exhale 8. Measurably reduces cortisol. Free, works anywhere, takes 90 seconds.</li>
+      </ul>
+      <p style="color:var(--lime);margin-top:1.2rem">&#128161; The most expensive health decision you will ever make is ignoring the free stuff that actually works.</p>
+    </div>
   </div>
-  <p style="font-size:0.75rem;color:#444;font-family:'Barlow Condensed',sans-serif;letter-spacing:0.06em;margin-top:0.8rem">As an Amazon Associate, BML earns from qualifying purchases.</p>
+  <div style="margin-bottom:3rem">
+    <p class="section-label">Budget Nutrition</p>
+    <h2 class="section-title" style="margin-bottom:1.5rem">Eat Well for Almost Nothing</h2>
+    <div class="ai-block">
+      <span class="ai-badge">&#10022; Always True</span>
+      <h3>The Cheap Foods That Actually Fuel Performance</h3>
+      <ul style="margin:1rem 0;padding-left:1.2rem">
+        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Oats every morning</strong> — Rolled oats cost under $1 per week for daily breakfasts. Add a banana and peanut butter for a complete, filling, nutritious meal.</li>
+        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Lentils are the most underrated food</strong> — More protein per dollar than chicken. Cook a big pot on Sunday and use them all week in soups, curries, and tacos.</li>
+        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Canned fish is a protein cheat code</strong> — Canned tuna, salmon, and sardines have identical nutrition to fresh at 20 percent of the cost. Stock a dozen cans monthly.</li>
+        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Greek yogurt over protein powders</strong> — More protein than most supplements plus probiotics. A large container is under $6 and lasts a week of daily servings.</li>
+        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Buy vitamins in bulk online</strong> — Amazon and Costco sell the same supplements as GNC at 60 to 80 percent less. D3, magnesium, and fish oil are the three essentials.</li>
+      </ul>
+      <p style="color:var(--lime);margin-top:1.2rem">&#128161; You do not need an expensive diet. You need consistent cheap foods that actually fuel performance every day.</p>
+    </div>
+  </div>
+  <div style="margin-bottom:3rem">
+    <p class="section-label">Broke Mode Picks</p>
+    <h2 class="section-title" style="margin-bottom:1.5rem">Worth Every Penny</h2>
+    <div class="product-grid">
+      <a class="product-card" href="https://www.amazon.com/s?k=resistance+bands+set&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+        <div class="product-price">~$28</div>
+        <div class="product-name">Resistance Bands Set</div>
+        <div class="product-desc">Full gym in a bag. Cancel the membership. These 5 bands replace a rack of weights.</div>
+        <div class="product-link">View on Amazon &rarr;</div>
+      </a>
+      <a class="product-card" href="https://www.amazon.com/s?k=foam+roller+muscle&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+        <div class="product-price">~$22</div>
+        <div class="product-name">Foam Roller</div>
+        <div class="product-desc">Recovery tool that actually works. Skip the $80 massage and roll it out instead.</div>
+        <div class="product-link">View on Amazon &rarr;</div>
+      </a>
+      <a class="product-card" href="https://www.amazon.com/s?k=yoga+mat+non+slip&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+        <div class="product-price">~$18</div>
+        <div class="product-name">Yoga Mat Non-Slip</div>
+        <div class="product-desc">Home workouts need a mat. Works for yoga, HIIT, stretching — all of it.</div>
+        <div class="product-link">View on Amazon &rarr;</div>
+      </a>
+      <a class="product-card" href="https://www.amazon.com/s?k=speed+jump+rope&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+        <div class="product-price">~$14</div>
+        <div class="product-name">Jump Rope Speed Cable</div>
+        <div class="product-desc">Best cardio per dollar on the market. 15 minutes beats most gym sessions.</div>
+        <div class="product-link">View on Amazon &rarr;</div>
+      </a>
+    </div>
+    <p style="font-size:0.75rem;color:#444;font-family:'Barlow Condensed',sans-serif;letter-spacing:0.06em;margin-top:0.8rem">As an Amazon Associate, BML earns from qualifying purchases.</p>
+  </div>
+  <div style="margin-bottom:3rem">
+    <p class="section-label">Related Guides</p>
+    <h2 class="section-title" style="margin-bottom:1.5rem">Keep Going</h2>
+    <div class="card-grid">
+      <a class="card" href="budget_beauty.html"><div class="card-title">💅 Budget Beauty</div><div class="card-body">Look good without going broke</div><span class="card-tag">Explore &rarr;</span></a>
+      <a class="card" href="freestuff.html"><div class="card-title">🎁 Free Stuff</div><div class="card-body">Freebies and no-cost deals</div><span class="card-tag">Explore &rarr;</span></a>
+      <a class="card" href="go_out_and_play.html"><div class="card-title">🎯 Go Out & Play</div><div class="card-body">Free fun and entertainment</div><span class="card-tag">Explore &rarr;</span></a>
+    </div>
+  </div>
 </div>
-
-<div style="margin-bottom:3rem">
-  <p class="section-label">Related Guides</p>
-  <h2 class="section-title" style="margin-bottom:1.5rem">Keep Going</h2>
-  <div class="card-grid">
-  <a class="card" href="budget_beauty.html">
-    <div class="card-title">💅 Budget Beauty</div>
-    <div class="card-body">Look good without going broke</div>
-    <span class="card-tag">Explore &rarr;</span>
-  </a>
-  <a class="card" href="listen_here.html">
-    <div class="card-title">🎵 Listen Here</div>
-    <div class="card-body">Free music and budget audio</div>
-    <span class="card-tag">Explore &rarr;</span>
-  </a>
-  <a class="card" href="go_out_and_play.html">
-    <div class="card-title">🎯 Go Out & Play</div>
-    <div class="card-body">Free fun and entertainment</div>
-    <span class="card-tag">Explore &rarr;</span>
-  </a>
-  <a class="card" href="freestuff.html">
-    <div class="card-title">🎁 Free Stuff</div>
-    <div class="card-body">Freebies and no-cost deals</div>
-    <span class="card-tag">Explore &rarr;</span>
-  </a>
-  <a class="card" href="shop.html">
-    <div class="card-title">🛒 Shop</div>
-    <div class="card-body">Budget gear and gadgets</div>
-    <span class="card-tag">Explore &rarr;</span>
-  </a>
-  <a class="card" href="travel.html">
-    <div class="card-title">✈️ Travel</div>
-    <div class="card-body">Go further for less</div>
-    <span class="card-tag">Explore &rarr;</span>
-  </a>
-</div>
-</div>
-
-</div>
-
 <section class="email-strip">
   <h2>Stay in the Loop</h2>
   <p>Get updates, deals, and broke-mode strategy direct to your inbox.</p>
@@ -139,24 +125,17 @@
   </form>
   <p class="email-note" id="form-status">No spam. Unsubscribe any time.</p>
 </section>
-
 <footer>
   <div><div class="footer-brand">Broke Mode Life</div><div class="footer-tagline">Live Large on a Lean Budget</div></div>
   <div class="footer-links">
     <a href="terms.html">Terms</a><a href="privacy.html">Privacy</a>
     <a href="affiliate.html">Affiliate</a><a href="contact.html">Contact</a><a href="cookie.html">Cookies</a>
   </div>
-  <p class="footer-copy">© Broke Mode Life 2026 — All Rights Reserved</p>
+  <p class="footer-copy">&copy; Broke Mode Life 2026 &mdash; All Rights Reserved</p>
 </footer>
-
 <script src="main.js"></script>
 <script>
-const appleadayPrompt = `You are a budget wellness expert for BrokeModeLife.com. Generate 5 free or cheap health tips. Return ONLY valid JSON:
-{"title":"Free Ways to Stay Healthy This Week","intro":"Five health moves that cost nothing.","items":[{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"}],"tip":"Bold closing wellness insight."}`;
-function refreshappleaday() {
-  loadAIContent('appleaday-ai', 'Budget Health & Wellness Tips', appleadayPrompt);
-}
+function refreshappleaday() { loadAIContent('appleaday-ai', 'Budget Health & Wellness Tips', ''); }
 refreshappleaday();
 </script>
-</body>
-</html>
+</body></html>
