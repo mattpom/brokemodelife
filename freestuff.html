@@ -38,16 +38,22 @@ nav a:hover,nav a.active{color:var(--accent);}
 .ai-badge{font-family:var(--font-display);font-size:10px;letter-spacing:2px;color:var(--green);background:rgba(74,222,128,0.1);border:1px solid rgba(74,222,128,0.25);padding:3px 8px;border-radius:4px;}
 .refresh-btn{background:none;border:1px solid var(--border);color:var(--muted);font-size:12px;font-family:var(--font-display);padding:5px 12px;border-radius:4px;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:6px;}
 .refresh-btn:hover{border-color:var(--accent);color:var(--accent);}
-.refresh-icon{display:inline-block;transition:transform 0.4s;}
+.refresh-icon{display:inline-block;transition:transform 0.5s;}
 .refresh-btn.spinning .refresh-icon{transform:rotate(360deg);}
 .ai-content{padding:20px 18px;min-height:160px;}
 .tip-list{list-style:none;display:flex;flex-direction:column;gap:14px;}
 .tip-item{display:flex;gap:12px;align-items:flex-start;animation:fadeUp 0.4s ease both;}
 .tip-item:nth-child(2){animation-delay:.08s;}.tip-item:nth-child(3){animation-delay:.16s;}.tip-item:nth-child(4){animation-delay:.24s;}.tip-item:nth-child(5){animation-delay:.32s;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
-.tip-icon{font-size:18px;flex-shrink:0;margin-top:1px;}
+.tip-icon{font-size:20px;flex-shrink:0;margin-top:1px;width:28px;text-align:center;}
 .tip-text{font-size:15px;color:var(--text);line-height:1.5;}
 .tip-text strong{color:var(--accent);font-weight:600;}
+.loading-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px 0;gap:12px;}
+.loading-dots{display:flex;gap:6px;}
+.loading-dots span{width:8px;height:8px;background:var(--accent);border-radius:50%;animation:bounce 1.2s ease infinite;opacity:0.4;}
+.loading-dots span:nth-child(2){animation-delay:.2s;}.loading-dots span:nth-child(3){animation-delay:.4s;}
+.loading-label{font-family:var(--font-display);font-size:10px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;}
+@keyframes bounce{0%,100%{transform:translateY(0);opacity:0.4;}50%{transform:translateY(-6px);opacity:1;}}
 .gear-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;}
 .gear-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 18px;display:flex;flex-direction:column;gap:8px;text-decoration:none;color:var(--text);transition:border-color 0.2s,transform 0.2s;}
 .gear-card:hover{border-color:var(--accent);transform:translateY(-2px);}
@@ -65,7 +71,7 @@ nav a:hover,nav a.active{color:var(--accent);}
 .related-arrow{font-size:12px;color:var(--accent);margin-top:10px;display:block;}
 .content-section{max-width:960px;margin:0 auto;padding:0 20px 50px;}
 .content-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:28px;margin-bottom:20px;}
-.content-card h2{font-family:var(--font-display);font-size:16px;color:var(--accent);margin-bottom:14px;}
+.content-card h2{font-family:var(--font-display);font-size:15px;color:var(--accent);margin-bottom:14px;}
 .content-card h3{font-size:15px;font-weight:700;color:var(--text);margin:18px 0 8px;}
 .content-card p{font-size:15px;color:#bbb;line-height:1.7;margin-bottom:12px;}
 .content-card ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
@@ -92,10 +98,6 @@ footer{border-top:1px solid var(--border);padding:28px 20px;text-align:center;}
 .footer-links a{font-size:12px;color:var(--muted);text-decoration:none;transition:color 0.2s;}
 .footer-links a:hover{color:var(--accent);}
 .footer-copy{font-size:11px;color:#555;}
-.loading-dots{display:flex;gap:6px;padding:20px 0;justify-content:center;}
-.loading-dots span{width:8px;height:8px;background:var(--accent);border-radius:50%;animation:bounce 1.2s ease infinite;opacity:0.4;}
-.loading-dots span:nth-child(2){animation-delay:.2s;}.loading-dots span:nth-child(3){animation-delay:.4s;}
-@keyframes bounce{0%,100%{transform:translateY(0);opacity:0.4;}50%{transform:translateY(-6px);opacity:1;}}
 @media(max-width:600px){.gear-grid{grid-template-columns:repeat(2,1fr);}}
 </style>
 </head>
@@ -114,19 +116,11 @@ footer{border-top:1px solid var(--border);padding:28px 20px;text-align:center;}
   <a href="https://brokemodelife.com/shop.html">Shop</a>
   <a href="https://brokemodelife.com/blog.html">Blog</a>
   <a href="https://brokemodelife.com/index.html#email-section" class="nav-join">Join Free</a>
-</nav><script>
-var PAGE_TOPIC = 'finding and claiming free stuff samples and birthday freebies';
-var PAGE_FALLBACK = [
-  {icon:'🎂', tip:'<strong>Your birthday is a free food tour:</strong> Starbucks, Sephora, Dennys, Chick-fil-A, and dozens more give real freebies just for being born. Claim every one.'},
-  {icon:'📧', tip:'<strong>Burner email is your secret weapon:</strong> One address just for freebies. Sign up everywhere, claim everything, never clog your real inbox.'},
-  {icon:'📱', tip:'<strong>Download brand apps before shopping:</strong> McDonalds, Starbucks, Panera, and Target hide their best deals inside apps, not on the menu board.'},
-  {icon:'🛒', tip:'<strong>PINCHme sends real free samples monthly:</strong> Sign up, complete your profile, and full-size product boxes arrive at your door for free.'},
-  {icon:'📚', tip:'<strong>Your library card unlocks thousands in value:</strong> Libby for audiobooks, Kanopy for movies, Hoopla for comics. All free, no cost ever.'}
-];
-</script>
+</nav>
 <div class="hero"><p class="hero-eyebrow">No-Cost Deals & Freebies</p><h1>🎁 Free <span>Stuff</span></h1><p>The world gives away more than you think. Birthday freebies, free samples, loyalty rewards. Go get what you are owed.</p></div>
 <div class="marquee-wrap"><div class="marquee-track"><span>Birthday Freebies</span><span class="dot">&#9670;</span><span>Free Samples</span><span class="dot">&#9670;</span><span>PINCHme</span><span class="dot">&#9670;</span><span>Loyalty Rewards</span><span class="dot">&#9670;</span><span>Burner Email</span><span class="dot">&#9670;</span><span>Starbucks Free</span><span class="dot">&#9670;</span><span>Sephora Birthday</span><span class="dot">&#9670;</span><span>Library Card</span><span class="dot">&#9670;</span><span>Kanopy Movies</span><span class="dot">&#9670;</span><span>No Purchase Required</span><span class="dot">&#9670;</span><span>Birthday Freebies</span><span class="dot">&#9670;</span><span>Free Samples</span><span class="dot">&#9670;</span><span>PINCHme</span><span class="dot">&#9670;</span><span>Loyalty Rewards</span><span class="dot">&#9670;</span><span>Burner Email</span><span class="dot">&#9670;</span><span>Starbucks Free</span><span class="dot">&#9670;</span><span>Sephora Birthday</span><span class="dot">&#9670;</span><span>Library Card</span><span class="dot">&#9670;</span><span>Kanopy Movies</span><span class="dot">&#9670;</span><span>No Purchase Required</span><span class="dot">&#9670;</span></div></div>
-<section class="section"><div class="section-header"><span class="section-title">Freebie Strategy Tips</span><span class="section-sub">AI-Powered &mdash; Updates Every Visit</span></div><div class="ai-box">
+<section class="section"><div class="section-header"><span class="section-title">Freebie Strategy Tips</span><span class="section-sub">AI-Powered &mdash; Updates Every Visit</span></div>
+<div class="ai-box">
   <div class="ai-box-header">
     <span class="ai-badge">&#9679; LIVE</span>
     <button class="refresh-btn" id="refreshBtn" onclick="loadTips()">
@@ -134,11 +128,14 @@ var PAGE_FALLBACK = [
     </button>
   </div>
   <div class="ai-content" id="tipsContainer">
-    <div class="loading-dots"><span></span><span></span><span></span></div>
+    <div class="loading-wrap">
+      <div class="loading-dots"><span></span><span></span><span></span></div>
+      <div class="loading-label">Loading tips...</div>
+    </div>
   </div>
 </div></section>
 <section class="content-section">
-<div class="content-card"><h2>🎂 Birthday Freebies Master List</h2><p>Download the app, join rewards, show up on your birthday. No purchase required.</p><ul>
+<div class="content-card"><h2>🎂 BIRTHDAY FREEBIES MASTER LIST</h2><p>Download the app, join rewards, show up on your birthday. No purchase required.</p><ul>
 <li><strong>Starbucks</strong> — free drink any size, any customization</li>
 <li><strong>Sephora</strong> — free birthday gift, no purchase required</li>
 <li><strong>Dennys</strong> — free Grand Slam breakfast</li>
@@ -148,18 +145,18 @@ var PAGE_FALLBACK = [
 <li><strong>Panera</strong> — free pastry or bakery item</li>
 <li><strong>Cold Stone Creamery</strong> — free creation via rewards</li></ul>
 <p style="margin-top:14px;"><a href="https://brokemodelife.com/freebies_birthday_list_branded_one_page.pdf" style="color:var(--accent);font-family:var(--font-display);font-size:12px;letter-spacing:1px;">&#8595; DOWNLOAD FULL PDF LIST</a></p></div>
-<div class="content-card"><h2>📦 Free Sample Sites That Work</h2><ul>
+<div class="content-card"><h2>📦 FREE SAMPLE SITES THAT WORK</h2><ul>
 <li><strong>PINCHme</strong> — monthly sample boxes, full-size products, completely free</li>
 <li><strong>SampleSource</strong> — quarterly boxes, new offers regularly</li>
 <li><strong>Walmart Free Samples</strong> — check walmart.com/cp/free-samples periodically</li>
 <li><strong>Costco and Trader Joes</strong> — in-store samples especially on weekends</li>
 <li><strong>Influenster</strong> — review products and receive free full-size items</li></ul></div>
-<div class="content-card"><h2>🧠 The Broke Mode Freebie System</h2><ul>
+<div class="content-card"><h2>🧠 THE BROKE MODE FREEBIE SYSTEM</h2><ul>
 <li><strong>Burner email only</strong> — keep your real inbox clean, one address for all freebie signups</li>
 <li><strong>Build your freebie route</strong> — coffee in the morning, smoothie at lunch, sample after dinner</li>
 <li><strong>Track in a spreadsheet</strong> — note expiration dates so you never miss a claim window</li>
 <li><strong>r/freebies on Reddit</strong> — community posts real deals daily, worth checking weekly</li>
-<li><strong>Library card solves your entertainment budget</strong> — Libby, Kanopy, Hoopla, all free</li></ul></div>
+<li><strong>Library card solves entertainment</strong> — Libby, Kanopy, Hoopla, all free</li></ul></div>
 </section>
 <section class="section"><div class="section-header"><span class="section-title">Keep Exploring</span><span class="section-sub"></span></div>
 <div class="related-grid"><a href="https://brokemodelife.com/coupon_stack.html" class="related-card"><span class="related-icon">💸</span><div class="related-name">Coupon Stack</div><div class="related-sub">Stack deals for maximum savings</div><span class="related-arrow">Explore &rarr;</span></a><a href="https://brokemodelife.com/budget_beauty.html" class="related-card"><span class="related-icon">💅</span><div class="related-name">Budget Beauty</div><div class="related-sub">Free beauty samples and trials</div><span class="related-arrow">Explore &rarr;</span></a><a href="https://brokemodelife.com/all_you_can_eat.html" class="related-card"><span class="related-icon">🍽️</span><div class="related-name">All You Can Eat</div><div class="related-sub">Budget food strategy</div><span class="related-arrow">Explore &rarr;</span></a><a href="https://brokemodelife.com/shop.html" class="related-card"><span class="related-icon">🛒</span><div class="related-name">Shop</div><div class="related-sub">Budget gear worth buying</div><span class="related-arrow">Explore &rarr;</span></a></div></section><div class="email-section" id="email-section">
@@ -184,46 +181,57 @@ var PAGE_FALLBACK = [
   <div class="footer-copy">&copy; Broke Mode Life 2026 &mdash; All Rights Reserved</div>
 </footer>
 <script>
-function renderTips(tips) {
-  var c = document.getElementById('tipsContainer');
-  var h = '<ul class="tip-list">';
-  for (var i = 0; i < tips.length; i++) {
-    h += '<li class="tip-item"><span class="tip-icon">' + tips[i].icon + '</span><span class="tip-text">' + tips[i].tip + '</span></li>';
-  }
-  c.innerHTML = h + '</ul>';
-}
+(function() {
+  var TOPIC = "finding and claiming free stuff samples and birthday freebies";
+  var FALLBACK = [{"icon": "🎂", "tip": "<strong>Your birthday is a free food tour:</strong> Starbucks, Sephora, Dennys, and Chick-fil-A give real freebies just for being born. Claim every one."}, {"icon": "📧", "tip": "<strong>Burner email is your secret weapon:</strong> One address just for freebies. Sign up everywhere, claim everything, never clog your real inbox."}, {"icon": "📱", "tip": "<strong>Download brand apps before shopping:</strong> McDonalds, Starbucks, Panera, and Target hide their best deals inside apps, not on the menu board."}, {"icon": "🛒", "tip": "<strong>PINCHme sends real free samples monthly:</strong> Sign up, complete your profile, and full-size product boxes arrive for free."}, {"icon": "📚", "tip": "<strong>Your library card unlocks thousands in value:</strong> Libby for audiobooks, Kanopy for movies, Hoopla for comics. All completely free."}];
 
-async function loadTips() {
-  var btn = document.getElementById('refreshBtn');
-  var container = document.getElementById('tipsContainer');
-  if (btn) btn.classList.add('spinning');
-  container.innerHTML = '<div class="loading-dots"><span></span><span></span><span></span></div>';
-  try {
-    var resp = await fetch("https://api.anthropic.com/v1/messages", {
-      method: "POST",
-      headers: {"Content-Type":"application/json"},
-      body: JSON.stringify({
-        model: "claude-sonnet-4-20250514",
-        max_tokens: 800,
-        messages: [{
-          role: "user",
-          content: "Give 5 budget tips about: " + PAGE_TOPIC + ". Reply ONLY with a raw JSON array, no markdown fences, no explanation. Format: [{"icon":"emoji","tip":"<strong>Title:</strong> One sentence."}]"
-        }]
-      })
-    });
-    if (!resp.ok) throw new Error('HTTP ' + resp.status);
-    var data = await resp.json();
-    var raw = data.content[0].text.trim();
-    var s = raw.indexOf('['), e = raw.lastIndexOf(']');
-    if (s === -1 || e === -1) throw new Error('no array');
-    var tips = JSON.parse(raw.substring(s, e + 1));
-    if (!Array.isArray(tips) || !tips.length) throw new Error('empty');
-    renderTips(tips);
-  } catch(err) {
-    renderTips(PAGE_FALLBACK);
+  function renderTips(tips) {
+    var c = document.getElementById('tipsContainer');
+    if (!c) return;
+    var h = '<ul class="tip-list">';
+    for (var i = 0; i < tips.length; i++) {
+      h += '<li class="tip-item"><span class="tip-icon">' + tips[i].icon + '</span><span class="tip-text">' + tips[i].tip + '</span></li>';
+    }
+    c.innerHTML = h + '</ul>';
   }
-  if (btn) btn.classList.remove('spinning');
-}
-window.addEventListener('load', loadTips);
+
+  function showLoading() {
+    var c = document.getElementById('tipsContainer');
+    if (c) c.innerHTML = '<div class="loading-wrap"><div class="loading-dots"><span></span><span></span><span></span></div><div class="loading-label">Loading tips...</div></div>';
+  }
+
+  window.loadTips = async function() {
+    var btn = document.getElementById('refreshBtn');
+    if (btn) btn.classList.add('spinning');
+    showLoading();
+    try {
+      var resp = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-20250514',
+          max_tokens: 800,
+          messages: [{
+            role: 'user',
+            content: 'Give 5 practical budget tips about: ' + TOPIC + '. Respond with ONLY a valid JSON array, nothing else, no markdown. Each element must have icon (emoji string) and tip (HTML string with <strong>Title:</strong> then one sentence) fields.'
+          }]
+        })
+      });
+      if (!resp.ok) throw new Error('HTTP ' + resp.status);
+      var data = await resp.json();
+      var raw = data.content[0].text.trim();
+      var s = raw.indexOf('['), e = raw.lastIndexOf(']');
+      if (s < 0 || e < 0) throw new Error('no array');
+      var tips = JSON.parse(raw.slice(s, e + 1));
+      if (!Array.isArray(tips) || tips.length === 0) throw new Error('empty');
+      renderTips(tips);
+    } catch(err) {
+      renderTips(FALLBACK);
+    }
+    if (btn) btn.classList.remove('spinning');
+  };
+
+  window.addEventListener('load', window.loadTips);
+})();
 </script>
 </body></html>

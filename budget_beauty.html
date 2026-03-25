@@ -38,16 +38,22 @@ nav a:hover,nav a.active{color:var(--accent);}
 .ai-badge{font-family:var(--font-display);font-size:10px;letter-spacing:2px;color:var(--green);background:rgba(74,222,128,0.1);border:1px solid rgba(74,222,128,0.25);padding:3px 8px;border-radius:4px;}
 .refresh-btn{background:none;border:1px solid var(--border);color:var(--muted);font-size:12px;font-family:var(--font-display);padding:5px 12px;border-radius:4px;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:6px;}
 .refresh-btn:hover{border-color:var(--accent);color:var(--accent);}
-.refresh-icon{display:inline-block;transition:transform 0.4s;}
+.refresh-icon{display:inline-block;transition:transform 0.5s;}
 .refresh-btn.spinning .refresh-icon{transform:rotate(360deg);}
 .ai-content{padding:20px 18px;min-height:160px;}
 .tip-list{list-style:none;display:flex;flex-direction:column;gap:14px;}
 .tip-item{display:flex;gap:12px;align-items:flex-start;animation:fadeUp 0.4s ease both;}
 .tip-item:nth-child(2){animation-delay:.08s;}.tip-item:nth-child(3){animation-delay:.16s;}.tip-item:nth-child(4){animation-delay:.24s;}.tip-item:nth-child(5){animation-delay:.32s;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
-.tip-icon{font-size:18px;flex-shrink:0;margin-top:1px;}
+.tip-icon{font-size:20px;flex-shrink:0;margin-top:1px;width:28px;text-align:center;}
 .tip-text{font-size:15px;color:var(--text);line-height:1.5;}
 .tip-text strong{color:var(--accent);font-weight:600;}
+.loading-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px 0;gap:12px;}
+.loading-dots{display:flex;gap:6px;}
+.loading-dots span{width:8px;height:8px;background:var(--accent);border-radius:50%;animation:bounce 1.2s ease infinite;opacity:0.4;}
+.loading-dots span:nth-child(2){animation-delay:.2s;}.loading-dots span:nth-child(3){animation-delay:.4s;}
+.loading-label{font-family:var(--font-display);font-size:10px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;}
+@keyframes bounce{0%,100%{transform:translateY(0);opacity:0.4;}50%{transform:translateY(-6px);opacity:1;}}
 .gear-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;}
 .gear-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 18px;display:flex;flex-direction:column;gap:8px;text-decoration:none;color:var(--text);transition:border-color 0.2s,transform 0.2s;}
 .gear-card:hover{border-color:var(--accent);transform:translateY(-2px);}
@@ -65,7 +71,7 @@ nav a:hover,nav a.active{color:var(--accent);}
 .related-arrow{font-size:12px;color:var(--accent);margin-top:10px;display:block;}
 .content-section{max-width:960px;margin:0 auto;padding:0 20px 50px;}
 .content-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:28px;margin-bottom:20px;}
-.content-card h2{font-family:var(--font-display);font-size:16px;color:var(--accent);margin-bottom:14px;}
+.content-card h2{font-family:var(--font-display);font-size:15px;color:var(--accent);margin-bottom:14px;}
 .content-card h3{font-size:15px;font-weight:700;color:var(--text);margin:18px 0 8px;}
 .content-card p{font-size:15px;color:#bbb;line-height:1.7;margin-bottom:12px;}
 .content-card ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
@@ -92,10 +98,6 @@ footer{border-top:1px solid var(--border);padding:28px 20px;text-align:center;}
 .footer-links a{font-size:12px;color:var(--muted);text-decoration:none;transition:color 0.2s;}
 .footer-links a:hover{color:var(--accent);}
 .footer-copy{font-size:11px;color:#555;}
-.loading-dots{display:flex;gap:6px;padding:20px 0;justify-content:center;}
-.loading-dots span{width:8px;height:8px;background:var(--accent);border-radius:50%;animation:bounce 1.2s ease infinite;opacity:0.4;}
-.loading-dots span:nth-child(2){animation-delay:.2s;}.loading-dots span:nth-child(3){animation-delay:.4s;}
-@keyframes bounce{0%,100%{transform:translateY(0);opacity:0.4;}50%{transform:translateY(-6px);opacity:1;}}
 @media(max-width:600px){.gear-grid{grid-template-columns:repeat(2,1fr);}}
 </style>
 </head>
@@ -114,19 +116,11 @@ footer{border-top:1px solid var(--border);padding:28px 20px;text-align:center;}
   <a href="https://brokemodelife.com/shop.html">Shop</a>
   <a href="https://brokemodelife.com/blog.html">Blog</a>
   <a href="https://brokemodelife.com/index.html#email-section" class="nav-join">Join Free</a>
-</nav><script>
-var PAGE_TOPIC = 'budget beauty skincare and makeup drugstore dupes';
-var PAGE_FALLBACK = [
-  {icon:'💄', tip:'<strong>CeraVe covers the full routine:</strong> Cleanser, moisturizer, and SPF all under $15 each. Dermatologist-recommended and outperforms products costing 5x more.'},
-  {icon:'🛍️', tip:'<strong>Marshalls beauty aisle is a goldmine:</strong> Name-brand skincare at 50-70% off. Stock changes weekly, no loyalty card required.'},
-  {icon:'🧴', tip:'<strong>The Ordinary Hyaluronic Acid is $7:</strong> Rivals $80 serums. Start here before spending more on anything else.'},
-  {icon:'🎯', tip:'<strong>Stack CVS ExtraBucks with coupons:</strong> Wait for sales, add manufacturer coupons, pay almost nothing for beauty staples.'},
-  {icon:'🧖', tip:'<strong>DIY honey and oatmeal mask:</strong> Gentle exfoliant, works for all skin types, costs pennies per use.'}
-];
-</script>
+</nav>
 <div class="hero"><p class="hero-eyebrow">Budget Fashion & Beauty</p><h1>💅 Budget <span>Beauty</span></h1><p>Glow without going broke. Drugstore staples, luxury dupes, and DIY skincare that actually works.</p></div>
 <div class="marquee-wrap"><div class="marquee-track"><span>ELF Cosmetics</span><span class="dot">&#9670;</span><span>The Ordinary</span><span class="dot">&#9670;</span><span>CeraVe</span><span class="dot">&#9670;</span><span>Drugstore Dupes</span><span class="dot">&#9670;</span><span>DIY Skincare</span><span class="dot">&#9670;</span><span>Luxury Dupes</span><span class="dot">&#9670;</span><span>Ulta Sales</span><span class="dot">&#9670;</span><span>CVS ExtraBucks</span><span class="dot">&#9670;</span><span>Budget SPF</span><span class="dot">&#9670;</span><span>Glow for Less</span><span class="dot">&#9670;</span><span>ELF Cosmetics</span><span class="dot">&#9670;</span><span>The Ordinary</span><span class="dot">&#9670;</span><span>CeraVe</span><span class="dot">&#9670;</span><span>Drugstore Dupes</span><span class="dot">&#9670;</span><span>DIY Skincare</span><span class="dot">&#9670;</span><span>Luxury Dupes</span><span class="dot">&#9670;</span><span>Ulta Sales</span><span class="dot">&#9670;</span><span>CVS ExtraBucks</span><span class="dot">&#9670;</span><span>Budget SPF</span><span class="dot">&#9670;</span><span>Glow for Less</span><span class="dot">&#9670;</span></div></div>
-<section class="section"><div class="section-header"><span class="section-title">Budget Beauty Tips</span><span class="section-sub">AI-Powered &mdash; Updates Every Visit</span></div><div class="ai-box">
+<section class="section"><div class="section-header"><span class="section-title">Budget Beauty Tips</span><span class="section-sub">AI-Powered &mdash; Updates Every Visit</span></div>
+<div class="ai-box">
   <div class="ai-box-header">
     <span class="ai-badge">&#9679; LIVE</span>
     <button class="refresh-btn" id="refreshBtn" onclick="loadTips()">
@@ -134,27 +128,30 @@ var PAGE_FALLBACK = [
     </button>
   </div>
   <div class="ai-content" id="tipsContainer">
-    <div class="loading-dots"><span></span><span></span><span></span></div>
+    <div class="loading-wrap">
+      <div class="loading-dots"><span></span><span></span><span></span></div>
+      <div class="loading-label">Loading tips...</div>
+    </div>
   </div>
 </div></section>
 <section class="content-section">
-<div class="content-card"><h2>🧴 The Three-Product Routine</h2><p>Cleanser, moisturizer, SPF. All three under $20 total from the drugstore.</p><ul>
+<div class="content-card"><h2>🧴 THE THREE-PRODUCT ROUTINE</h2><p>Cleanser, moisturizer, SPF. All three under $20 total from the drugstore.</p><ul>
 <li><strong>CeraVe Hydrating Cleanser</strong> — gentle, dermatologist-recommended, under $15</li>
 <li><strong>Neutrogena Hydro Boost</strong> — lightweight moisturizer, under $18</li>
 <li><strong>EltaMD UV Clear SPF 46</strong> — the one splurge worth making, around $35</li></ul></div>
-<div class="content-card"><h2>💄 Dupe It. Own It.</h2>
+<div class="content-card"><h2>💄 DUPE IT. OWN IT.</h2>
 <table><tr><th>Luxury Product</th><th>Broke Mode Dupe</th><th>Savings</th></tr>
 <tr><td>Dior Lip Oil $38</td><td>NYX Butter Gloss $8</td><td>$30</td></tr>
 <tr><td>Charlotte Tilbury Foundation $50</td><td>Maybelline Fit Me $8</td><td>$42</td></tr>
 <tr><td>Drunk Elephant Serum $90</td><td>The Ordinary $7</td><td>$83</td></tr>
 <tr><td>Urban Decay Setting Spray $35</td><td>ELF Matte Magic Mist $10</td><td>$25</td></tr></table></div>
-<div class="content-card"><h2>🛒 Where to Shop and Save</h2><ul>
+<div class="content-card"><h2>🛒 WHERE TO SHOP AND SAVE</h2><ul>
 <li><strong>CVS clearance bins</strong> — check every visit, stock rotates constantly</li>
 <li><strong>Marshalls beauty aisle</strong> — name brands at 50-70% off</li>
 <li><strong>Amazon Subscribe and Save</strong> — 15% off repeat staples like razors and moisturizer</li>
 <li><strong>Ulta 21 Days of Beauty</strong> — twice a year, prestige products go 50% off</li>
 <li><strong>Target Circle app</strong> — stack manufacturer coupons with Circle offers</li></ul></div>
-<div class="content-card"><h2>🧖 DIY Skincare That Works</h2><ul>
+<div class="content-card"><h2>🧖 DIY SKINCARE THAT WORKS</h2><ul>
 <li><strong>Oatmeal and honey mask</strong> — gentle exfoliant, soothing, works for all skin types</li>
 <li><strong>Green tea toner</strong> — brew, cool, apply with cotton pad, antioxidants for pennies</li>
 <li><strong>Sugar and coconut oil scrub</strong> — lips and body, soft skin at zero cost</li>
@@ -190,46 +187,57 @@ var PAGE_FALLBACK = [
   <div class="footer-copy">&copy; Broke Mode Life 2026 &mdash; All Rights Reserved</div>
 </footer>
 <script>
-function renderTips(tips) {
-  var c = document.getElementById('tipsContainer');
-  var h = '<ul class="tip-list">';
-  for (var i = 0; i < tips.length; i++) {
-    h += '<li class="tip-item"><span class="tip-icon">' + tips[i].icon + '</span><span class="tip-text">' + tips[i].tip + '</span></li>';
-  }
-  c.innerHTML = h + '</ul>';
-}
+(function() {
+  var TOPIC = "budget beauty skincare makeup and drugstore dupes";
+  var FALLBACK = [{"icon": "💄", "tip": "<strong>CeraVe covers the full routine:</strong> Cleanser, moisturizer, and SPF all under $15 each. Dermatologist-recommended and outperforms products costing 5x more."}, {"icon": "🛍️", "tip": "<strong>Marshalls beauty aisle is a goldmine:</strong> Name-brand skincare at 50-70% off. Stock changes weekly, no loyalty card required."}, {"icon": "🧴", "tip": "<strong>The Ordinary Hyaluronic Acid is $7:</strong> Rivals $80 serums. Start here before spending more on anything else."}, {"icon": "🎯", "tip": "<strong>Stack CVS ExtraBucks with coupons:</strong> Wait for sales, add manufacturer coupons, pay almost nothing for beauty staples."}, {"icon": "🧖", "tip": "<strong>DIY honey and oatmeal mask:</strong> Gentle exfoliant, works for all skin types, costs pennies per use."}];
 
-async function loadTips() {
-  var btn = document.getElementById('refreshBtn');
-  var container = document.getElementById('tipsContainer');
-  if (btn) btn.classList.add('spinning');
-  container.innerHTML = '<div class="loading-dots"><span></span><span></span><span></span></div>';
-  try {
-    var resp = await fetch("https://api.anthropic.com/v1/messages", {
-      method: "POST",
-      headers: {"Content-Type":"application/json"},
-      body: JSON.stringify({
-        model: "claude-sonnet-4-20250514",
-        max_tokens: 800,
-        messages: [{
-          role: "user",
-          content: "Give 5 budget tips about: " + PAGE_TOPIC + ". Reply ONLY with a raw JSON array, no markdown fences, no explanation. Format: [{"icon":"emoji","tip":"<strong>Title:</strong> One sentence."}]"
-        }]
-      })
-    });
-    if (!resp.ok) throw new Error('HTTP ' + resp.status);
-    var data = await resp.json();
-    var raw = data.content[0].text.trim();
-    var s = raw.indexOf('['), e = raw.lastIndexOf(']');
-    if (s === -1 || e === -1) throw new Error('no array');
-    var tips = JSON.parse(raw.substring(s, e + 1));
-    if (!Array.isArray(tips) || !tips.length) throw new Error('empty');
-    renderTips(tips);
-  } catch(err) {
-    renderTips(PAGE_FALLBACK);
+  function renderTips(tips) {
+    var c = document.getElementById('tipsContainer');
+    if (!c) return;
+    var h = '<ul class="tip-list">';
+    for (var i = 0; i < tips.length; i++) {
+      h += '<li class="tip-item"><span class="tip-icon">' + tips[i].icon + '</span><span class="tip-text">' + tips[i].tip + '</span></li>';
+    }
+    c.innerHTML = h + '</ul>';
   }
-  if (btn) btn.classList.remove('spinning');
-}
-window.addEventListener('load', loadTips);
+
+  function showLoading() {
+    var c = document.getElementById('tipsContainer');
+    if (c) c.innerHTML = '<div class="loading-wrap"><div class="loading-dots"><span></span><span></span><span></span></div><div class="loading-label">Loading tips...</div></div>';
+  }
+
+  window.loadTips = async function() {
+    var btn = document.getElementById('refreshBtn');
+    if (btn) btn.classList.add('spinning');
+    showLoading();
+    try {
+      var resp = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-20250514',
+          max_tokens: 800,
+          messages: [{
+            role: 'user',
+            content: 'Give 5 practical budget tips about: ' + TOPIC + '. Respond with ONLY a valid JSON array, nothing else, no markdown. Each element must have icon (emoji string) and tip (HTML string with <strong>Title:</strong> then one sentence) fields.'
+          }]
+        })
+      });
+      if (!resp.ok) throw new Error('HTTP ' + resp.status);
+      var data = await resp.json();
+      var raw = data.content[0].text.trim();
+      var s = raw.indexOf('['), e = raw.lastIndexOf(']');
+      if (s < 0 || e < 0) throw new Error('no array');
+      var tips = JSON.parse(raw.slice(s, e + 1));
+      if (!Array.isArray(tips) || tips.length === 0) throw new Error('empty');
+      renderTips(tips);
+    } catch(err) {
+      renderTips(FALLBACK);
+    }
+    if (btn) btn.classList.remove('spinning');
+  };
+
+  window.addEventListener('load', window.loadTips);
+})();
 </script>
 </body></html>
