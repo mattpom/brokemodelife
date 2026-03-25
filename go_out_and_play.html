@@ -4,107 +4,120 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Go Out & Play — Broke Mode Life</title>
-<meta name="description" content="Fun doesn't require a fat wallet. Free events, cheap activities, no-cost adventures.">
+<meta name="description" content="Fun doesn't require a fat wallet. Free events, cheap activities, and no-cost adventures.">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-486684955"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-486684955');</script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-486684955"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-486684955');
+  </script>
 </head>
-<body><nav>
+<body>
+
+<nav>
   <a class="nav-logo" href="index.html">BML</a>
   <ul class="nav-links">
     <li><a href="all_you_can_eat.html">Food</a></li>
     <li><a href="apple_a_day.html">Health</a></li>
-    <li><a href="go_out_and_play.html" class="active">Fun</a></li>
+    <li><a href="go_out_and_play.html">Fun</a></li>
     <li><a href="style.html">Style</a></li>
     <li><a href="travel.html">Travel</a></li>
-    <li><a href="listen_here.html">Music</a></li>
     <li><a href="freestuff.html">Free Stuff</a></li>
     <li><a href="shop.html">Shop</a></li>
     <li><a href="blog.html">Blog</a></li>
     <li><a href="index.html#email-section" class="nav-cta">Join Free</a></li>
   </ul>
   <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
-</nav><div class="page-hero fade-up">
+</nav>
+
+<div class="page-hero fade-up">
   <p class="eyebrow">Free & Cheap Entertainment</p>
   <h1>🎯 Go Out & Play</h1>
-  <p>Fun doesn't require a fat wallet. Free events, cheap activities, and no-cost adventures worth talking about.</p>
-</div><div class="marquee-wrap"><div class="marquee-track"><span>Free Events</span><span class="sep">·</span><span>Park Days</span><span class="sep">·</span><span>Museum Free Days</span><span class="sep">·</span><span>Game Nights</span><span class="sep">·</span><span>Outdoor Movies</span><span class="sep">·</span><span>Community Events</span><span class="sep">·</span><span>National Parks</span><span class="sep">·</span><span>No-Cost Fun</span><span class="sep">·</span><span>Weekend Ideas</span><span class="sep">·</span><span>Free Events</span><span class="sep">·</span><span>Park Days</span><span class="sep">·</span><span>Museum Free Days</span><span class="sep">·</span><span>Game Nights</span><span class="sep">·</span><span>Outdoor Movies</span><span class="sep">·</span><span>Community Events</span><span class="sep">·</span><span>National Parks</span><span class="sep">·</span><span>No-Cost Fun</span><span class="sep">·</span><span>Weekend Ideas</span><span class="sep">·</span></div></div>
+  <p>Fun doesn't require a fat wallet. Free events, cheap activities, and no-cost adventures.</p>
+</div>
+
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>Free Events</span><span class="sep">·</span><span>Park Days</span><span class="sep">·</span><span>Museum Free Days</span><span class="sep">·</span><span>Game Nights</span><span class="sep">·</span><span>Outdoor Movies</span><span class="sep">·</span><span>Community Events</span><span class="sep">·</span><span>National Parks</span><span class="sep">·</span><span>No-Cost Fun</span><span class="sep">·</span><span>Weekend Ideas</span><span class="sep">·</span>
+    <span>Free Events</span><span class="sep">·</span><span>Park Days</span><span class="sep">·</span><span>Museum Free Days</span><span class="sep">·</span><span>Game Nights</span><span class="sep">·</span><span>Outdoor Movies</span><span class="sep">·</span><span>Community Events</span><span class="sep">·</span><span>National Parks</span><span class="sep">·</span><span>No-Cost Fun</span><span class="sep">·</span><span>Weekend Ideas</span><span class="sep">·</span>
+  </div>
+</div>
+
 <div class="main-content">
-<div style="margin-bottom:2rem">
-    <p class="section-label">AI-Powered &mdash; Updates Every Visit</p>
+
+  <div style="margin-bottom:2rem">
+    <p class="section-label">AI-Powered — Updates Every Visit</p>
     <h2 class="section-title">Free & Cheap Entertainment Ideas</h2>
-    <button class="btn-refresh" onclick="refreshfun()">&#8635; Refresh Content</button>
-    <div id="fun-ai"></div>
-  </div>  <div style="margin-bottom:3rem">
-    <p class="section-label">This Weekend</p>
-    <h2 class="section-title" style="margin-bottom:1.5rem">Free Entertainment Right Now</h2>
-    <div class="ai-block">
-      <span class="ai-badge">&#10022; Always True</span>
-      <h3>Five Things to Do That Cost Nothing</h3>
-      <ul style="margin:1rem 0;padding-left:1.2rem">
-        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">National Park free days</strong> — The NPS offers free entry on specific days each year. Check nps.gov and put every date on your calendar now.</li>
-        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Museum free days</strong> — Most major museums offer free admission one day per month. Google your city plus free museum days and build a full annual calendar.</li>
-        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Outdoor movie nights</strong> — Cities run free outdoor screenings all summer. Bring a blanket, make popcorn at home, arrive early for the best spot.</li>
-        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Parks and rec events</strong> — Your parks department runs free concerts, festivals, and workshops most people never find. Check their website every week.</li>
-        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Library events</strong> — Free author talks, film screenings, and community workshops. Your library is far more than books and all of it is completely free.</li>
-      </ul>
-      <p style="color:var(--lime);margin-top:1.2rem">&#128161; The most memorable nights rarely cost the most money. They cost the most intention.</p>
-    </div>
-  </div>  <div style="margin-bottom:3rem">
-    <p class="section-label">Game Night Formula</p>
-    <h2 class="section-title" style="margin-bottom:1.5rem">Host One This Week for Almost Nothing</h2>
-    <div class="ai-block">
-      <span class="ai-badge">&#10022; Always True</span>
-      <h3>The Broke Mode Entertainment Playbook</h3>
-      <ul style="margin:1rem 0;padding-left:1.2rem">
-        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Potluck format kills the cost</strong> — Everyone brings one dish. You supply the space. Total host cost is under $5 and everyone eats well.</li>
-        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Free games you already own</strong> — A standard deck of cards opens hundreds of games. Scattergories, Uno, any thrift store board game for $2.</li>
-        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Jackbox Games split the cost</strong> — One person owns it, everyone plays on their phone. Split the $10 purchase or use a free trial.</li>
-        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Theme nights add energy for free</strong> — Decade night, movie character night, worst dressed. A theme costs nothing and makes the night genuinely memorable.</li>
-        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Outdoor hangouts beat bars</strong> — A park, a blanket, a Bluetooth speaker, a cooler. More fun, better conversations, and a fraction of a bar tab.</li>
-      </ul>
-      <p style="color:var(--lime);margin-top:1.2rem">&#128161; Broke mode entertainment is not about spending less. It is about being more intentional with your time and your people.</p>
-    </div>
-  </div>  <div style="margin-bottom:3rem">
-    <p class="section-label">Broke Mode Picks</p>
-    <h2 class="section-title" style="margin-bottom:1.5rem">Worth Every Penny</h2>
-    <div class="product-grid">
-      <a class="product-card" href="https://www.amazon.com/s?k=playing+cards+set&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-        <div class="product-price">~$12</div>
-        <div class="product-name">Playing Cards Premium Set</div>
-        <div class="product-desc">Hundreds of games, zero subscription. Highest entertainment ROI you will ever buy.</div>
-        <div class="product-link">View on Amazon &rarr;</div>
-      </a>
-      <a class="product-card" href="https://www.amazon.com/s?k=portable+bluetooth+speaker&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-        <div class="product-price">~$28</div>
-        <div class="product-name">Portable Bluetooth Speaker</div>
-        <div class="product-desc">Take the party anywhere. Loud enough to fill a room, cheap enough not to stress.</div>
-        <div class="product-link">View on Amazon &rarr;</div>
-      </a>
-      <a class="product-card" href="https://www.amazon.com/s?k=board+games+adults&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-        <div class="product-price">~$35</div>
-        <div class="product-name">Board Game for Adults</div>
-        <div class="product-desc">One purchase, infinite game nights. Better than a restaurant, cheaper than a bar.</div>
-        <div class="product-link">View on Amazon &rarr;</div>
-      </a>
-      <a class="product-card" href="https://www.amazon.com/s?k=waterproof+outdoor+blanket&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-        <div class="product-price">~$22</div>
-        <div class="product-name">Outdoor Waterproof Blanket</div>
-        <div class="product-desc">Parks, concerts, beaches, movie nights. The broke-mode ticket to free outdoor entertainment.</div>
-        <div class="product-link">View on Amazon &rarr;</div>
-      </a>
-    </div>
-    <p style="font-size:0.75rem;color:#444;font-family:'Barlow Condensed',sans-serif;letter-spacing:0.06em;margin-top:0.8rem">As an Amazon Associate, BML earns from qualifying purchases.</p>
-  </div>  <div style="margin-bottom:3rem">
-    <p class="section-label">Related Guides</p>
-    <h2 class="section-title" style="margin-bottom:1.5rem">Keep Going</h2>
+    <button class="btn-refresh" onclick="refreshgooutandplay()">↻ Refresh Content</button>
+    <div id="gooutandplay-ai"></div>
+  </div>
+
+  
+  
+
+<div style="margin-bottom:3rem">
+  <p class="section-label">Broke Mode Picks</p>
+  <h2 class="section-title" style="margin-bottom:1.5rem">Worth Every Penny</h2>
+  <div class="product-grid">
+    <a class="product-card" href="https://www.amazon.com/s?k=playing+cards+set&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+      <div class="product-price">~$12</div>
+      <div class="product-name">Playing Cards Premium Set</div>
+      <div class="product-desc">Hundreds of games, zero subscription. The highest ROI entertainment purchase you'll ever make.</div>
+      <div class="product-link">View on Amazon →</div>
+    </a>
+    <a class="product-card" href="https://www.amazon.com/s?k=portable+bluetooth+speaker&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+      <div class="product-price">~$28</div>
+      <div class="product-name">Portable Bluetooth Speaker</div>
+      <div class="product-desc">Take the party anywhere. Loud enough to fill a room, cheap enough not to stress about it.</div>
+      <div class="product-link">View on Amazon →</div>
+    </a>
+    <a class="product-card" href="https://www.amazon.com/s?k=board+games+adults&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+      <div class="product-price">~$35</div>
+      <div class="product-name">Board Game Adults</div>
+      <div class="product-desc">One purchase, infinite game nights. Better than a restaurant, cheaper than a bar.</div>
+      <div class="product-link">View on Amazon →</div>
+    </a>
+    <a class="product-card" href="https://www.amazon.com/s?k=waterproof+outdoor+blanket&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+      <div class="product-price">~$22</div>
+      <div class="product-name">Outdoor Blanket Waterproof</div>
+      <div class="product-desc">Parks, concerts, beaches, movie nights. The broke-mode ticket to free outdoor entertainment.</div>
+      <div class="product-link">View on Amazon →</div>
+    </a>
+  </div>
+  <p style="font-size:0.75rem;color:#444;font-family:'Barlow Condensed',sans-serif;letter-spacing:0.06em;margin-top:0.8rem">As an Amazon Associate, BML earns from qualifying purchases.</p>
+</div>
+
+  <div style="margin-bottom:3rem">
+    <p class="section-label">Related Categories</p>
+    <h2 class="section-title" style="margin-bottom:1.5rem">Keep Exploring</h2>
     <div class="card-grid">
-      <a class="card" href="listen_here.html"><div class="card-title">🎵 Listen Here</div><div class="card-body">Free music to soundtrack your adventures</div><span class="card-tag">Explore &rarr;</span></a>
-      <a class="card" href="freestuff.html"><div class="card-title">🎁 Free Stuff</div><div class="card-body">Free event passes and no-cost deals</div><span class="card-tag">Explore &rarr;</span></a>
-      <a class="card" href="cheers_mate.html"><div class="card-title">🍻 Cheers Mate</div><div class="card-body">Budget drinks for game night</div><span class="card-tag">Explore &rarr;</span></a>
+      <a class="card" href="listen_here.html">
+        <div class="card-icon">🎵</div>
+        <div class="card-title">Listen Here</div>
+        <div class="card-body">Free music and podcasts to soundtrack your free outdoor activities.</div>
+        <span class="card-tag">Explore →</span>
+      </a>
+      <a class="card" href="freestuff.html">
+        <div class="card-icon">🎁</div>
+        <div class="card-title">Free Stuff</div>
+        <div class="card-body">Free event passes, museum days, and no-cost local experiences.</div>
+        <span class="card-tag">Explore →</span>
+      </a>
+      <a class="card" href="cheers_mate.html">
+        <div class="card-icon">🍻</div>
+        <div class="card-title">Cheers Mate</div>
+        <div class="card-body">Budget drinks to bring to your next game night or outdoor event.</div>
+        <span class="card-tag">Explore →</span>
+      </a>
     </div>
-  </div></div>
+  </div>
+
+</div>
+
 <section class="email-strip">
   <h2>Stay in the Loop</h2>
   <p>Get updates, deals, and broke-mode strategy direct to your inbox.</p>
@@ -114,17 +127,24 @@
   </form>
   <p class="email-note" id="form-status">No spam. Unsubscribe any time.</p>
 </section>
+
 <footer>
   <div><div class="footer-brand">Broke Mode Life</div><div class="footer-tagline">Live Large on a Lean Budget</div></div>
   <div class="footer-links">
     <a href="terms.html">Terms</a><a href="privacy.html">Privacy</a>
     <a href="affiliate.html">Affiliate</a><a href="contact.html">Contact</a><a href="cookie.html">Cookies</a>
   </div>
-  <p class="footer-copy">&copy; Broke Mode Life 2026 &mdash; All Rights Reserved</p>
+  <p class="footer-copy">© Broke Mode Life 2026 — All Rights Reserved</p>
 </footer>
+
 <script src="main.js"></script>
 <script>
-function refreshfun() { loadAIContent('fun-ai', 'Free & Cheap Entertainment Ideas', ''); }
-refreshfun();
+const gooutandplayPrompt = `You are an entertainment expert for BrokeModeLife.com. Generate 5 free or near-free fun activity ideas. Return ONLY valid JSON:
+{"title":"This Weekend's Free Fun Ideas","intro":"Five things to do that cost next to nothing.","items":[{"title":"activity","desc":"one action sentence"},{"title":"activity","desc":"one action sentence"},{"title":"activity","desc":"one action sentence"},{"title":"activity","desc":"one action sentence"},{"title":"activity","desc":"one action sentence"}],"tip":"Bold insight about free entertainment."}`;
+function refreshgooutandplay() {
+  loadAIContent('gooutandplay-ai', 'Free & Cheap Entertainment Ideas', gooutandplayPrompt);
+}
+refreshgooutandplay();
 </script>
-</body></html>
+</body>
+</html>
