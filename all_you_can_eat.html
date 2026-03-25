@@ -1,233 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>🍽️ All You Can Eat — Broke Mode Life</title>
-  <meta name="description" content="Budget meals, bulk buying, and zero-waste cooking."/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet"/>
-  <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{--bg:#0d0d0d;--surface:#161616;--surface2:#1e1e1e;--border:#2a2a2a;--accent:#f0c040;--text:#f0ede8;--muted:#888;--green:#4ade80;--font-display:'Space Mono',monospace;--font-body:'DM Sans',sans-serif;}
-html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:16px;line-height:1.6;}
-nav{background:#111;border-bottom:1px solid var(--border);padding:0 20px;position:sticky;top:0;z-index:100;display:flex;align-items:center;overflow-x:auto;-webkit-overflow-scrolling:touch;}
-nav::-webkit-scrollbar{display:none;}
-.nav-logo{font-family:var(--font-display);font-size:14px;font-weight:700;color:var(--accent);text-decoration:none;padding:16px 20px 16px 0;white-space:nowrap;border-right:1px solid var(--border);margin-right:8px;flex-shrink:0;}
-nav a{color:#bbb;text-decoration:none;font-size:13px;font-weight:500;padding:16px 10px;white-space:nowrap;transition:color 0.2s;flex-shrink:0;}
-nav a:hover,nav a.active{color:var(--accent);}
-.nav-join{background:var(--accent);color:#000!important;border-radius:4px;padding:6px 14px!important;margin-left:auto;font-weight:700!important;flex-shrink:0;}
-.hero{padding:60px 20px 40px;max-width:900px;margin:0 auto;text-align:center;}
-.hero-eyebrow{font-family:var(--font-display);font-size:11px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin-bottom:16px;}
-.hero h1{font-family:var(--font-display);font-size:clamp(28px,6vw,52px);font-weight:700;line-height:1.15;margin-bottom:16px;}
-.hero h1 span{color:var(--accent);}
-.hero p{font-size:18px;color:#aaa;max-width:580px;margin:0 auto 28px;}
-.marquee-wrap{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:10px 0;margin-bottom:50px;background:var(--surface);}
-.marquee-track{display:flex;gap:32px;white-space:nowrap;animation:marquee 30s linear infinite;}
-.marquee-track span{font-family:var(--font-display);font-size:11px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;}
-.marquee-track span.dot{color:var(--accent);}
-@keyframes marquee{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
-.section{max-width:960px;margin:0 auto;padding:0 20px 60px;}
-.section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;border-bottom:1px solid var(--border);padding-bottom:14px;}
-.section-title{font-family:var(--font-display);font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);}
-.section-sub{font-size:13px;color:var(--muted);}
-.ai-box{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;}
-.ai-box-header{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:var(--surface2);border-bottom:1px solid var(--border);}
-.ai-badge{font-family:var(--font-display);font-size:10px;letter-spacing:2px;color:var(--green);background:rgba(74,222,128,0.1);border:1px solid rgba(74,222,128,0.25);padding:3px 8px;border-radius:4px;}
-.refresh-btn{background:none;border:1px solid var(--border);color:var(--muted);font-size:12px;font-family:var(--font-display);padding:5px 12px;border-radius:4px;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:6px;}
-.refresh-btn:hover{border-color:var(--accent);color:var(--accent);}
-.refresh-icon{display:inline-block;transition:transform 0.5s;}
-.refresh-btn.spinning .refresh-icon{transform:rotate(360deg);}
-.ai-content{padding:20px 18px;min-height:160px;}
-.tip-list{list-style:none;display:flex;flex-direction:column;gap:14px;}
-.tip-item{display:flex;gap:12px;align-items:flex-start;animation:fadeUp 0.4s ease both;}
-.tip-item:nth-child(2){animation-delay:.08s;}.tip-item:nth-child(3){animation-delay:.16s;}.tip-item:nth-child(4){animation-delay:.24s;}.tip-item:nth-child(5){animation-delay:.32s;}
-@keyframes fadeUp{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
-.tip-icon{font-size:20px;flex-shrink:0;margin-top:1px;width:28px;text-align:center;}
-.tip-text{font-size:15px;color:var(--text);line-height:1.5;}
-.tip-text strong{color:var(--accent);font-weight:600;}
-.loading-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px 0;gap:12px;}
-.loading-dots{display:flex;gap:6px;}
-.loading-dots span{width:8px;height:8px;background:var(--accent);border-radius:50%;animation:bounce 1.2s ease infinite;opacity:0.4;}
-.loading-dots span:nth-child(2){animation-delay:.2s;}.loading-dots span:nth-child(3){animation-delay:.4s;}
-.loading-label{font-family:var(--font-display);font-size:10px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;}
-@keyframes bounce{0%,100%{transform:translateY(0);opacity:0.4;}50%{transform:translateY(-6px);opacity:1;}}
-.gear-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;}
-.gear-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 18px;display:flex;flex-direction:column;gap:8px;text-decoration:none;color:var(--text);transition:border-color 0.2s,transform 0.2s;}
-.gear-card:hover{border-color:var(--accent);transform:translateY(-2px);}
-.gear-price{font-family:var(--font-display);font-size:11px;color:var(--accent);letter-spacing:1px;}
-.gear-name{font-weight:700;font-size:15px;}
-.gear-desc{font-size:13px;color:var(--muted);flex:1;}
-.gear-cta{font-size:12px;font-family:var(--font-display);color:var(--accent);letter-spacing:1px;margin-top:4px;}
-.affiliate-note{font-size:11px;color:var(--muted);margin-top:14px;font-style:italic;}
-.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;}
-.related-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px;text-decoration:none;color:var(--text);transition:border-color 0.2s;display:block;}
-.related-card:hover{border-color:var(--accent);}
-.related-icon{font-size:24px;margin-bottom:10px;display:block;}
-.related-name{font-weight:700;font-size:15px;margin-bottom:4px;}
-.related-sub{font-size:13px;color:var(--muted);}
-.related-arrow{font-size:12px;color:var(--accent);margin-top:10px;display:block;}
-.content-section{max-width:960px;margin:0 auto;padding:0 20px 50px;}
-.content-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:28px;margin-bottom:20px;}
-.content-card h2{font-family:var(--font-display);font-size:15px;color:var(--accent);margin-bottom:14px;}
-.content-card h3{font-size:15px;font-weight:700;color:var(--text);margin:18px 0 8px;}
-.content-card p{font-size:15px;color:#bbb;line-height:1.7;margin-bottom:12px;}
-.content-card ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
-.content-card ul li{font-size:14px;color:#bbb;padding-left:20px;position:relative;}
-.content-card ul li::before{content:"→";position:absolute;left:0;color:var(--accent);}
-.content-card strong{color:var(--text);}
-table{width:100%;border-collapse:collapse;margin-top:12px;font-size:14px;}
-th{background:var(--surface2);color:var(--accent);font-family:var(--font-display);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:10px 12px;text-align:left;border-bottom:1px solid var(--border);}
-td{padding:10px 12px;border-bottom:1px solid var(--border);color:#bbb;}
-tr:last-child td{border-bottom:none;}
-.email-section{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:36px 24px;text-align:center;max-width:960px;margin:0 auto 60px;}
-.email-section h3{font-family:var(--font-display);font-size:18px;margin-bottom:8px;}
-.email-section p{font-size:14px;color:var(--muted);margin-bottom:20px;}
-.email-form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
-.email-input{background:var(--bg);border:1px solid var(--border);color:var(--text);padding:10px 16px;border-radius:6px;font-size:14px;width:260px;font-family:var(--font-body);outline:none;transition:border-color 0.2s;}
-.email-input:focus{border-color:var(--accent);}
-.email-btn{background:var(--accent);color:#000;border:none;padding:10px 22px;border-radius:6px;font-family:var(--font-display);font-size:12px;font-weight:700;letter-spacing:1px;cursor:pointer;}
-.email-btn:hover{opacity:0.85;}
-.email-fine{font-size:11px;color:var(--muted);margin-top:10px;}
-footer{border-top:1px solid var(--border);padding:28px 20px;text-align:center;}
-.footer-brand{font-family:var(--font-display);font-size:14px;font-weight:700;color:var(--accent);margin-bottom:4px;}
-.footer-tagline{font-size:12px;color:var(--muted);margin-bottom:16px;}
-.footer-links{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:16px;}
-.footer-links a{font-size:12px;color:var(--muted);text-decoration:none;transition:color 0.2s;}
-.footer-links a:hover{color:var(--accent);}
-.footer-copy{font-size:11px;color:#555;}
-@media(max-width:600px){.gear-grid{grid-template-columns:repeat(2,1fr);}}
-</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All You Can Eat — Broke Mode Life</title>
+<meta name="description" content="Buffet mentality on a broke budget. Stretch every dollar, waste nothing, eat like you mean it.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-486684955"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-486684955');
+  </script>
 </head>
-<body>
-<nav>
-  <a href="https://brokemodelife.com/index.html" class="nav-logo">BML</a>
-  <a href="https://brokemodelife.com/all_you_can_eat.html">Food</a>
-  <a href="https://brokemodelife.com/apple_a_day.html">Health</a>
-  <a href="https://brokemodelife.com/go_out_and_play.html">Fun</a>
-  <a href="https://brokemodelife.com/style.html">Style</a>
-  <a href="https://brokemodelife.com/listen_here.html">Music</a>
-  <a href="https://brokemodelife.com/cheers_mate.html">Drinks</a>
-  <a href="https://brokemodelife.com/travel.html">Travel</a>
-  <a href="https://brokemodelife.com/pets.html">Pets</a>
-  <a href="https://brokemodelife.com/freestuff.html">Free Stuff</a>
-  <a href="https://brokemodelife.com/shop.html">Shop</a>
-  <a href="https://brokemodelife.com/blog.html">Blog</a>
-  <a href="https://brokemodelife.com/index.html#email-section" class="nav-join">Join Free</a>
-</nav>
-<div class="hero"><p class="hero-eyebrow">Budget Food & Nutrition</p><h1>🍽️ All You <span>Can Eat</span></h1><p>Buffet mentality on a broke budget. Stretch every dollar, waste nothing, eat like you mean it.</p></div>
-<div class="marquee-wrap"><div class="marquee-track"><span>Bulk Buying</span><span class="dot">&#9670;</span><span>Meal Prep</span><span class="dot">&#9670;</span><span>Zero Waste</span><span class="dot">&#9670;</span><span>Rice & Beans</span><span class="dot">&#9670;</span><span>Batch Cook</span><span class="dot">&#9670;</span><span>Frozen Veg</span><span class="dot">&#9670;</span><span>Protein Hacks</span><span class="dot">&#9670;</span><span>Budget Meals</span><span class="dot">&#9670;</span><span>Grocery Hacks</span><span class="dot">&#9670;</span><span>No Waste Cooking</span><span class="dot">&#9670;</span><span>Bulk Buying</span><span class="dot">&#9670;</span><span>Meal Prep</span><span class="dot">&#9670;</span><span>Zero Waste</span><span class="dot">&#9670;</span><span>Rice & Beans</span><span class="dot">&#9670;</span><span>Batch Cook</span><span class="dot">&#9670;</span><span>Frozen Veg</span><span class="dot">&#9670;</span><span>Protein Hacks</span><span class="dot">&#9670;</span><span>Budget Meals</span><span class="dot">&#9670;</span><span>Grocery Hacks</span><span class="dot">&#9670;</span><span>No Waste Cooking</span><span class="dot">&#9670;</span></div></div>
-<section class="section"><div class="section-header"><span class="section-title">Budget Food Tips</span><span class="section-sub">AI-Powered &mdash; Updates Every Visit</span></div>
-<div class="ai-box">
-  <div class="ai-box-header">
-    <span class="ai-badge">&#9679; LIVE</span>
-    <button class="refresh-btn" id="refreshBtn" onclick="loadTips()">
-      <span class="refresh-icon">&#8635;</span> Refresh Tips
-    </button>
+<body><nav>
+  <a class="nav-logo" href="index.html">BML</a>
+  <ul class="nav-links">
+    <li><a href="all_you_can_eat.html" class="active">Food</a></li>
+    <li><a href="apple_a_day.html">Health</a></li>
+    <li><a href="go_out_and_play.html">Fun</a></li>
+    <li><a href="style.html">Style</a></li>
+    <li><a href="travel.html">Travel</a></li>
+    <li><a href="freestuff.html">Free Stuff</a></li>
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="index.html#email-section" class="nav-cta">Join Free</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav><div class="page-hero fade-up">
+  <p class="eyebrow">Budget Food & Nutrition</p>
+  <h1>🍽️ All You Can Eat</h1>
+  <p>Buffet mentality on a broke budget. Stretch every dollar, waste nothing, eat like you mean it.</p>
+</div><div class="marquee-wrap">
+  <div class="marquee-track"><span>Bulk Buying</span><span class="sep">·</span><span>Meal Prep</span><span class="sep">·</span><span>Zero Waste</span><span class="sep">·</span><span>Rice & Beans</span><span class="sep">·</span><span>Batch Cook</span><span class="sep">·</span><span>Frozen Veg</span><span class="sep">·</span><span>Protein Hacks</span><span class="sep">·</span><span>Budget Meals</span><span class="sep">·</span><span>Grocery Hacks</span><span class="sep">·</span><span>No Waste Cooking</span><span class="sep">·</span><span>Bulk Buying</span><span class="sep">·</span><span>Meal Prep</span><span class="sep">·</span><span>Zero Waste</span><span class="sep">·</span><span>Rice & Beans</span><span class="sep">·</span><span>Batch Cook</span><span class="sep">·</span><span>Frozen Veg</span><span class="sep">·</span><span>Protein Hacks</span><span class="sep">·</span><span>Budget Meals</span><span class="sep">·</span><span>Grocery Hacks</span><span class="sep">·</span><span>No Waste Cooking</span><span class="sep">·</span></div>
+</div><div class="main-content">
+
+  <div style="margin-bottom:2rem">
+    <p class="section-label">AI-Powered — Updates Every Visit</p>
+    <h2 class="section-title">Budget Food Tips</h2>
+    <button class="btn-refresh" onclick="refreshfood()">↻ Refresh Content</button>
+    <div id="food-ai"></div>
   </div>
-  <div class="ai-content" id="tipsContainer">
-    <div class="loading-wrap">
-      <div class="loading-dots"><span></span><span></span><span></span></div>
-      <div class="loading-label">Loading tips...</div>
-    </div>
+
+<div style="margin-bottom:3rem">
+  <p class="section-label">Broke Mode Picks</p>
+  <h2 class="section-title" style="margin-bottom:1.5rem">Worth Every Penny</h2>
+  <div class="product-grid">
+    <a class="product-card" href="https://www.amazon.com/s?k=cast+iron+skillet&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+      <div class="product-price">~$22</div>
+      <div class="product-name">Cast Iron Skillet</div>
+      <div class="product-desc">Lasts forever, cooks everything. Best cost-per-use kitchen item you will ever buy.</div>
+      <div class="product-link">View on Amazon →</div>
+    </a>
+    <a class="product-card" href="https://www.amazon.com/s?k=meal+prep+containers+glass&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+      <div class="product-price">~$15</div>
+      <div class="product-name">Meal Prep Containers</div>
+      <div class="product-desc">Glass containers from fridge to microwave. Batch cook once, eat all week.</div>
+      <div class="product-link">View on Amazon →</div>
+    </a>
+    <a class="product-card" href="https://www.amazon.com/s?k=budget+chef+knife&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+      <div class="product-price">~$18</div>
+      <div class="product-name">Budget Chef Knife</div>
+      <div class="product-desc">A sharp knife changes everything. You need sharp, not expensive.</div>
+      <div class="product-link">View on Amazon →</div>
+    </a>
+    <a class="product-card" href="https://www.amazon.com/s?k=spice+rack+set&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+      <div class="product-price">~$12</div>
+      <div class="product-name">Spice Rack Starter Set</div>
+      <div class="product-desc">Transform cheap ingredients into real meals. Highest ROI grocery purchase you can make.</div>
+      <div class="product-link">View on Amazon →</div>
+    </a>
   </div>
-</div></section>
-<section class="content-section">
-<div class="content-card"><h2>🍛 SMART BULK BUYS</h2><p>Buy once, eat all week. Rice, oats, beans, and frozen vegetables anchor every meal.</p>
-<table><tr><th>Item</th><th>Use</th><th>Cost</th></tr><tr><td>Brown Rice</td><td>Stir fry, bowls</td><td>~$1.20/lb</td></tr><tr><td>Dry Lentils</td><td>Soups, curries, tacos</td><td>~$1.00/lb</td></tr><tr><td>Rolled Oats</td><td>Breakfast, baking</td><td>~$0.90/lb</td></tr><tr><td>Frozen Veggies</td><td>Stir fry, pasta, sides</td><td>~$1.50/lb</td></tr><tr><td>Eggs (dozen)</td><td>Protein, anything</td><td>~$2.00</td></tr></table></div>
-<div class="content-card"><h2>🥡 NO WASTE STRATEGY</h2><p>Plan meals backward from perishables. Leftover rice becomes stir fry. Roasted veg becomes soup. Soft bananas become smoothies. Nothing in the trash.</p>
-<h3>Build-Your-Own Buffet</h3>
-<table><tr><th>Base</th><th>Protein</th><th>Veggie</th><th>Topping</th></tr><tr><td>Quinoa</td><td>Hard-boiled Eggs</td><td>Roasted Peppers</td><td>Hot Sauce</td></tr><tr><td>Sweet Potatoes</td><td>Black Beans</td><td>Onions</td><td>Greek Yogurt</td></tr><tr><td>Brown Rice</td><td>Canned Tuna</td><td>Frozen Broccoli</td><td>Sriracha</td></tr></table></div>
-<div class="content-card"><h2>🏷️ BUFFET HACKS</h2><ul>
-<li><strong>Label leftovers</strong> — masking tape and sharpie, write the date every time</li>
-<li><strong>Pre-split into containers</strong> — dinner becomes grab-and-go instantly</li>
-<li><strong>Frozen garlic cubes</strong> — saves 20 minutes of prep per week</li>
-<li><strong>Shop bulk with a friend</strong> — split a 10 lb bag of oats, both win</li>
-<li><strong>Weekly tray bake</strong> — starch plus protein plus three veggies in one oven session covers 3 meals</li></ul></div>
-</section>
-<section class="section"><div class="section-header"><span class="section-title">Broke Mode Picks</span><span class="section-sub">Worth Every Penny</span></div>
-<div class="gear-grid">
-<a href="https://www.amazon.com/s?k=cast+iron+skillet&tag=brokemodelife-20" target="_blank" rel="noopener noreferrer" class="gear-card"><div class="gear-price">~$22</div><div class="gear-name">🍳 Cast Iron Skillet</div><div class="gear-desc">Lasts forever, cooks everything. Best cost-per-use kitchen item you will ever buy.</div><div class="gear-cta">View on Amazon &rarr;</div></a>
-<a href="https://www.amazon.com/s?k=meal+prep+containers+glass&tag=brokemodelife-20" target="_blank" rel="noopener noreferrer" class="gear-card"><div class="gear-price">~$15</div><div class="gear-name">📦 Meal Prep Containers</div><div class="gear-desc">Glass containers from fridge to microwave. Batch cook once, eat all week.</div><div class="gear-cta">View on Amazon &rarr;</div></a>
-<a href="https://www.amazon.com/s?k=budget+chef+knife&tag=brokemodelife-20" target="_blank" rel="noopener noreferrer" class="gear-card"><div class="gear-price">~$18</div><div class="gear-name">🔪 Budget Chef Knife</div><div class="gear-desc">A sharp knife changes everything. You need sharp, not expensive.</div><div class="gear-cta">View on Amazon &rarr;</div></a>
-<a href="https://www.amazon.com/s?k=spice+rack+set&tag=brokemodelife-20" target="_blank" rel="noopener noreferrer" class="gear-card"><div class="gear-price">~$12</div><div class="gear-name">🧂 Spice Rack Starter</div><div class="gear-desc">Transform cheap ingredients into real meals. Highest ROI grocery purchase.</div><div class="gear-cta">View on Amazon &rarr;</div></a>
-</div><p class="affiliate-note">As an Amazon Associate, BML earns from qualifying purchases.</p></section>
-<section class="section"><div class="section-header"><span class="section-title">Keep Exploring</span><span class="section-sub"></span></div>
-<div class="related-grid"><a href="https://brokemodelife.com/apple_a_day.html" class="related-card"><span class="related-icon">🍎</span><div class="related-name">Apple a Day</div><div class="related-sub">Budget health and wellness</div><span class="related-arrow">Explore &rarr;</span></a><a href="https://brokemodelife.com/cheers_mate.html" class="related-card"><span class="related-icon">🍻</span><div class="related-name">Cheers Mate</div><div class="related-sub">Budget drinks and cocktails</div><span class="related-arrow">Explore &rarr;</span></a><a href="https://brokemodelife.com/freestuff.html" class="related-card"><span class="related-icon">🎁</span><div class="related-name">Free Stuff</div><div class="related-sub">Freebies and no-cost deals</div><span class="related-arrow">Explore &rarr;</span></a><a href="https://brokemodelife.com/shop.html" class="related-card"><span class="related-icon">🛒</span><div class="related-name">Shop</div><div class="related-sub">Budget kitchen gear</div><span class="related-arrow">Explore &rarr;</span></a></div></section><div class="email-section" id="email-section">
-  <h3>Stay in the Loop</h3>
-  <p>Get updates, deals, and broke-mode strategy direct to your inbox.</p>
-  <form class="email-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-    <input class="email-input" type="email" name="email" placeholder="your@email.com" required/>
-    <button class="email-btn" type="submit">SUBSCRIBE</button>
-  </form>
-  <p class="email-fine">No spam. Unsubscribe any time.</p>
+  <p style="font-size:0.75rem;color:#444;font-family:'Barlow Condensed',sans-serif;letter-spacing:0.06em;margin-top:0.8rem">As an Amazon Associate, BML earns from qualifying purchases.</p>
+</div><div style="margin-bottom:3rem">
+  <p class="section-label">Related Guides</p>
+  <h2 class="section-title" style="margin-bottom:1.5rem">Keep Going</h2>
+  <div class="card-grid">
+    <a class="card" href="cheers_mate.html">
+      <div class="card-title">🍻 Cheers Mate</div>
+      <div class="card-body">Budget drinks and cocktails</div>
+      <span class="card-tag">Explore →</span>
+    </a>
+    <a class="card" href="apple_a_day.html">
+      <div class="card-title">🍎 Apple a Day</div>
+      <div class="card-body">Budget health and wellness</div>
+      <span class="card-tag">Explore →</span>
+    </a>
+    <a class="card" href="freestuff.html">
+      <div class="card-title">🎁 Free Stuff</div>
+      <div class="card-body">Freebies and no-cost deals</div>
+      <span class="card-tag">Explore →</span>
+    </a>
+    <a class="card" href="shop.html">
+      <div class="card-title">🛒 Shop</div>
+      <div class="card-body">Budget kitchen gear picks</div>
+      <span class="card-tag">Explore →</span>
+    </a>
+  </div>
 </div>
-<footer>
-  <div class="footer-brand">Broke Mode Life</div>
-  <div class="footer-tagline">Live Large on a Lean Budget</div>
+</div>
+<section class="email-strip">
+  <h2>Stay in the Loop</h2>
+  <p>Get updates, deals, and broke-mode strategy direct to your inbox.</p>
+  <form class="email-form" onsubmit="handleEmail(event)">
+    <input type="email" placeholder="your@email.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+  <p class="email-note" id="form-status">No spam. Unsubscribe any time.</p>
+</section><footer>
+  <div><div class="footer-brand">Broke Mode Life</div><div class="footer-tagline">Live Large on a Lean Budget</div></div>
   <div class="footer-links">
-    <a href="https://brokemodelife.com/terms.html">Terms</a>
-    <a href="https://brokemodelife.com/privacy.html">Privacy</a>
-    <a href="https://brokemodelife.com/affiliate.html">Affiliate</a>
-    <a href="https://brokemodelife.com/contact.html">Contact</a>
-    <a href="https://brokemodelife.com/cookie.html">Cookies</a>
+    <a href="terms.html">Terms</a><a href="privacy.html">Privacy</a>
+    <a href="affiliate.html">Affiliate</a><a href="contact.html">Contact</a><a href="cookie.html">Cookies</a>
   </div>
-  <div class="footer-copy">&copy; Broke Mode Life 2026 &mdash; All Rights Reserved</div>
-</footer>
+  <p class="footer-copy">© Broke Mode Life 2026 — All Rights Reserved</p>
+</footer><script src="main.js"></script>
 <script>
-(function() {
-  var TOPIC = "budget meal planning and cheap grocery shopping strategies";
-  var FALLBACK = [{"icon": "🍚", "tip": "<strong>Rice and beans = complete protein:</strong> Under $1 per meal and covers all essential amino acids. Stock both in bulk."}, {"icon": "🥦", "tip": "<strong>Frozen beats fresh on a budget:</strong> Nutritionally equal and 60% cheaper. Fresh for salads, frozen for cooking."}, {"icon": "🍳", "tip": "<strong>Eggs are your best friend:</strong> About 15 cents each, the cheapest high-quality protein available anywhere."}, {"icon": "🛒", "tip": "<strong>Shop dry goods first:</strong> Fill your cart with bulk staples before hitting produce. Stops impulse buying."}, {"icon": "📦", "tip": "<strong>Batch cook Sunday, eat all week:</strong> One 2-hour session covers 5 days of lunches automatically."}];
-
-  function renderTips(tips) {
-    var c = document.getElementById('tipsContainer');
-    if (!c) return;
-    var h = '<ul class="tip-list">';
-    for (var i = 0; i < tips.length; i++) {
-      h += '<li class="tip-item"><span class="tip-icon">' + tips[i].icon + '</span><span class="tip-text">' + tips[i].tip + '</span></li>';
-    }
-    c.innerHTML = h + '</ul>';
-  }
-
-  function showLoading() {
-    var c = document.getElementById('tipsContainer');
-    if (c) c.innerHTML = '<div class="loading-wrap"><div class="loading-dots"><span></span><span></span><span></span></div><div class="loading-label">Loading tips...</div></div>';
-  }
-
-  window.loadTips = async function() {
-    var btn = document.getElementById('refreshBtn');
-    if (btn) btn.classList.add('spinning');
-    showLoading();
-    try {
-      var resp = await fetch('https://api.anthropic.com/v1/messages', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({
-          model: 'claude-sonnet-4-20250514',
-          max_tokens: 800,
-          messages: [{
-            role: 'user',
-            content: 'Give 5 practical budget tips about: ' + TOPIC + '. Respond with ONLY a valid JSON array, nothing else, no markdown. Each element must have icon (emoji string) and tip (HTML string with <strong>Title:</strong> then one sentence) fields.'
-          }]
-        })
-      });
-      if (!resp.ok) throw new Error('HTTP ' + resp.status);
-      var data = await resp.json();
-      var raw = data.content[0].text.trim();
-      var s = raw.indexOf('['), e = raw.lastIndexOf(']');
-      if (s < 0 || e < 0) throw new Error('no array');
-      var tips = JSON.parse(raw.slice(s, e + 1));
-      if (!Array.isArray(tips) || tips.length === 0) throw new Error('empty');
-      renderTips(tips);
-    } catch(err) {
-      renderTips(FALLBACK);
-    }
-    if (btn) btn.classList.remove('spinning');
-  };
-
-  window.addEventListener('load', window.loadTips);
-})();
+function refreshfood() {
+  loadAIContent('food-ai', 'Budget Food Tips', '');
+}
+refreshfood();
 </script>
 </body></html>
