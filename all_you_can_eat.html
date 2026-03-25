@@ -4,18 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>All You Can Eat — Broke Mode Life</title>
-<meta name="description" content="Buffet mentality on a broke budget. Stretch every dollar, waste nothing, eat like you mean it.">
+<meta name="description" content="Buffet mentality on a broke budget. Stretch every dollar, waste nothing, eat well.">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-486684955"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-486684955');
-  </script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-486684955');</script>
 </head>
-<body><nav>
+<body>
+<nav>
   <a class="nav-logo" href="index.html">BML</a>
   <ul class="nav-links">
     <li><a href="all_you_can_eat.html" class="active">Food</a></li>
@@ -23,104 +19,140 @@
     <li><a href="go_out_and_play.html">Fun</a></li>
     <li><a href="style.html">Style</a></li>
     <li><a href="travel.html">Travel</a></li>
+    <li><a href="listen_here.html">Music</a></li>
     <li><a href="freestuff.html">Free Stuff</a></li>
     <li><a href="shop.html">Shop</a></li>
     <li><a href="blog.html">Blog</a></li>
     <li><a href="index.html#email-section" class="nav-cta">Join Free</a></li>
   </ul>
   <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
-</nav><div class="page-hero fade-up">
+</nav>
+
+<div class="page-hero fade-up">
   <p class="eyebrow">Budget Food & Nutrition</p>
   <h1>🍽️ All You Can Eat</h1>
   <p>Buffet mentality on a broke budget. Stretch every dollar, waste nothing, eat like you mean it.</p>
-</div><div class="marquee-wrap">
-  <div class="marquee-track"><span>Bulk Buying</span><span class="sep">·</span><span>Meal Prep</span><span class="sep">·</span><span>Zero Waste</span><span class="sep">·</span><span>Rice & Beans</span><span class="sep">·</span><span>Batch Cook</span><span class="sep">·</span><span>Frozen Veg</span><span class="sep">·</span><span>Protein Hacks</span><span class="sep">·</span><span>Budget Meals</span><span class="sep">·</span><span>Grocery Hacks</span><span class="sep">·</span><span>No Waste Cooking</span><span class="sep">·</span><span>Bulk Buying</span><span class="sep">·</span><span>Meal Prep</span><span class="sep">·</span><span>Zero Waste</span><span class="sep">·</span><span>Rice & Beans</span><span class="sep">·</span><span>Batch Cook</span><span class="sep">·</span><span>Frozen Veg</span><span class="sep">·</span><span>Protein Hacks</span><span class="sep">·</span><span>Budget Meals</span><span class="sep">·</span><span>Grocery Hacks</span><span class="sep">·</span><span>No Waste Cooking</span><span class="sep">·</span></div>
-</div><div class="main-content">
+</div>
+
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>Bulk Buying</span><span class="sep">·</span><span>Meal Prep</span><span class="sep">·</span><span>Zero Waste</span><span class="sep">·</span><span>Rice & Beans</span><span class="sep">·</span><span>Batch Cook</span><span class="sep">·</span><span>Frozen Veg</span><span class="sep">·</span><span>Protein Hacks</span><span class="sep">·</span><span>Budget Meals</span><span class="sep">·</span><span>Grocery Hacks</span><span class="sep">·</span>
+    <span>Bulk Buying</span><span class="sep">·</span><span>Meal Prep</span><span class="sep">·</span><span>Zero Waste</span><span class="sep">·</span><span>Rice & Beans</span><span class="sep">·</span><span>Batch Cook</span><span class="sep">·</span><span>Frozen Veg</span><span class="sep">·</span><span>Protein Hacks</span><span class="sep">·</span><span>Budget Meals</span><span class="sep">·</span><span>Grocery Hacks</span><span class="sep">·</span>
+  </div>
+</div>
+
+<div class="main-content">
 
   <div style="margin-bottom:2rem">
-    <p class="section-label">AI-Powered — Updates Every Visit</p>
+    <p class="section-label">AI-Powered &mdash; Updates Every Visit</p>
     <h2 class="section-title">Budget Food Tips</h2>
-    <button class="btn-refresh" onclick="refreshfood()">↻ Refresh Content</button>
+    <button class="btn-refresh" onclick="refreshfood()">&#8635; Refresh Content</button>
     <div id="food-ai"></div>
   </div>
 
-<div style="margin-bottom:3rem">
-  <p class="section-label">Broke Mode Picks</p>
-  <h2 class="section-title" style="margin-bottom:1.5rem">Worth Every Penny</h2>
-  <div class="product-grid">
-    <a class="product-card" href="https://www.amazon.com/s?k=cast+iron+skillet&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$22</div>
-      <div class="product-name">Cast Iron Skillet</div>
-      <div class="product-desc">Lasts forever, cooks everything. Best cost-per-use kitchen item you will ever buy.</div>
-      <div class="product-link">View on Amazon →</div>
-    </a>
-    <a class="product-card" href="https://www.amazon.com/s?k=meal+prep+containers+glass&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$15</div>
-      <div class="product-name">Meal Prep Containers</div>
-      <div class="product-desc">Glass containers from fridge to microwave. Batch cook once, eat all week.</div>
-      <div class="product-link">View on Amazon →</div>
-    </a>
-    <a class="product-card" href="https://www.amazon.com/s?k=budget+chef+knife&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$18</div>
-      <div class="product-name">Budget Chef Knife</div>
-      <div class="product-desc">A sharp knife changes everything. You need sharp, not expensive.</div>
-      <div class="product-link">View on Amazon →</div>
-    </a>
-    <a class="product-card" href="https://www.amazon.com/s?k=spice+rack+set&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$12</div>
-      <div class="product-name">Spice Rack Starter Set</div>
-      <div class="product-desc">Transform cheap ingredients into real meals. Highest ROI grocery purchase you can make.</div>
-      <div class="product-link">View on Amazon →</div>
-    </a>
+  <div style="margin-bottom:3rem">
+    <p class="section-label">Broke Mode Strategy</p>
+    <h2 class="section-title" style="margin-bottom:1.5rem">The $1 Meal Formula</h2>
+    <div class="ai-block">
+      <span class="ai-badge">&#10022; Always True</span>
+      <h3>Master These Five and Your Food Budget Drops by Half</h3>
+      <ul style="margin:1rem 0;padding-left:1.2rem">
+        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Rice and beans = complete protein</strong> — Under $1 per meal. Covers all essential amino acids. Infinite variations with different seasonings and toppings.</li>
+        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Frozen veg beats fresh on a budget</strong> — Picked at peak ripeness, nutritionally equal, and 60 percent cheaper. Fresh for salads, frozen for everything cooked.</li>
+        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Eggs at every meal</strong> — About 15 cents each. The cheapest complete protein on earth. Works for breakfast, lunch, dinner, and snacks.</li>
+        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Batch cook once, eat five days</strong> — Two hours on Sunday makes rice, roasted veg, and a protein. Mix and match all week with near-zero daily effort.</li>
+        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Shop the perimeter last</strong> — Hit bulk and dry goods first. Fill your cart with cheap staples before reaching the expensive packaged center aisles.</li>
+      </ul>
+      <p style="color:var(--lime);margin-top:1.2rem">&#128161; The cheapest meal you will ever eat is the one you made from what was already in your kitchen.</p>
+    </div>
   </div>
-  <p style="font-size:0.75rem;color:#444;font-family:'Barlow Condensed',sans-serif;letter-spacing:0.06em;margin-top:0.8rem">As an Amazon Associate, BML earns from qualifying purchases.</p>
-</div><div style="margin-bottom:3rem">
-  <p class="section-label">Related Guides</p>
-  <h2 class="section-title" style="margin-bottom:1.5rem">Keep Going</h2>
-  <div class="card-grid">
-    <a class="card" href="cheers_mate.html">
-      <div class="card-title">🍻 Cheers Mate</div>
-      <div class="card-body">Budget drinks and cocktails</div>
-      <span class="card-tag">Explore →</span>
-    </a>
-    <a class="card" href="apple_a_day.html">
-      <div class="card-title">🍎 Apple a Day</div>
-      <div class="card-body">Budget health and wellness</div>
-      <span class="card-tag">Explore →</span>
-    </a>
-    <a class="card" href="freestuff.html">
-      <div class="card-title">🎁 Free Stuff</div>
-      <div class="card-body">Freebies and no-cost deals</div>
-      <span class="card-tag">Explore →</span>
-    </a>
-    <a class="card" href="shop.html">
-      <div class="card-title">🛒 Shop</div>
-      <div class="card-body">Budget kitchen gear picks</div>
-      <span class="card-tag">Explore →</span>
-    </a>
+
+  <div style="margin-bottom:3rem">
+    <p class="section-label">The Numbers</p>
+    <h2 class="section-title" style="margin-bottom:1.5rem">What $20 Gets You Per Week</h2>
+    <div class="ai-block">
+      <table style="width:100%;border-collapse:collapse">
+        <thead><tr>
+          <th style="padding:0.6rem 0.8rem;text-align:left;border-bottom:1px solid var(--border);font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--lime)">Item</th>
+          <th style="padding:0.6rem 0.8rem;text-align:left;border-bottom:1px solid var(--border);font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--lime)">Cost</th>
+          <th style="padding:0.6rem 0.8rem;text-align:left;border-bottom:1px solid var(--border);font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--lime)">Servings</th>
+        </tr></thead>
+        <tbody>
+          <tr><td style="padding:0.6rem 0.8rem;border-bottom:1px solid var(--border);font-size:0.88rem;color:#bbb">Brown rice 5 lb</td><td style="padding:0.6rem 0.8rem;border-bottom:1px solid var(--border);font-size:0.88rem;color:#bbb">$4</td><td style="padding:0.6rem 0.8rem;border-bottom:1px solid var(--border);font-size:0.88rem;color:#bbb">10+</td></tr>
+          <tr><td style="padding:0.6rem 0.8rem;border-bottom:1px solid var(--border);font-size:0.88rem;color:#bbb">Dry lentils 2 lb</td><td style="padding:0.6rem 0.8rem;border-bottom:1px solid var(--border);font-size:0.88rem;color:#bbb">$3</td><td style="padding:0.6rem 0.8rem;border-bottom:1px solid var(--border);font-size:0.88rem;color:#bbb">8</td></tr>
+          <tr><td style="padding:0.6rem 0.8rem;border-bottom:1px solid var(--border);font-size:0.88rem;color:#bbb">Eggs dozen</td><td style="padding:0.6rem 0.8rem;border-bottom:1px solid var(--border);font-size:0.88rem;color:#bbb">$3</td><td style="padding:0.6rem 0.8rem;border-bottom:1px solid var(--border);font-size:0.88rem;color:#bbb">12</td></tr>
+          <tr><td style="padding:0.6rem 0.8rem;border-bottom:1px solid var(--border);font-size:0.88rem;color:#bbb">Frozen veg bag</td><td style="padding:0.6rem 0.8rem;border-bottom:1px solid var(--border);font-size:0.88rem;color:#bbb">$2</td><td style="padding:0.6rem 0.8rem;border-bottom:1px solid var(--border);font-size:0.88rem;color:#bbb">6</td></tr>
+          <tr><td style="padding:0.6rem 0.8rem;border-bottom:1px solid var(--border);font-size:0.88rem;color:#bbb">Canned tomatoes x4</td><td style="padding:0.6rem 0.8rem;border-bottom:1px solid var(--border);font-size:0.88rem;color:#bbb">$4</td><td style="padding:0.6rem 0.8rem;border-bottom:1px solid var(--border);font-size:0.88rem;color:#bbb">8</td></tr>
+          <tr><td style="padding:0.6rem 0.8rem;font-size:0.88rem;color:#bbb">Rolled oats 42 oz</td><td style="padding:0.6rem 0.8rem;font-size:0.88rem;color:#bbb">$4</td><td style="padding:0.6rem 0.8rem;font-size:0.88rem;color:#bbb">14 breakfasts</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
+
+  <div style="margin-bottom:3rem">
+    <p class="section-label">No Waste System</p>
+    <h2 class="section-title" style="margin-bottom:1.5rem">Treat Leftovers Like Assets</h2>
+    <div class="ai-block">
+      <span class="ai-badge">&#10022; Always True</span>
+      <h3>Nothing Goes in the Trash If It Can Go in a New Dish</h3>
+      <ul style="margin:1rem 0;padding-left:1.2rem">
+        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Label everything</strong> — Masking tape and a sharpie. Write what it is and the date. Your future self will thank you every single time.</li>
+        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Pre-split into grab-and-go containers</strong> — Divide meals right after cooking so they are ready to grab throughout the week without thinking.</li>
+        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Leftover rice becomes stir fry</strong> — Day-old rice is better for stir fry than fresh. Add egg, frozen veg, and soy sauce. Dinner in 8 minutes.</li>
+        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Soft produce goes in the freezer</strong> — Bananas going brown, wilting spinach, soft berries all go in the freezer before they go in the trash.</li>
+        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">One tray bake per week</strong> — One starch, one protein, three vegetables roasted together. Three meals worth of components done in one session.</li>
+      </ul>
+      <p style="color:var(--lime);margin-top:1.2rem">&#128161; Broke mode is about attention, not deprivation. Pay attention to what you have before buying more.</p>
+    </div>
+  </div>
+
+  <div style="margin-bottom:3rem">
+    <p class="section-label">Broke Mode Picks</p>
+    <h2 class="section-title" style="margin-bottom:1.5rem">Worth Every Penny</h2>
+    <div class="product-grid">
+      <a class="product-card" href="https://www.amazon.com/s?k=cast+iron+skillet&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+        <div class="product-price">~$22</div>
+        <div class="product-name">Cast Iron Skillet</div>
+        <div class="product-desc">Lasts forever, cooks everything. Best cost-per-use kitchen item you will ever buy.</div>
+        <div class="product-link">View on Amazon &rarr;</div>
+      </a>
+      <a class="product-card" href="https://www.amazon.com/s?k=meal+prep+containers+glass&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+        <div class="product-price">~$15</div>
+        <div class="product-name">Meal Prep Containers</div>
+        <div class="product-desc">Glass, fridge to microwave. Batch cook once, eat all week without thinking.</div>
+        <div class="product-link">View on Amazon &rarr;</div>
+      </a>
+      <a class="product-card" href="https://www.amazon.com/s?k=budget+chef+knife&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+        <div class="product-price">~$18</div>
+        <div class="product-name">Budget Chef Knife</div>
+        <div class="product-desc">Sharp beats expensive every time. A sharp $20 knife outperforms a dull $200 one.</div>
+        <div class="product-link">View on Amazon &rarr;</div>
+      </a>
+      <a class="product-card" href="https://www.amazon.com/s?k=spice+rack+set&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+        <div class="product-price">~$12</div>
+        <div class="product-name">Spice Rack Starter Set</div>
+        <div class="product-desc">Highest ROI grocery purchase. Transforms cheap ingredients into real meals instantly.</div>
+        <div class="product-link">View on Amazon &rarr;</div>
+      </a>
+    </div>
+    <p style="font-size:0.75rem;color:#444;font-family:'Barlow Condensed',sans-serif;letter-spacing:0.06em;margin-top:0.8rem">As an Amazon Associate, BML earns from qualifying purchases.</p>
+  </div>
+
 </div>
-</div>
-<section class="email-strip">
-  <h2>Stay in the Loop</h2>
-  <p>Get updates, deals, and broke-mode strategy direct to your inbox.</p>
-  <form class="email-form" onsubmit="handleEmail(event)">
-    <input type="email" placeholder="your@email.com" required>
-    <button type="submit">Subscribe</button>
-  </form>
-  <p class="email-note" id="form-status">No spam. Unsubscribe any time.</p>
-</section><footer>
+
+
+<footer>
   <div><div class="footer-brand">Broke Mode Life</div><div class="footer-tagline">Live Large on a Lean Budget</div></div>
   <div class="footer-links">
     <a href="terms.html">Terms</a><a href="privacy.html">Privacy</a>
     <a href="affiliate.html">Affiliate</a><a href="contact.html">Contact</a><a href="cookie.html">Cookies</a>
   </div>
-  <p class="footer-copy">© Broke Mode Life 2026 — All Rights Reserved</p>
-</footer><script src="main.js"></script>
+  <p class="footer-copy">&copy; Broke Mode Life 2026 &mdash; All Rights Reserved</p>
+</footer>
+
+<script src="main.js"></script>
 <script>
-function refreshfood() {
-  loadAIContent('food-ai', 'Budget Food Tips', '');
-}
+function refreshfood() { loadAIContent('food-ai', 'Budget Food Tips', ''); }
 refreshfood();
 </script>
 </body></html>
