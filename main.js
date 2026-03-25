@@ -264,26 +264,48 @@ async function loadBlogFeed(containerId, maxItems = 9) {
 
   const allItems = [];
 
+  // Use rss2json API — more reliable than proxy services
+  const RSS2JSON = 'https://api.rss2json.com/v1/api.json?rss_url=';
+
   await Promise.allSettled(RSS_FEEDS.map(async feed => {
     try {
-      const proxy = 'https://api.allorigins.win/get?url=' + encodeURIComponent(feed.url);
-      const res   = await fetch(proxy);
-      const json  = await res.json();
-      const parser = new DOMParser();
-      const xml   = parser.parseFromString(json.contents, 'text/xml');
-      const items = [...xml.querySelectorAll('item')].slice(0, 4);
-      items.forEach(item => {
-        const title = item.querySelector('title')?.textContent || '';
-        const link  = item.querySelector('link')?.textContent || '#';
-        const desc  = item.querySelector('description')?.textContent?.replace(/<[^>]+>/g,'').slice(0,120) || '';
-        const date  = item.querySelector('pubDate')?.textContent || '';
-        if (title) allItems.push({ title, link, desc, date, source: feed.name });
-      });
+      const res  = await fetch(RSS2JSON + encodeURIComponent(feed.url) + '&count=4');
+      const json = await res.json();
+      if (json.status === 'ok' && json.items) {
+        json.items.forEach(item => {
+          const title = item.title || '';
+          const link  = item.link || '#';
+          const desc  = (item.description || item.content || '').replace(/<[^>]+>/g,'').slice(0,120);
+          const date  = item.pubDate || '';
+          if (title) allItems.push({ title, link, desc, date, source: feed.name });
+        });
+      }
     } catch(e) { /* skip failed feed */ }
   }));
 
+  // Fallback: try allorigins if rss2json fails
   if (allItems.length === 0) {
-    container.innerHTML = '<p style="color:#666;padding:2rem">Could not load feeds right now. Check back soon.</p>';
+    await Promise.allSettled(RSS_FEEDS.map(async feed => {
+      try {
+        const proxy = 'https://api.allorigins.win/get?url=' + encodeURIComponent(feed.url);
+        const res   = await fetch(proxy);
+        const json  = await res.json();
+        const parser = new DOMParser();
+        const xml   = parser.parseFromString(json.contents, 'text/xml');
+        const items = [...xml.querySelectorAll('item')].slice(0, 4);
+        items.forEach(item => {
+          const title = item.querySelector('title')?.textContent || '';
+          const link  = item.querySelector('link')?.textContent || '#';
+          const desc  = item.querySelector('description')?.textContent?.replace(/<[^>]+>/g,'').slice(0,120) || '';
+          const date  = item.querySelector('pubDate')?.textContent || '';
+          if (title) allItems.push({ title, link, desc, date, source: feed.name });
+        });
+      } catch(e) {}
+    }));
+  }
+
+  if (allItems.length === 0) {
+    container.innerHTML = '<p style="color:#666;padding:2rem;font-family:Barlow Condensed,sans-serif;letter-spacing:0.06em">Feed temporarily unavailable. Check back shortly.</p>';
     return;
   }
 
