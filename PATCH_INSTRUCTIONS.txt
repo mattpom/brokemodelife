@@ -1,33 +1,18 @@
-# BrokeModeLife.com — Patch Instructions
-# Pages that need ONLY the copyright fix (2025 → 2026)
+BrokeModeLife.com — Patch Instructions
+=======================================
 
-These 8 pages are already on the correct new template.
-The ONLY change needed is one line in each file.
+FULLY REBUILT FILES (upload these to GitHub, replacing existing):
+  all_you_can_eat.html
+  budget_beauty.html
+  shop.html
+  freestuff.html
 
-FOR EACH PAGE BELOW:
-1. Go to github.com/mattpom/brokemodelife
-2. Click the filename
-3. Click the pencil (Edit) icon
-4. Press Ctrl+F (or Cmd+F) and search for: 2025
-5. Change: © Broke Mode Life 2025  →  © Broke Mode Life 2026
-6. Click "Commit changes"
+PAGES NEEDING ONLY COPYRIGHT FIX (edit directly on GitHub):
+  apple_a_day.html, go_out_and_play.html, style.html, travel.html,
+  cheers_mate.html, pets.html, blog.html, listen_here.html
 
-FILES TO PATCH (copyright only):
-- apple_a_day.html
-- go_out_and_play.html
-- style.html
-- travel.html
-- cheers_mate.html
-- pets.html
-- blog.html
-- listen_here.html
+  For each: open file on GitHub > click pencil > find "2025" > change to "2026" > commit.
 
-FILES FULLY REBUILT (replace entire file with version from this ZIP):
-- all_you_can_eat.html   ← full rebuild, new template + new content
-- budget_beauty.html     ← full rebuild, new template + new content  
-- shop.html              ← full rebuild, new template + new content
-- freestuff.html         ← full rebuild, new template + new content
-
-KNOWN REMAINING ISSUE (manual fix needed):
-- All email subscription forms still have YOUR_FORM_ID placeholder
-  Fix: go to formspree.io, create form, get your ID, find/replace in each file
+REMAINING MANUAL TASK:
+  All email forms have YOUR_FORM_ID placeholder.
+  Get your ID from formspree.io and replace in each file.
