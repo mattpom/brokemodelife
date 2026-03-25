@@ -1,228 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shop — Broke Mode Life</title>
-<meta name="description" content="Budget-approved gear, gadgets, and home essentials. Broke-mode vetted picks that won't empty your wallet.">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<style>
-.shop-cat-header {
-  display: flex; align-items: center; gap: 1rem;
-  margin: 3rem 0 1.5rem;
-  padding-bottom: 0.8rem;
-  border-bottom: 1px solid var(--border);
-}
-.shop-cat-header h2 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 2rem; letter-spacing: 0.04em; color: var(--white);
-}
-.shop-cat-header span { font-size: 1.6rem; }
-.affiliate-note {
-  font-size: 0.75rem; color: #444;
-  font-family: 'Barlow Condensed', sans-serif;
-  letter-spacing: 0.06em;
-  margin-top: 1rem; margin-bottom: 3rem;
-}
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🛒 Shop — Broke Mode Life</title>
+  <meta name="description" content="Budget home goods, gadgets, and gear that actually works. Smart buying strategy for broke-mode shoppers."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+  <style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #0d0d0d; --surface: #161616; --surface2: #1e1e1e;
+    --border: #2a2a2a; --accent: #f0c040; --accent2: #e87c3e;
+    --text: #f0ede8; --muted: #888; --green: #4ade80;
+    --font-display: 'Space Mono', monospace; --font-body: 'DM Sans', sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 16px; line-height: 1.6; }
+
+  nav { background: #111; border-bottom: 1px solid var(--border); padding: 0 20px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  nav::-webkit-scrollbar { display: none; }
+  .nav-logo { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--accent); text-decoration: none; padding: 16px 20px 16px 0; white-space: nowrap; border-right: 1px solid var(--border); margin-right: 8px; flex-shrink: 0; }
+  nav a { color: #bbb; text-decoration: none; font-size: 13px; font-weight: 500; padding: 16px 10px; white-space: nowrap; transition: color 0.2s; flex-shrink: 0; }
+  nav a:hover, nav a.active { color: var(--accent); }
+  .nav-join { background: var(--accent); color: #000 !important; border-radius: 4px; padding: 6px 14px !important; margin-left: auto; font-weight: 700 !important; flex-shrink: 0; }
+
+  .hero { padding: 60px 20px 40px; max-width: 900px; margin: 0 auto; text-align: center; }
+  .hero-eyebrow { font-family: var(--font-display); font-size: 11px; letter-spacing: 3px; color: var(--accent); text-transform: uppercase; margin-bottom: 16px; }
+  .hero h1 { font-family: var(--font-display); font-size: clamp(28px, 6vw, 52px); font-weight: 700; line-height: 1.15; margin-bottom: 16px; }
+  .hero h1 span { color: var(--accent); }
+  .hero p { font-size: 18px; color: #aaa; max-width: 580px; margin: 0 auto 28px; }
+
+  .marquee-wrap { overflow: hidden; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 10px 0; margin-bottom: 50px; background: var(--surface); }
+  .marquee-track { display: flex; gap: 32px; white-space: nowrap; animation: marquee 30s linear infinite; }
+  .marquee-track span { font-family: var(--font-display); font-size: 11px; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; }
+  .marquee-track span.dot { color: var(--accent); }
+  @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+  .section { max-width: 960px; margin: 0 auto; padding: 0 20px 60px; }
+  .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; border-bottom: 1px solid var(--border); padding-bottom: 14px; }
+  .section-title { font-family: var(--font-display); font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); }
+  .section-sub { font-size: 13px; color: var(--muted); }
+
+  .ai-box { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+  .ai-box-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; background: var(--surface2); border-bottom: 1px solid var(--border); }
+  .ai-badge { font-family: var(--font-display); font-size: 10px; letter-spacing: 2px; color: var(--green); background: rgba(74,222,128,0.1); border: 1px solid rgba(74,222,128,0.25); padding: 3px 8px; border-radius: 4px; }
+  .refresh-btn { background: none; border: 1px solid var(--border); color: var(--muted); font-size: 12px; font-family: var(--font-display); padding: 5px 12px; border-radius: 4px; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 6px; }
+  .refresh-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .refresh-icon { display: inline-block; transition: transform 0.4s; }
+  .refresh-btn.spinning .refresh-icon { transform: rotate(360deg); }
+  .ai-content { padding: 20px 18px; min-height: 160px; }
+  .tip-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  .tip-item { display: flex; gap: 12px; align-items: flex-start; animation: fadeUp 0.4s ease both; }
+  .tip-item:nth-child(2) { animation-delay: 0.08s; } .tip-item:nth-child(3) { animation-delay: 0.16s; } .tip-item:nth-child(4) { animation-delay: 0.24s; } .tip-item:nth-child(5) { animation-delay: 0.32s; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  .tip-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .tip-text { font-size: 15px; color: var(--text); line-height: 1.5; }
+  .tip-text strong { color: var(--accent); font-weight: 600; }
+
+  .gear-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 14px; }
+  .gear-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px 18px; display: flex; flex-direction: column; gap: 8px; text-decoration: none; color: var(--text); transition: border-color 0.2s, transform 0.2s; }
+  .gear-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .gear-price { font-family: var(--font-display); font-size: 11px; color: var(--accent); letter-spacing: 1px; }
+  .gear-name { font-weight: 700; font-size: 15px; }
+  .gear-desc { font-size: 13px; color: var(--muted); flex: 1; }
+  .gear-cta { font-size: 12px; font-family: var(--font-display); color: var(--accent); letter-spacing: 1px; margin-top: 4px; }
+  .affiliate-note { font-size: 11px; color: var(--muted); margin-top: 14px; font-style: italic; }
+
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
+  .related-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; text-decoration: none; color: var(--text); transition: border-color 0.2s; display: block; }
+  .related-card:hover { border-color: var(--accent); }
+  .related-icon { font-size: 24px; margin-bottom: 10px; display: block; }
+  .related-name { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+  .related-sub { font-size: 13px; color: var(--muted); }
+  .related-arrow { font-size: 12px; color: var(--accent); margin-top: 10px; display: block; }
+
+  .content-section { max-width: 960px; margin: 0 auto; padding: 0 20px 50px; }
+  .content-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 28px; margin-bottom: 20px; }
+  .content-card h2 { font-family: var(--font-display); font-size: 16px; color: var(--accent); margin-bottom: 14px; }
+  .content-card h3 { font-size: 15px; font-weight: 700; color: var(--text); margin: 18px 0 8px; }
+  .content-card p { font-size: 15px; color: #bbb; line-height: 1.7; margin-bottom: 12px; }
+  .content-card ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .content-card ul li { font-size: 14px; color: #bbb; padding-left: 20px; position: relative; }
+  .content-card ul li::before { content: "→"; position: absolute; left: 0; color: var(--accent); }
+  .content-card strong { color: var(--text); }
+  table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 14px; }
+  th { background: var(--surface2); color: var(--accent); font-family: var(--font-display); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+  td { padding: 10px 12px; border-bottom: 1px solid var(--border); color: #bbb; }
+  tr:last-child td { border-bottom: none; }
+
+  .email-section { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 36px 24px; text-align: center; max-width: 960px; margin: 0 auto 60px; }
+  .email-section h3 { font-family: var(--font-display); font-size: 18px; margin-bottom: 8px; }
+  .email-section p { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
+  .email-form { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .email-input { background: var(--bg); border: 1px solid var(--border); color: var(--text); padding: 10px 16px; border-radius: 6px; font-size: 14px; width: 260px; font-family: var(--font-body); outline: none; transition: border-color 0.2s; }
+  .email-input:focus { border-color: var(--accent); }
+  .email-btn { background: var(--accent); color: #000; border: none; padding: 10px 22px; border-radius: 6px; font-family: var(--font-display); font-size: 12px; font-weight: 700; letter-spacing: 1px; cursor: pointer; transition: opacity 0.2s; }
+  .email-btn:hover { opacity: 0.85; }
+  .email-fine { font-size: 11px; color: var(--muted); margin-top: 10px; }
+
+  footer { border-top: 1px solid var(--border); padding: 28px 20px; text-align: center; }
+  .footer-brand { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--accent); margin-bottom: 4px; }
+  .footer-tagline { font-size: 12px; color: var(--muted); margin-bottom: 16px; }
+  .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
+  .footer-links a { font-size: 12px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--accent); }
+  .footer-copy { font-size: 11px; color: #555; }
+
+  .loading-dots { display: flex; gap: 6px; padding: 20px 0; justify-content: center; }
+  .loading-dots span { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; animation: bounce 1.2s ease infinite; opacity: 0.4; }
+  .loading-dots span:nth-child(2) { animation-delay: 0.2s; } .loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes bounce { 0%, 100% { transform: translateY(0); opacity: 0.4; } 50% { transform: translateY(-6px); opacity: 1; } }
 </style>
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-486684955"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-486684955');
-  </script>
 </head>
 <body>
-
 <nav>
-  <a class="nav-logo" href="index.html">BML</a>
-  <ul class="nav-links">
-    <li><a href="all_you_can_eat.html">Food</a></li>
-    <li><a href="apple_a_day.html">Health</a></li>
-    <li><a href="go_out_and_play.html">Fun</a></li>
-    <li><a href="style.html">Style</a></li>
-    <li><a href="travel.html">Travel</a></li>
-    <li><a href="freestuff.html">Free Stuff</a></li>
-    <li><a href="shop.html" class="active">Shop</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="index.html#email-section" class="nav-cta">Join Free</a></li>
-  </ul>
-  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  <a href="https://brokemodelife.com/index.html" class="nav-logo">BML</a>
+  <a href="https://brokemodelife.com/all_you_can_eat.html">Food</a>
+  <a href="https://brokemodelife.com/apple_a_day.html">Health</a>
+  <a href="https://brokemodelife.com/go_out_and_play.html">Fun</a>
+  <a href="https://brokemodelife.com/style.html">Style</a>
+  <a href="https://brokemodelife.com/listen_here.html">Music</a>
+  <a href="https://brokemodelife.com/cheers_mate.html">Drinks</a>
+  <a href="https://brokemodelife.com/travel.html">Travel</a>
+  <a href="https://brokemodelife.com/pets.html">Pets</a>
+  <a href="https://brokemodelife.com/freestuff.html">Free Stuff</a>
+  <a href="https://brokemodelife.com/shop.html">Shop</a>
+  <a href="https://brokemodelife.com/blog.html">Blog</a>
+  <a href="https://brokemodelife.com/index.html#email-section" class="nav-join">Join Free</a>
 </nav>
-
-<div class="page-hero fade-up">
-  <p class="eyebrow">Broke-Mode Vetted Picks</p>
-  <h1>📦 Shop</h1>
-  <p>Everything here passed the Broke Mode test: Does it work? Is it worth it? Would we buy it ourselves? If yes — it's here.</p>
+<div class="hero">
+  <p class="hero-eyebrow">Home Goods + Gadgets</p>
+  <h1>🛒 Shop <span>Smart</span></h1>
+  <p>You don't need to spend $500 to get a decent setup. Just broke-mode strategy and gear that actually works.</p>
 </div>
-
-<div class="marquee-wrap">
-  <div class="marquee-track">
-    <span>Tech</span><span class="sep">·</span><span>Home</span><span class="sep">·</span><span>Kitchen</span><span class="sep">·</span><span>Fitness</span><span class="sep">·</span><span>Travel</span><span class="sep">·</span><span>Style</span><span class="sep">·</span><span>Entertainment</span><span class="sep">·</span>
-    <span>Tech</span><span class="sep">·</span><span>Home</span><span class="sep">·</span><span>Kitchen</span><span class="sep">·</span><span>Fitness</span><span class="sep">·</span><span>Travel</span><span class="sep">·</span><span>Style</span><span class="sep">·</span><span>Entertainment</span><span class="sep">·</span>
+<div class="marquee-wrap"><div class="marquee-track"><span>Open Box Deals</span><span class="dot">&#9670;</span><span>Amazon Warehouse</span><span class="dot">&#9670;</span><span>Price Alerts</span><span class="dot">&#9670;</span><span>CamelCamelCamel</span><span class="dot">&#9670;</span><span>Read Reviews</span><span class="dot">&#9670;</span><span>Return Policy</span><span class="dot">&#9670;</span><span>Function Over Flash</span><span class="dot">&#9670;</span><span>Buy Less Better</span><span class="dot">&#9670;</span><span>Smart Gadgets</span><span class="dot">&#9670;</span><span>Budget Home</span><span class="dot">&#9670;</span><span>Open Box Deals</span><span class="dot">&#9670;</span><span>Amazon Warehouse</span><span class="dot">&#9670;</span><span>Price Alerts</span><span class="dot">&#9670;</span><span>CamelCamelCamel</span><span class="dot">&#9670;</span><span>Read Reviews</span><span class="dot">&#9670;</span><span>Return Policy</span><span class="dot">&#9670;</span><span>Function Over Flash</span><span class="dot">&#9670;</span><span>Buy Less Better</span><span class="dot">&#9670;</span><span>Smart Gadgets</span><span class="dot">&#9670;</span><span>Budget Home</span><span class="dot">&#9670;</span></div></div>
+<section class="section">
+  <div class="section-header"><span class="section-title">Shopping Strategy Tips</span><span class="section-sub">AI-Powered &mdash; Updates Every Visit</span></div>
+  <div class="ai-box">
+  <div class="ai-box-header">
+    <span class="ai-badge">&#9679; LIVE</span>
+    <button class="refresh-btn" id="refreshBtn" onclick="loadTips('smart budget shopping and finding deals on Amazon and home goods', [{"icon": "🔍", "tip": "<strong>Read 1-star reviews first:</strong> That"s where the truth lives. If they all say "broke in 2 weeks," believe them."}, {"icon": "📦", "tip": "<strong>Amazon Warehouse saves 20-40%:</strong> Open-box items that are functionally new. Always check the condition notes before buying."}, {"icon": "⏰", "tip": "<strong>Set price alerts on CamelCamelCamel:</strong> Track Amazon price history and get notified when items hit their lowest price."}, {"icon": "🔁", "tip": "<strong>Return policy is part of the deal:</strong> Only buy from sellers with easy returns. If it breaks, send it back — protect every dollar."}, {"icon": "💡", "tip": "<strong>Function over flash every time:</strong> Ask: does this solve a real problem? A $4 thermos outperforms a $70 smart mug for 99% of uses."}])">
+      <span class="refresh-icon">&#8635;</span> Refresh Tips
+    </button>
+  </div>
+  <div class="ai-content" id="tipsContainer">
+    <div class="loading-dots"><span></span><span></span><span></span></div>
   </div>
 </div>
-
-<div class="main-content">
-
-  <!-- AI Shopping Tip -->
-  <div style="margin-bottom:2rem">
-    <p class="section-label">AI-Powered — Updates Every Visit</p>
-    <h2 class="section-title">Smart Shopping This Week</h2>
-    <button class="btn-refresh" onclick="refreshShop()">↻ Refresh Tips</button>
-    <div id="shop-ai"></div>
-  </div>
-
-  <!-- TECH -->
-  <div class="shop-cat-header"><span>📱</span><h2>Tech Under $30</h2></div>
-  <div class="product-grid">
-    <a class="product-card" href="https://www.amazon.com/s?k=bluetooth+earbuds&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$22</div>
-      <div class="product-name">Bluetooth Earbuds</div>
-      <div class="product-desc">Great sound, surprisingly durable. The broke-mode audio essential that punches way above its price.</div>
-      <div class="product-link">View on Amazon →</div>
-    </a>
-    <a class="product-card" href="https://www.amazon.com/s?k=budget+home+essentials&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$28</div>
-      <div class="product-name">LED Strip Lights</div>
-      <div class="product-desc">Transform any room for under $15. The easiest glow-up your apartment will ever have.</div>
-      <div class="product-link">View on Amazon →</div>
-    </a>
-    <a class="product-card" href="https://www.amazon.com/s?k=bluetooth+earbuds&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$24</div>
-      <div class="product-name">Compact Power Bank</div>
-      <div class="product-desc">Charge your phone twice over. Fits in your pocket. Never panic-charge again.</div>
-      <div class="product-link">View on Amazon →</div>
-    </a>
-    <a class="product-card" href="https://www.amazon.com/s?k=budget+home+essentials&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$18</div>
-      <div class="product-name">Phone Tripod Stand</div>
-      <div class="product-desc">Perfect for content, Zoom calls, or just hands-free anything. Under $20 and genuinely useful.</div>
-      <div class="product-link">View on Amazon →</div>
-    </a>
-  </div>
-
-  <!-- HOME -->
-  <div class="shop-cat-header"><span>🏠</span><h2>Home Essentials</h2></div>
-  <div class="product-grid">
-    <a class="product-card" href="https://www.amazon.com/s?k=bluetooth+earbuds&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$25</div>
-      <div class="product-name">Cast Iron Skillet</div>
-      <div class="product-desc">Lasts forever. Cooks everything. Costs $25. The single best kitchen investment you'll make broke.</div>
-      <div class="product-link">View on Amazon →</div>
-    </a>
-    <a class="product-card" href="https://www.amazon.com/s?k=budget+home+essentials&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$18</div>
-      <div class="product-name">Compact Tool Kit</div>
-      <div class="product-desc">Fixes 90% of everything that breaks. Every apartment needs one. Zero excuses.</div>
-      <div class="product-link">View on Amazon →</div>
-    </a>
-    <a class="product-card" href="https://www.amazon.com/s?k=bluetooth+earbuds&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$29</div>
-      <div class="product-name">Blackout Curtains</div>
-      <div class="product-desc">Better sleep AND lower energy bills. That's a broke-mode double win.</div>
-      <div class="product-link">View on Amazon →</div>
-    </a>
-    <a class="product-card" href="https://www.amazon.com/s?k=budget+home+essentials&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$16</div>
-      <div class="product-name">Fabric Storage Bins (6-pack)</div>
-      <div class="product-desc">Instant declutter. Makes any space look intentional. Under $20 for all six.</div>
-      <div class="product-link">View on Amazon →</div>
-    </a>
-  </div>
-
-  <!-- DRINKS -->
-  <div class="shop-cat-header"><span>🥃</span><h2>Bar Cart Basics</h2></div>
-  <div class="product-grid">
-    <a class="product-card" href="https://www.amazon.com/s?k=bluetooth+earbuds&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$32</div>
-      <div class="product-name">Turntable (Budget Pick)</div>
-      <div class="product-desc">Set the vibe. A turntable makes any gathering feel intentional and elevated. Under $35.</div>
-      <div class="product-link">View on Amazon →</div>
-    </a>
-    <a class="product-card" href="https://www.amazon.com/s?k=budget+home+essentials&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$24</div>
-      <div class="product-name">Bourbon Glass Wood Set</div>
-      <div class="product-desc">Drink well even when you bought the cheap bourbon. Presentation is everything.</div>
-      <div class="product-link">View on Amazon →</div>
-    </a>
-    <a class="product-card" href="https://www.amazon.com/s?k=bluetooth+earbuds&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$19</div>
-      <div class="product-name">Cocktail Shaker Set</div>
-      <div class="product-desc">Make bar-quality drinks at home. Pays for itself the first time you skip the bar tab.</div>
-      <div class="product-link">View on Amazon →</div>
-    </a>
-    <a class="product-card" href="https://www.amazon.com/s?k=budget+home+essentials&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$26</div>
-      <div class="product-name">Portable Bluetooth Speaker</div>
-      <div class="product-desc">Loud enough to fill a room. Cheap enough not to stress if it gets bumped at a party.</div>
-      <div class="product-link">View on Amazon →</div>
-    </a>
-  </div>
-
-  <!-- FITNESS -->
-  <div class="shop-cat-header"><span>💪</span><h2>Budget Fitness</h2></div>
-  <div class="product-grid">
-    <a class="product-card" href="https://www.amazon.com/s?k=bluetooth+earbuds&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$28</div>
-      <div class="product-name">Resistance Bands Set</div>
-      <div class="product-desc">Full gym in a bag. Cancel the membership. These 5 bands replace a rack of weights.</div>
-      <div class="product-link">View on Amazon →</div>
-    </a>
-    <a class="product-card" href="https://www.amazon.com/s?k=budget+home+essentials&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$22</div>
-      <div class="product-name">Jump Rope (Speed)</div>
-      <div class="product-desc">Best cardio per dollar on the market. 15 minutes beats most gym sessions.</div>
-      <div class="product-link">View on Amazon →</div>
-    </a>
-    <a class="product-card" href="https://www.amazon.com/s?k=bluetooth+earbuds&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$35</div>
-      <div class="product-name">Foam Roller</div>
-      <div class="product-desc">Recovery tool that actually works. Skip the $80 massage. Roll it out instead.</div>
-      <div class="product-link">View on Amazon →</div>
-    </a>
-    <a class="product-card" href="https://www.amazon.com/s?k=budget+home+essentials&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$18</div>
-      <div class="product-name">Yoga Mat (Non-slip)</div>
-      <div class="product-desc">Workout at home. No gym floor, no fee. Works for yoga, HIIT, stretching, all of it.</div>
-      <div class="product-link">View on Amazon →</div>
-    </a>
-  </div>
-
-  <p class="affiliate-note">* As an Amazon Associate, Broke Mode Life earns from qualifying purchases. Prices are approximate and may vary.</p>
-
-</div>
-
-<section class="email-strip">
-  <h2>Stay in the Loop</h2>
-  <p>New picks, deals, and broke-mode finds — straight to your inbox.</p>
-  <form class="email-form" onsubmit="handleEmail(event)">
-    <input type="email" placeholder="your@email.com" required>
-    <button type="submit">Subscribe</button>
-  </form>
-  <p class="email-note" id="form-status">No spam. Unsubscribe any time.</p>
 </section>
-
-<footer>
-  <div><div class="footer-brand">Broke Mode Life</div><div class="footer-tagline">Live Large on a Lean Budget</div></div>
-  <div class="footer-links">
-    <a href="terms.html">Terms</a><a href="privacy.html">Privacy</a>
-    <a href="affiliate.html">Affiliate</a><a href="contact.html">Contact</a><a href="cookie.html">Cookies</a>
+<section class="content-section">
+  <div class="content-card">
+    <h2>🧠 Think Function, Not Flash</h2>
+    <p>Looks are cheap. Utility pays rent. Do you need a $70 smart mug or will a $4 thermos do the job? Ask that question before you click Buy. The best purchases are invisible — you just use them every day and they work.</p>
+    <table><tr><th>Item</th><th>Why It Wins</th><th>Budget</th></tr>
+    <tr><td>Bluetooth Earbuds</td><td>Good sound, daily use, easily replaced</td><td>$20-30</td></tr>
+    <tr><td>LED Strip Lights</td><td>Transform a space, uses almost no power</td><td>Under $15</td></tr>
+    <tr><td>Power Bank</td><td>Charges phone 2x, travel essential</td><td>Under $25</td></tr>
+    <tr><td>Cast Iron Skillet</td><td>Lasts forever, cooks everything</td><td>Under $25</td></tr>
+    <tr><td>Compact Tool Kit</td><td>Fixes 90% of home problems</td><td>~$18</td></tr>
+    <tr><td>Blackout Curtains</td><td>Better sleep, lower energy bill</td><td>~$30</td></tr></table>
   </div>
-  <p class="footer-copy">© Broke Mode Life 2025 — All Rights Reserved</p>
+  <div class="content-card">
+    <h2>⚡ Broke Mode Shopping Rules</h2>
+    <ul>
+      <li><strong>Read 1-star reviews first</strong> — truth lives there, not in the 5-stars</li>
+      <li><strong>Check Amazon Warehouse</strong> — open-box at 20-40% off, often functionally new</li>
+      <li><strong>Use CamelCamelCamel</strong> — tracks Amazon price history, alerts you when prices drop</li>
+      <li><strong>Buy open box at Best Buy</strong> — same product, lower price, real return window</li>
+      <li><strong>Never buy cables at retail</strong> — Amazon basics cables work identically for 80% less</li>
+      <li><strong>Upgrade with texture, not furniture</strong> — throw pillows, lighting, and wall hooks flip a space for under $10</li>
+    </ul>
+  </div>
+</section>
+<section class="section">
+  <div class="section-header"><span class="section-title">Broke Mode Picks</span><span class="section-sub">Worth Every Penny</span></div>
+  <div class="gear-grid">
+    <a href="https://www.amazon.com/s?k=led+strip+lights&tag=brokemodelife-20" target="_blank" rel="noopener noreferrer" class="gear-card">
+  <div class="gear-price">~$25</div>
+  <div class="gear-name">💡 LED Strip Lights</div>
+  <div class="gear-desc">Transform any room for under $20. Adhesive, remote-controlled, and low power.</div>
+  <div class="gear-cta">View on Amazon &rarr;</div>
+</a>
+    <a href="https://www.amazon.com/s?k=compact+home+tool+kit&tag=brokemodelife-20" target="_blank" rel="noopener noreferrer" class="gear-card">
+  <div class="gear-price">~$18</div>
+  <div class="gear-name">🧰 Compact Tool Kit</div>
+  <div class="gear-desc">Fixes 90% of home problems. Every renter and homeowner needs one.</div>
+  <div class="gear-cta">View on Amazon &rarr;</div>
+</a>
+    <a href="https://www.amazon.com/s?k=compact+power+bank&tag=brokemodelife-20" target="_blank" rel="noopener noreferrer" class="gear-card">
+  <div class="gear-price">~$22</div>
+  <div class="gear-name">🔋 Compact Power Bank</div>
+  <div class="gear-desc">Two full phone charges in your pocket. Travel, work, anywhere.</div>
+  <div class="gear-cta">View on Amazon &rarr;</div>
+</a>
+    <a href="https://www.amazon.com/s?k=blackout+curtains&tag=brokemodelife-20" target="_blank" rel="noopener noreferrer" class="gear-card">
+  <div class="gear-price">~$28</div>
+  <div class="gear-name">🪟 Blackout Curtains</div>
+  <div class="gear-desc">Better sleep and lower energy bills. One of the best ROI home purchases.</div>
+  <div class="gear-cta">View on Amazon &rarr;</div>
+</a>
+    <a href="https://www.amazon.com/s?k=magnetic+phone+mount&tag=brokemodelife-20" target="_blank" rel="noopener noreferrer" class="gear-card">
+  <div class="gear-price">~$12</div>
+  <div class="gear-name">🧲 Magnetic Phone Mount</div>
+  <div class="gear-desc">Car, desk, or wall. Once you use one you'll put them everywhere.</div>
+  <div class="gear-cta">View on Amazon &rarr;</div>
+</a>
+    <a href="https://www.amazon.com/s?k=drawer+organizer+set&tag=brokemodelife-20" target="_blank" rel="noopener noreferrer" class="gear-card">
+  <div class="gear-price">~$15</div>
+  <div class="gear-name">🗃️ Drawer Organizers</div>
+  <div class="gear-desc">Feel like a functioning adult for $15. Transforms any junk drawer instantly.</div>
+  <div class="gear-cta">View on Amazon &rarr;</div>
+</a>
+  </div>
+  <p class="affiliate-note">As an Amazon Associate, BML earns from qualifying purchases.</p>
+</section>
+<section class="section">
+  <div class="section-header"><span class="section-title">Keep Exploring</span><span class="section-sub"></span></div>
+  <div class="related-grid">
+    <a href="https://brokemodelife.com/freestuff.html" class="related-card">
+  <span class="related-icon">🎁</span>
+  <div class="related-name">Free Stuff</div>
+  <div class="related-sub">Freebies and no-cost deals</div>
+  <span class="related-arrow">Explore &rarr;</span>
+</a>
+    <a href="https://brokemodelife.com/budget_beauty.html" class="related-card">
+  <span class="related-icon">💅</span>
+  <div class="related-name">Budget Beauty</div>
+  <div class="related-sub">Beauty tools and skincare picks</div>
+  <span class="related-arrow">Explore &rarr;</span>
+</a>
+    <a href="https://brokemodelife.com/listen_here.html" class="related-card">
+  <span class="related-icon">🎧</span>
+  <div class="related-name">Listen Here</div>
+  <div class="related-sub">Budget audio gear</div>
+  <span class="related-arrow">Explore &rarr;</span>
+</a>
+    <a href="https://brokemodelife.com/travel.html" class="related-card">
+  <span class="related-icon">✈️</span>
+  <div class="related-name">Travel</div>
+  <div class="related-sub">Budget travel gear essentials</div>
+  <span class="related-arrow">Explore &rarr;</span>
+</a>
+  </div>
+</section>
+<div class="email-section" id="email-section">
+  <h3>Stay in the Loop</h3>
+  <p>Get updates, deals, and broke-mode strategy direct to your inbox.</p>
+  <form class="email-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <input class="email-input" type="email" name="email" placeholder="your@email.com" required/>
+    <button class="email-btn" type="submit">SUBSCRIBE</button>
+  </form>
+  <p class="email-fine">No spam. Unsubscribe any time.</p>
+</div>
+<footer>
+  <div class="footer-brand">Broke Mode Life</div>
+  <div class="footer-tagline">Live Large on a Lean Budget</div>
+  <div class="footer-links">
+    <a href="https://brokemodelife.com/terms.html">Terms</a>
+    <a href="https://brokemodelife.com/privacy.html">Privacy</a>
+    <a href="https://brokemodelife.com/affiliate.html">Affiliate</a>
+    <a href="https://brokemodelife.com/contact.html">Contact</a>
+    <a href="https://brokemodelife.com/cookie.html">Cookies</a>
+  </div>
+  <div class="footer-copy">&copy; Broke Mode Life 2026 &mdash; All Rights Reserved</div>
 </footer>
-
-<script src="main.js"></script>
 <script>
-const shopPrompt = `You are a budget shopping expert for BrokeModeLife.com. Generate 5 smart shopping strategies for this week. Return ONLY valid JSON:
-{"title":"This Week's Smart Shopping Moves","intro":"Five ways to buy smarter and spend less right now.","items":[{"title":"strategy","desc":"one action sentence"},{"title":"strategy","desc":"one action sentence"},{"title":"strategy","desc":"one action sentence"},{"title":"strategy","desc":"one action sentence"},{"title":"strategy","desc":"one action sentence"}],"tip":"Bold insight about broke-mode shopping strategy."}`;
-function refreshShop() {
-  loadAIContent('shop-ai', 'Smart Shopping Strategies', shopPrompt);
+async function loadTips(topic, fallback) {
+  const btn = document.getElementById('refreshBtn');
+  const container = document.getElementById('tipsContainer');
+  if (btn) btn.classList.add('spinning');
+  container.innerHTML = '<div class="loading-dots"><span></span><span></span><span></span></div>';
+  try {
+    const resp = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        model: "claude-sonnet-4-20250514", max_tokens: 1000,
+        messages: [{ role: "user", content: `You are writing for BrokeModeLife.com — for people living smart on a tight budget. Give exactly 5 actionable, specific, interesting tips about: ${topic}. Format as JSON array only, no other text: [{"icon":"🔥","tip":"<strong>Title:</strong> One sentence."},...] Rules: specific and useful, bolded title before colon, 1-2 sentences max, direct confident tone.` }]
+      })
+    });
+    const data = await resp.json();
+    const raw = data.content[0].text.replace(/\`\`\`json|\`\`\`/g,'').trim();
+    const tips = JSON.parse(raw);
+    container.innerHTML = '<ul class="tip-list">' + tips.map(t => '<li class="tip-item"><span class="tip-icon">'+t.icon+'</span><span class="tip-text">'+t.tip+'</span></li>').join('') + '</ul>';
+  } catch(e) {
+    container.innerHTML = '<ul class="tip-list">' + fallback.map(t => '<li class="tip-item"><span class="tip-icon">'+t.icon+'</span><span class="tip-text">'+t.tip+'</span></li>').join('') + '</ul>';
+  }
+  if (btn) btn.classList.remove('spinning');
 }
-refreshShop();
 </script>
-</body>
-</html>
+<script>window.addEventListener('load', function(){ loadTips('smart budget shopping and finding deals on Amazon and home goods', [{'icon': '🔍', 'tip': "<strong>Read 1-star reviews first:</strong> That's where the truth lives. If they all say 'broke in 2 weeks,' believe them."}, {'icon': '📦', 'tip': '<strong>Amazon Warehouse saves 20-40%:</strong> Open-box items that are functionally new. Always check the condition notes before buying.'}, {'icon': '⏰', 'tip': '<strong>Set price alerts on CamelCamelCamel:</strong> Track Amazon price history and get notified when items hit their lowest price.'}, {'icon': '🔁', 'tip': '<strong>Return policy is part of the deal:</strong> Only buy from sellers with easy returns. If it breaks, send it back — protect every dollar.'}, {'icon': '💡', 'tip': '<strong>Function over flash every time:</strong> Ask: does this solve a real problem? A $4 thermos outperforms a $70 smart mug for 99% of uses.'}]); });</script>
+</body></html>

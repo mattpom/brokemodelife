@@ -1,148 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free Stuff — Broke Mode Life</title>
-<meta name="description" content="There's no shame in the free game. Samples, birthday freebies, loyalty rewards, and everything in between.">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-486684955"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-486684955');
-  </script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🎁 Free Stuff — Broke Mode Life</title>
+  <meta name="description" content="Real freebies, birthday rewards, free samples, and no-cost deals that actually work. No surveys, no gimmicks."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+  <style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #0d0d0d; --surface: #161616; --surface2: #1e1e1e;
+    --border: #2a2a2a; --accent: #f0c040; --accent2: #e87c3e;
+    --text: #f0ede8; --muted: #888; --green: #4ade80;
+    --font-display: 'Space Mono', monospace; --font-body: 'DM Sans', sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 16px; line-height: 1.6; }
+
+  nav { background: #111; border-bottom: 1px solid var(--border); padding: 0 20px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  nav::-webkit-scrollbar { display: none; }
+  .nav-logo { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--accent); text-decoration: none; padding: 16px 20px 16px 0; white-space: nowrap; border-right: 1px solid var(--border); margin-right: 8px; flex-shrink: 0; }
+  nav a { color: #bbb; text-decoration: none; font-size: 13px; font-weight: 500; padding: 16px 10px; white-space: nowrap; transition: color 0.2s; flex-shrink: 0; }
+  nav a:hover, nav a.active { color: var(--accent); }
+  .nav-join { background: var(--accent); color: #000 !important; border-radius: 4px; padding: 6px 14px !important; margin-left: auto; font-weight: 700 !important; flex-shrink: 0; }
+
+  .hero { padding: 60px 20px 40px; max-width: 900px; margin: 0 auto; text-align: center; }
+  .hero-eyebrow { font-family: var(--font-display); font-size: 11px; letter-spacing: 3px; color: var(--accent); text-transform: uppercase; margin-bottom: 16px; }
+  .hero h1 { font-family: var(--font-display); font-size: clamp(28px, 6vw, 52px); font-weight: 700; line-height: 1.15; margin-bottom: 16px; }
+  .hero h1 span { color: var(--accent); }
+  .hero p { font-size: 18px; color: #aaa; max-width: 580px; margin: 0 auto 28px; }
+
+  .marquee-wrap { overflow: hidden; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 10px 0; margin-bottom: 50px; background: var(--surface); }
+  .marquee-track { display: flex; gap: 32px; white-space: nowrap; animation: marquee 30s linear infinite; }
+  .marquee-track span { font-family: var(--font-display); font-size: 11px; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; }
+  .marquee-track span.dot { color: var(--accent); }
+  @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+  .section { max-width: 960px; margin: 0 auto; padding: 0 20px 60px; }
+  .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; border-bottom: 1px solid var(--border); padding-bottom: 14px; }
+  .section-title { font-family: var(--font-display); font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); }
+  .section-sub { font-size: 13px; color: var(--muted); }
+
+  .ai-box { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+  .ai-box-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; background: var(--surface2); border-bottom: 1px solid var(--border); }
+  .ai-badge { font-family: var(--font-display); font-size: 10px; letter-spacing: 2px; color: var(--green); background: rgba(74,222,128,0.1); border: 1px solid rgba(74,222,128,0.25); padding: 3px 8px; border-radius: 4px; }
+  .refresh-btn { background: none; border: 1px solid var(--border); color: var(--muted); font-size: 12px; font-family: var(--font-display); padding: 5px 12px; border-radius: 4px; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 6px; }
+  .refresh-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .refresh-icon { display: inline-block; transition: transform 0.4s; }
+  .refresh-btn.spinning .refresh-icon { transform: rotate(360deg); }
+  .ai-content { padding: 20px 18px; min-height: 160px; }
+  .tip-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  .tip-item { display: flex; gap: 12px; align-items: flex-start; animation: fadeUp 0.4s ease both; }
+  .tip-item:nth-child(2) { animation-delay: 0.08s; } .tip-item:nth-child(3) { animation-delay: 0.16s; } .tip-item:nth-child(4) { animation-delay: 0.24s; } .tip-item:nth-child(5) { animation-delay: 0.32s; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  .tip-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .tip-text { font-size: 15px; color: var(--text); line-height: 1.5; }
+  .tip-text strong { color: var(--accent); font-weight: 600; }
+
+  .gear-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 14px; }
+  .gear-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px 18px; display: flex; flex-direction: column; gap: 8px; text-decoration: none; color: var(--text); transition: border-color 0.2s, transform 0.2s; }
+  .gear-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .gear-price { font-family: var(--font-display); font-size: 11px; color: var(--accent); letter-spacing: 1px; }
+  .gear-name { font-weight: 700; font-size: 15px; }
+  .gear-desc { font-size: 13px; color: var(--muted); flex: 1; }
+  .gear-cta { font-size: 12px; font-family: var(--font-display); color: var(--accent); letter-spacing: 1px; margin-top: 4px; }
+  .affiliate-note { font-size: 11px; color: var(--muted); margin-top: 14px; font-style: italic; }
+
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
+  .related-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; text-decoration: none; color: var(--text); transition: border-color 0.2s; display: block; }
+  .related-card:hover { border-color: var(--accent); }
+  .related-icon { font-size: 24px; margin-bottom: 10px; display: block; }
+  .related-name { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+  .related-sub { font-size: 13px; color: var(--muted); }
+  .related-arrow { font-size: 12px; color: var(--accent); margin-top: 10px; display: block; }
+
+  .content-section { max-width: 960px; margin: 0 auto; padding: 0 20px 50px; }
+  .content-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 28px; margin-bottom: 20px; }
+  .content-card h2 { font-family: var(--font-display); font-size: 16px; color: var(--accent); margin-bottom: 14px; }
+  .content-card h3 { font-size: 15px; font-weight: 700; color: var(--text); margin: 18px 0 8px; }
+  .content-card p { font-size: 15px; color: #bbb; line-height: 1.7; margin-bottom: 12px; }
+  .content-card ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .content-card ul li { font-size: 14px; color: #bbb; padding-left: 20px; position: relative; }
+  .content-card ul li::before { content: "→"; position: absolute; left: 0; color: var(--accent); }
+  .content-card strong { color: var(--text); }
+  table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 14px; }
+  th { background: var(--surface2); color: var(--accent); font-family: var(--font-display); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+  td { padding: 10px 12px; border-bottom: 1px solid var(--border); color: #bbb; }
+  tr:last-child td { border-bottom: none; }
+
+  .email-section { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 36px 24px; text-align: center; max-width: 960px; margin: 0 auto 60px; }
+  .email-section h3 { font-family: var(--font-display); font-size: 18px; margin-bottom: 8px; }
+  .email-section p { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
+  .email-form { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .email-input { background: var(--bg); border: 1px solid var(--border); color: var(--text); padding: 10px 16px; border-radius: 6px; font-size: 14px; width: 260px; font-family: var(--font-body); outline: none; transition: border-color 0.2s; }
+  .email-input:focus { border-color: var(--accent); }
+  .email-btn { background: var(--accent); color: #000; border: none; padding: 10px 22px; border-radius: 6px; font-family: var(--font-display); font-size: 12px; font-weight: 700; letter-spacing: 1px; cursor: pointer; transition: opacity 0.2s; }
+  .email-btn:hover { opacity: 0.85; }
+  .email-fine { font-size: 11px; color: var(--muted); margin-top: 10px; }
+
+  footer { border-top: 1px solid var(--border); padding: 28px 20px; text-align: center; }
+  .footer-brand { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--accent); margin-bottom: 4px; }
+  .footer-tagline { font-size: 12px; color: var(--muted); margin-bottom: 16px; }
+  .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
+  .footer-links a { font-size: 12px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--accent); }
+  .footer-copy { font-size: 11px; color: #555; }
+
+  .loading-dots { display: flex; gap: 6px; padding: 20px 0; justify-content: center; }
+  .loading-dots span { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; animation: bounce 1.2s ease infinite; opacity: 0.4; }
+  .loading-dots span:nth-child(2) { animation-delay: 0.2s; } .loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes bounce { 0%, 100% { transform: translateY(0); opacity: 0.4; } 50% { transform: translateY(-6px); opacity: 1; } }
+</style>
 </head>
 <body>
-
 <nav>
-  <a class="nav-logo" href="index.html">BML</a>
-  <ul class="nav-links">
-    <li><a href="all_you_can_eat.html">Food</a></li>
-    <li><a href="apple_a_day.html">Health</a></li>
-    <li><a href="go_out_and_play.html">Fun</a></li>
-    <li><a href="style.html">Style</a></li>
-    <li><a href="travel.html">Travel</a></li>
-    <li><a href="freestuff.html">Free Stuff</a></li>
-    <li><a href="shop.html">Shop</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="index.html#email-section" class="nav-cta">Join Free</a></li>
-  </ul>
-  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  <a href="https://brokemodelife.com/index.html" class="nav-logo">BML</a>
+  <a href="https://brokemodelife.com/all_you_can_eat.html">Food</a>
+  <a href="https://brokemodelife.com/apple_a_day.html">Health</a>
+  <a href="https://brokemodelife.com/go_out_and_play.html">Fun</a>
+  <a href="https://brokemodelife.com/style.html">Style</a>
+  <a href="https://brokemodelife.com/listen_here.html">Music</a>
+  <a href="https://brokemodelife.com/cheers_mate.html">Drinks</a>
+  <a href="https://brokemodelife.com/travel.html">Travel</a>
+  <a href="https://brokemodelife.com/pets.html">Pets</a>
+  <a href="https://brokemodelife.com/freestuff.html">Free Stuff</a>
+  <a href="https://brokemodelife.com/shop.html">Shop</a>
+  <a href="https://brokemodelife.com/blog.html">Blog</a>
+  <a href="https://brokemodelife.com/index.html#email-section" class="nav-join">Join Free</a>
 </nav>
-
-<div class="page-hero fade-up">
-  <p class="eyebrow">Freebies, Samples & No-Cost Deals</p>
-  <h1>🎁 Free Stuff</h1>
-  <p>There's no shame in the free game. Samples, birthday freebies, loyalty rewards, and everything in between.</p>
+<div class="hero">
+  <p class="hero-eyebrow">No-Cost Deals & Freebies</p>
+  <h1>🎁 Free <span>Stuff</span></h1>
+  <p>The world gives away more than you think. Birthday freebies, free samples, loyalty rewards — go get what you're owed.</p>
 </div>
-
-<div class="marquee-wrap">
-  <div class="marquee-track">
-    <span>Birthday Freebies</span><span class="sep">·</span><span>Free Samples</span><span class="sep">·</span><span>PINCHme</span><span class="sep">·</span><span>Reddit Freebies</span><span class="sep">·</span><span>Loyalty Rewards</span><span class="sep">·</span><span>No Purchase Needed</span><span class="sep">·</span><span>Free Trials</span><span class="sep">·</span><span>Manufacturer Coupons</span><span class="sep">·</span><span>Zero Cost</span><span class="sep">·</span>
-    <span>Birthday Freebies</span><span class="sep">·</span><span>Free Samples</span><span class="sep">·</span><span>PINCHme</span><span class="sep">·</span><span>Reddit Freebies</span><span class="sep">·</span><span>Loyalty Rewards</span><span class="sep">·</span><span>No Purchase Needed</span><span class="sep">·</span><span>Free Trials</span><span class="sep">·</span><span>Manufacturer Coupons</span><span class="sep">·</span><span>Zero Cost</span><span class="sep">·</span>
+<div class="marquee-wrap"><div class="marquee-track"><span>Birthday Freebies</span><span class="dot">&#9670;</span><span>Free Samples</span><span class="dot">&#9670;</span><span>PINCHme</span><span class="dot">&#9670;</span><span>Loyalty Rewards</span><span class="dot">&#9670;</span><span>Burner Email</span><span class="dot">&#9670;</span><span>Starbucks Free</span><span class="dot">&#9670;</span><span>Sephora Birthday</span><span class="dot">&#9670;</span><span>Library Card</span><span class="dot">&#9670;</span><span>Kanopy Movies</span><span class="dot">&#9670;</span><span>No Purchase Required</span><span class="dot">&#9670;</span><span>Birthday Freebies</span><span class="dot">&#9670;</span><span>Free Samples</span><span class="dot">&#9670;</span><span>PINCHme</span><span class="dot">&#9670;</span><span>Loyalty Rewards</span><span class="dot">&#9670;</span><span>Burner Email</span><span class="dot">&#9670;</span><span>Starbucks Free</span><span class="dot">&#9670;</span><span>Sephora Birthday</span><span class="dot">&#9670;</span><span>Library Card</span><span class="dot">&#9670;</span><span>Kanopy Movies</span><span class="dot">&#9670;</span><span>No Purchase Required</span><span class="dot">&#9670;</span></div></div>
+<section class="section">
+  <div class="section-header"><span class="section-title">Freebie Strategy Tips</span><span class="section-sub">AI-Powered &mdash; Updates Every Visit</span></div>
+  <div class="ai-box">
+  <div class="ai-box-header">
+    <span class="ai-badge">&#9679; LIVE</span>
+    <button class="refresh-btn" id="refreshBtn" onclick="loadTips('finding and claiming free stuff samples and birthday freebies', [{"icon": "🎂", "tip": "<strong>Your birthday is a free food tour:</strong> Starbucks, Sephora, Denny"s, Chick-fil-A, and dozens more offer real freebies just for being born. Claim every single one."}, {"icon": "📧", "tip": "<strong>Burner email is your secret weapon:</strong> Create one address just for freebies. Sign up everywhere, claim everything, never clog your real inbox."}, {"icon": "📱", "tip": "<strong>Download brand apps before shopping:</strong> McDonald"s, Starbucks, Panera, and Target all hide their best deals inside their apps — not on the menu board."}, {"icon": "🛒", "tip": "<strong>PINCHme sends real free samples monthly:</strong> Sign up, complete your profile, and full-size product boxes arrive at your door for free every month."}, {"icon": "📚", "tip": "<strong>Your library card unlocks thousands in value:</strong> Libby for audiobooks, Kanopy for movies, and Hoopla for comics — all free with a library card."}])">
+      <span class="refresh-icon">&#8635;</span> Refresh Tips
+    </button>
+  </div>
+  <div class="ai-content" id="tipsContainer">
+    <div class="loading-dots"><span></span><span></span><span></span></div>
   </div>
 </div>
-
-<div class="main-content">
-
-  <div style="margin-bottom:2rem">
-    <p class="section-label">AI-Powered — Updates Every Visit</p>
-    <h2 class="section-title">Best Freebies & Samples This Week</h2>
-    <button class="btn-refresh" onclick="refreshfreestuff()">↻ Refresh Content</button>
-    <div id="freestuff-ai"></div>
-  </div>
-
-  
-  
-<div style="margin-bottom:3rem">
-  <p class="section-label">Broke Mode Picks</p>
-  <h2 class="section-title" style="margin-bottom:1.5rem">Worth Every Penny</h2>
-  <div class="product-grid">
-    <a class="product-card" href="https://www.amazon.com/s?k=coupon+organizer+binder&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$10</div>
-      <div class="product-name">Coupon Organizer Binder</div>
-      <div class="product-desc">The freebie hunter's tool of the trade. Organize deals, track expiry, never miss a saving.</div>
-      <div class="product-link">View on Amazon →</div>
-    </a>
-    <a class="product-card" href="https://www.amazon.com/s?k=label+maker&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$18</div>
-      <div class="product-name">Label Maker</div>
-      <div class="product-desc">Organize your hauls, your pantry, your life. A broke-mode home that looks intentional.</div>
-      <div class="product-link">View on Amazon →</div>
-    </a>
-    <a class="product-card" href="https://www.amazon.com/s?k=reusable+shopping+bags&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$12</div>
-      <div class="product-name">Reusable Shopping Bags (10-pack)</div>
-      <div class="product-desc">Some stores give discounts for bringing your own. Saves money and looks responsible doing it.</div>
-      <div class="product-link">View on Amazon →</div>
-    </a>
-    <a class="product-card" href="https://www.amazon.com/s?k=cash+envelope+wallet+budget&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-      <div class="product-price">~$14</div>
-      <div class="product-name">Cash Envelope Wallet</div>
-      <div class="product-desc">The physical budgeting system that actually changes behavior. Cash in envelopes = zero overspend.</div>
-      <div class="product-link">View on Amazon →</div>
-    </a>
-  </div>
-  <p style="font-size:0.75rem;color:#444;font-family:'Barlow Condensed',sans-serif;letter-spacing:0.06em;margin-top:0.8rem">As an Amazon Associate, BML earns from qualifying purchases.</p>
-</div>
-
-<div style="margin-bottom:3rem">
-  <p class="section-label">Related Guides</p>
-  <h2 class="section-title" style="margin-bottom:1.5rem">Keep Going</h2>
-  <div class="card-grid">
-    <a class="card" href="coupon_stack.html">
-      <div class="card-title">💸 Coupon Stack</div>
-      <div class="card-body">Stack deals like a pro</div>
-      <span class="card-tag">Explore →</span>
-    </a>
-
-    <a class="card" href="budget_beauty.html">
-      <div class="card-title">💅 Budget Beauty</div>
-      <div class="card-body">Free beauty samples and trials</div>
-      <span class="card-tag">Explore →</span>
-    </a>
-
-    <a class="card" href="quick_meals.html">
-      <div class="card-title">⚡ Quick Meals</div>
-      <div class="card-body">Fast free food hacks</div>
-      <span class="card-tag">Explore →</span>
-    </a>
-  </div>
-</div>
-
-</div>
-
-<section class="email-strip">
-  <h2>Stay in the Loop</h2>
-  <p>Get updates, deals, and broke-mode strategy direct to your inbox.</p>
-  <form class="email-form" onsubmit="handleEmail(event)">
-    <input type="email" placeholder="your@email.com" required>
-    <button type="submit">Subscribe</button>
-  </form>
-  <p class="email-note" id="form-status">No spam. Unsubscribe any time.</p>
 </section>
-
-<footer>
-  <div><div class="footer-brand">Broke Mode Life</div><div class="footer-tagline">Live Large on a Lean Budget</div></div>
-  <div class="footer-links">
-    <a href="terms.html">Terms</a><a href="privacy.html">Privacy</a>
-    <a href="affiliate.html">Affiliate</a><a href="contact.html">Contact</a><a href="cookie.html">Cookies</a>
+<section class="content-section">
+  <div class="content-card">
+    <h2>🎂 Birthday Freebies Master List</h2>
+    <p>Download the app, join the rewards program, show up on your birthday. These are 100% real and require no purchase.</p>
+    <ul>
+      <li><strong>Starbucks</strong> — free drink of any size, any customization</li>
+      <li><strong>Sephora</strong> — free birthday gift, no purchase required</li>
+      <li><strong>Denny's</strong> — free Grand Slam breakfast</li>
+      <li><strong>Chick-fil-A</strong> — free treat via app</li>
+      <li><strong>Baskin-Robbins</strong> — free ice cream scoop</li>
+      <li><strong>Auntie Anne's</strong> — free pretzel via rewards</li>
+      <li><strong>Panera</strong> — free pastry or bakery item</li>
+      <li><strong>Cold Stone Creamery</strong> — free creation via rewards</li>
+    </ul>
+    <p style="margin-top:14px;"><a href="https://brokemodelife.com/freebies_birthday_list_branded_one_page.pdf" style="color:var(--accent);font-family:var(--font-display);font-size:12px;letter-spacing:1px;">&#8595; DOWNLOAD FULL PDF LIST</a></p>
   </div>
-  <p class="footer-copy">© Broke Mode Life 2025 — All Rights Reserved</p>
+  <div class="content-card">
+    <h2>📦 Free Sample Sites That Actually Work</h2>
+    <ul>
+      <li><strong>PINCHme</strong> — monthly sample boxes, full-size products, completely free</li>
+      <li><strong>SampleSource</strong> — quarterly boxes, new offers regularly</li>
+      <li><strong>Walmart Free Samples</strong> — check walmart.com/cp/free-samples periodically</li>
+      <li><strong>Costco, Sam's Club, Trader Joe's</strong> — in-store samples, especially on weekends</li>
+      <li><strong>Influenster</strong> — review products and get free full-size items sent to you</li>
+    </ul>
+  </div>
+  <div class="content-card">
+    <h2>🧠 The Broke Mode Freebie System</h2>
+    <ul>
+      <li><strong>Burner email only</strong> — keep your real inbox clean. One address for all freebie signups.</li>
+      <li><strong>Build your freebie route</strong> — coffee in the morning, smoothie by lunch, sample after dinner. Stack it.</li>
+      <li><strong>Track in a simple spreadsheet</strong> — note expiration dates so you don't miss claim windows.</li>
+      <li><strong>r/freebies on Reddit</strong> — community posts real deals daily. Fast-moving, worth checking weekly.</li>
+      <li><strong>Library card = entertainment budget solved</strong> — Libby, Kanopy, Hoopla. Books, movies, music. All free.</li>
+    </ul>
+  </div>
+</section>
+<section class="section">
+  <div class="section-header"><span class="section-title">Keep Exploring</span><span class="section-sub"></span></div>
+  <div class="related-grid">
+    <a href="https://brokemodelife.com/coupon_stack.html" class="related-card">
+  <span class="related-icon">💸</span>
+  <div class="related-name">Coupon Stack</div>
+  <div class="related-sub">Stack deals for maximum savings</div>
+  <span class="related-arrow">Explore &rarr;</span>
+</a>
+    <a href="https://brokemodelife.com/budget_beauty.html" class="related-card">
+  <span class="related-icon">💅</span>
+  <div class="related-name">Budget Beauty</div>
+  <div class="related-sub">Free beauty samples and trials</div>
+  <span class="related-arrow">Explore &rarr;</span>
+</a>
+    <a href="https://brokemodelife.com/all_you_can_eat.html" class="related-card">
+  <span class="related-icon">🍽️</span>
+  <div class="related-name">All You Can Eat</div>
+  <div class="related-sub">Budget food and meal strategy</div>
+  <span class="related-arrow">Explore &rarr;</span>
+</a>
+    <a href="https://brokemodelife.com/shop.html" class="related-card">
+  <span class="related-icon">🛒</span>
+  <div class="related-name">Shop</div>
+  <div class="related-sub">Budget gear worth buying</div>
+  <span class="related-arrow">Explore &rarr;</span>
+</a>
+  </div>
+</section>
+<div class="email-section" id="email-section">
+  <h3>Stay in the Loop</h3>
+  <p>Get updates, deals, and broke-mode strategy direct to your inbox.</p>
+  <form class="email-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <input class="email-input" type="email" name="email" placeholder="your@email.com" required/>
+    <button class="email-btn" type="submit">SUBSCRIBE</button>
+  </form>
+  <p class="email-fine">No spam. Unsubscribe any time.</p>
+</div>
+<footer>
+  <div class="footer-brand">Broke Mode Life</div>
+  <div class="footer-tagline">Live Large on a Lean Budget</div>
+  <div class="footer-links">
+    <a href="https://brokemodelife.com/terms.html">Terms</a>
+    <a href="https://brokemodelife.com/privacy.html">Privacy</a>
+    <a href="https://brokemodelife.com/affiliate.html">Affiliate</a>
+    <a href="https://brokemodelife.com/contact.html">Contact</a>
+    <a href="https://brokemodelife.com/cookie.html">Cookies</a>
+  </div>
+  <div class="footer-copy">&copy; Broke Mode Life 2026 &mdash; All Rights Reserved</div>
 </footer>
-
-<script src="main.js"></script>
 <script>
-const freestuffPrompt = `You are a freebie expert for BrokeModeLife.com. Generate 5 ways to score free stuff this week. Return ONLY valid JSON:
-{"title":"This Week's Free Score Guide","intro":"Five legit ways to get something for nothing.","items":[{"title":"freebie","desc":"one action sentence on how to get it"},{"title":"freebie","desc":"one action sentence"},{"title":"freebie","desc":"one action sentence"},{"title":"freebie","desc":"one action sentence"},{"title":"freebie","desc":"one action sentence"}],"tip":"Bold insight about the freebie mindset."}`;
-function refreshfreestuff() {
-  loadAIContent('freestuff-ai', 'Best Freebies & Samples This Week', freestuffPrompt);
+async function loadTips(topic, fallback) {
+  const btn = document.getElementById('refreshBtn');
+  const container = document.getElementById('tipsContainer');
+  if (btn) btn.classList.add('spinning');
+  container.innerHTML = '<div class="loading-dots"><span></span><span></span><span></span></div>';
+  try {
+    const resp = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        model: "claude-sonnet-4-20250514", max_tokens: 1000,
+        messages: [{ role: "user", content: `You are writing for BrokeModeLife.com — for people living smart on a tight budget. Give exactly 5 actionable, specific, interesting tips about: ${topic}. Format as JSON array only, no other text: [{"icon":"🔥","tip":"<strong>Title:</strong> One sentence."},...] Rules: specific and useful, bolded title before colon, 1-2 sentences max, direct confident tone.` }]
+      })
+    });
+    const data = await resp.json();
+    const raw = data.content[0].text.replace(/\`\`\`json|\`\`\`/g,'').trim();
+    const tips = JSON.parse(raw);
+    container.innerHTML = '<ul class="tip-list">' + tips.map(t => '<li class="tip-item"><span class="tip-icon">'+t.icon+'</span><span class="tip-text">'+t.tip+'</span></li>').join('') + '</ul>';
+  } catch(e) {
+    container.innerHTML = '<ul class="tip-list">' + fallback.map(t => '<li class="tip-item"><span class="tip-icon">'+t.icon+'</span><span class="tip-text">'+t.tip+'</span></li>').join('') + '</ul>';
+  }
+  if (btn) btn.classList.remove('spinning');
 }
-refreshfreestuff();
 </script>
-</body>
-</html>
+<script>window.addEventListener('load', function(){ loadTips('finding and claiming free stuff samples and birthday freebies', [{'icon': '🎂', 'tip': "<strong>Your birthday is a free food tour:</strong> Starbucks, Sephora, Denny's, Chick-fil-A, and dozens more offer real freebies just for being born. Claim every single one."}, {'icon': '📧', 'tip': '<strong>Burner email is your secret weapon:</strong> Create one address just for freebies. Sign up everywhere, claim everything, never clog your real inbox.'}, {'icon': '📱', 'tip': "<strong>Download brand apps before shopping:</strong> McDonald's, Starbucks, Panera, and Target all hide their best deals inside their apps — not on the menu board."}, {'icon': '🛒', 'tip': '<strong>PINCHme sends real free samples monthly:</strong> Sign up, complete your profile, and full-size product boxes arrive at your door for free every month.'}, {'icon': '📚', 'tip': '<strong>Your library card unlocks thousands in value:</strong> Libby for audiobooks, Kanopy for movies, and Hoopla for comics — all free with a library card.'}]); });</script>
+</body></html>
