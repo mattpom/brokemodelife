@@ -7,10 +7,18 @@
 <meta name="description" content="Stream smarter. Free music, budget audio gear, and podcasts that actually teach you something.">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-486684955"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-486684955');</script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-486684955"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-486684955');
+  </script>
 </head>
-<body><nav>
+<body>
+
+<nav>
   <a class="nav-logo" href="index.html">BML</a>
   <ul class="nav-links">
     <li><a href="all_you_can_eat.html">Food</a></li>
@@ -18,99 +26,170 @@
     <li><a href="go_out_and_play.html">Fun</a></li>
     <li><a href="style.html">Style</a></li>
     <li><a href="travel.html">Travel</a></li>
-    <li><a href="listen_here.html" class="active">Music</a></li>
     <li><a href="freestuff.html">Free Stuff</a></li>
     <li><a href="shop.html">Shop</a></li>
+    <li><a href="https://brokehouseco.etsy.com" target="_blank" rel="noopener">Etsy Shop</a></li>
     <li><a href="blog.html">Blog</a></li>
     <li><a href="index.html#email-section" class="nav-cta">Join Free</a></li>
   </ul>
   <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
-</nav><div class="page-hero fade-up">
-  <p class="eyebrow">Free Music & Audio</p>
+</nav>
+
+<div class="page-hero fade-up">
+  <p class="eyebrow">Free Music & Podcasts</p>
   <h1>🎵 Listen Here</h1>
   <p>Stream smarter. Free music, budget audio gear, and podcasts that actually teach you something.</p>
-</div><div class="marquee-wrap"><div class="marquee-track"><span>Spotify Free</span><span class="sep">·</span><span>YouTube Music</span><span class="sep">·</span><span>SoundCloud</span><span class="sep">·</span><span>Lo-Fi Focus</span><span class="sep">·</span><span>Podcast Picks</span><span class="sep">·</span><span>Budget Earbuds</span><span class="sep">·</span><span>Free Audiobooks</span><span class="sep">·</span><span>Libby App</span><span class="sep">·</span><span>TuneIn Radio</span><span class="sep">·</span><span>Spotify Free</span><span class="sep">·</span><span>YouTube Music</span><span class="sep">·</span><span>SoundCloud</span><span class="sep">·</span><span>Lo-Fi Focus</span><span class="sep">·</span><span>Podcast Picks</span><span class="sep">·</span><span>Budget Earbuds</span><span class="sep">·</span><span>Free Audiobooks</span><span class="sep">·</span><span>Libby App</span><span class="sep">·</span><span>TuneIn Radio</span><span class="sep">·</span></div></div>
+</div>
+
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>Free Music</span><span class="sep">·</span><span>Spotify Hacks</span><span class="sep">·</span><span>Budget Audio</span><span class="sep">·</span><span>Podcasts</span><span class="sep">·</span><span>Earbuds Under $25</span><span class="sep">·</span><span>SoundCloud</span><span class="sep">·</span><span>Library Audiobooks</span><span class="sep">·</span><span>Family Plans</span><span class="sep">·</span><span>Free Trials</span><span class="sep">·</span>
+    <span>Free Music</span><span class="sep">·</span><span>Spotify Hacks</span><span class="sep">·</span><span>Budget Audio</span><span class="sep">·</span><span>Podcasts</span><span class="sep">·</span><span>Earbuds Under $25</span><span class="sep">·</span><span>SoundCloud</span><span class="sep">·</span><span>Library Audiobooks</span><span class="sep">·</span><span>Family Plans</span><span class="sep">·</span><span>Free Trials</span><span class="sep">·</span>
+  </div>
+</div>
+
 <div class="main-content">
-<div style="margin-bottom:2rem">
-    <p class="section-label">AI-Powered &mdash; Updates Every Visit</p>
-    <h2 class="section-title">Budget Audio & Music Tips</h2>
-    <button class="btn-refresh" onclick="refreshmusic()">&#8635; Refresh Content</button>
-    <div id="music-ai"></div>
-  </div>  <div style="margin-bottom:3rem">
-    <p class="section-label">Free Streaming</p>
-    <h2 class="section-title" style="margin-bottom:1.5rem">Get All the Music for Nothing</h2>
-    <div class="ai-block">
-      <span class="ai-badge">&#10022; Always True</span>
-      <h3>Five Platforms That Cost Zero Dollars</h3>
-      <ul style="margin:1rem 0;padding-left:1.2rem">
-        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Spotify Free is genuinely fine</strong> — Shuffle mode and occasional ads is a small price for 100 million songs. Use it on WiFi and your data stays flat all month.</li>
-        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">YouTube Music free tier</strong> — No subscription required for full catalog access. The ads are short and the library includes tracks Spotify does not have.</li>
-        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Libby for free audiobooks</strong> — Connect your library card to the Libby app. Thousands of audiobooks and podcasts delivered completely free to your phone.</li>
-        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">SoundCloud for discovery</strong> — Independent artists, early releases, underground scenes. Content you literally cannot find on the major platforms.</li>
-        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">TuneIn for live radio worldwide</strong> — Every radio station on earth, completely free. Sports, news, music, and talk without a single subscription required.</li>
-      </ul>
-      <p style="color:var(--lime);margin-top:1.2rem">&#128161; The best music is the music that moves you. Almost all of it is free if you know where to look.</p>
-    </div>
-  </div>  <div style="margin-bottom:3rem">
-    <p class="section-label">Podcast Picks</p>
-    <h2 class="section-title" style="margin-bottom:1.5rem">Knowledge That Pays You Back</h2>
-    <div class="ai-block">
-      <span class="ai-badge">&#10022; Always True</span>
-      <h3>Five Free Shows Worth Every Minute</h3>
-      <ul style="margin:1rem 0;padding-left:1.2rem">
-        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Planet Money — NPR</strong> — Economics explained clearly and engagingly. Every episode changes how you see money and everyday financial decisions.</li>
-        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">How I Built This — NPR</strong> — Founders of iconic companies tell the real story. Free business school that actually holds your attention the whole way through.</li>
-        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Huberman Lab</strong> — Stanford neuroscientist breaks down health, sleep, and performance. Free science you can apply the same day you hear it.</li>
-        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Freakonomics Radio</strong> — Why things work the way they do. Every episode rewires how you think about incentives, behavior, and everyday systems.</li>
-        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Darknet Diaries</strong> — True stories from hackers and the dark side of the internet. More educational than it sounds and wildly bingeable.</li>
-      </ul>
-      <p style="color:var(--lime);margin-top:1.2rem">&#128161; A good podcast during a commute or workout turns dead time into a genuine competitive advantage. All completely free.</p>
-    </div>
-  </div>  <div style="margin-bottom:3rem">
-    <p class="section-label">Broke Mode Picks</p>
-    <h2 class="section-title" style="margin-bottom:1.5rem">Worth Every Penny</h2>
-    <div class="product-grid">
-      <a class="product-card" href="https://www.amazon.com/s?k=wireless+earbuds+under+30&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-        <div class="product-price">~$22</div>
-        <div class="product-name">Wireless Earbuds Under 30</div>
-        <div class="product-desc">Great sound, surprisingly durable. The broke-mode audio essential that punches above its price.</div>
-        <div class="product-link">View on Amazon &rarr;</div>
-      </a>
-      <a class="product-card" href="https://www.amazon.com/s?k=portable+bluetooth+speaker&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-        <div class="product-price">~$28</div>
-        <div class="product-name">Portable Bluetooth Speaker</div>
-        <div class="product-desc">Loud enough to fill a room. Cheap enough not to stress if it gets bumped.</div>
-        <div class="product-link">View on Amazon &rarr;</div>
-      </a>
-      <a class="product-card" href="https://www.amazon.com/s?k=phone+tripod+stand&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-        <div class="product-price">~$16</div>
-        <div class="product-name">Phone Tripod Stand</div>
-        <div class="product-desc">Hands-free for podcasts, calls, or recording. Genuinely useful everywhere you go.</div>
-        <div class="product-link">View on Amazon &rarr;</div>
-      </a>
-      <a class="product-card" href="https://www.amazon.com/s?k=compact+power+bank&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-        <div class="product-price">~$22</div>
-        <div class="product-name">Compact Power Bank</div>
-        <div class="product-desc">Keep your phone alive so the music and podcasts never stop.</div>
-        <div class="product-link">View on Amazon &rarr;</div>
-      </a>
-    </div>
-    <p style="font-size:0.75rem;color:#444;font-family:'Barlow Condensed',sans-serif;letter-spacing:0.06em;margin-top:0.8rem">As an Amazon Associate, BML earns from qualifying purchases.</p>
+
+  <div style="margin-bottom:2rem">
+    <p class="section-label">AI-Powered — Updates Every Visit</p>
+    <h2 class="section-title">Free Music Streaming & Budget Audio</h2>
+    <button class="btn-refresh" onclick="refreshlistenhere()">↻ Refresh Content</button>
+    <div id="listenhere-ai"></div>
   </div>
 
+  <!-- FREE STREAMING GUIDE -->
+  <div style="margin-bottom:3rem">
+    <p class="section-label">The Broke Mode Streaming Stack</p>
+    <h2 class="section-title" style="margin-bottom:1.5rem">Free & Cheap Options Ranked</h2>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">🎵</div>
+        <div class="card-title">Spotify Free</div>
+        <div class="card-body">Shuffle mode + ads = 100 million songs for $0. Use on WiFi and your data bill stays flat. Upgrade only if shuffle drives you crazy.</div>
+        <span class="card-tag">$0/month</span>
+      </div>
+      <div class="card">
+        <div class="card-icon">📚</div>
+        <div class="card-title">Library — Libby & Hoopla</div>
+        <div class="card-body">Your library card unlocks free audiobooks, music, and podcasts via Libby and Hoopla. Most people have no idea this exists.</div>
+        <span class="card-tag">Free with library card</span>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎙️</div>
+        <div class="card-title">Podcast Apps</div>
+        <div class="card-body">Spotify, Apple Podcasts, and Pocket Casts all offer free podcast access. Thousands of hours of free education and entertainment.</div>
+        <span class="card-tag">$0/month</span>
+      </div>
+      <div class="card">
+        <div class="card-icon">👨‍👩‍👧‍👦</div>
+        <div class="card-title">Split a Family Plan</div>
+        <div class="card-body">Spotify Family split 6 ways = under $3/month each. Apple One shared = even cheaper. Find 5 people and stop paying full price.</div>
+        <span class="card-tag">~$3/month</span>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎤</div>
+        <div class="card-title">SoundCloud Free</div>
+        <div class="card-body">Independent artists, early releases, underground scenes — content you literally cannot find anywhere else. Free tier is genuinely deep.</div>
+        <span class="card-tag">$0/month</span>
+      </div>
+      <div class="card">
+        <div class="card-icon">📺</div>
+        <div class="card-title">YouTube Music Free</div>
+        <div class="card-body">Full catalog access with video ads. If you don't mind occasional interruptions, this is a legitimate free Spotify alternative.</div>
+        <span class="card-tag">$0/month</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- RELATED PAGES -->
+  <div style="margin-bottom:3rem">
+    <p class="section-label">Related Categories</p>
+    <h2 class="section-title" style="margin-bottom:1.5rem">Keep Exploring</h2>
+    <div class="card-grid">
+      <a class="card" href="go_out_and_play.html">
+        <div class="card-icon">🎯</div>
+        <div class="card-title">Go Out & Play</div>
+        <div class="card-body">Free events, cheap entertainment, and no-cost weekend ideas that don't require a speaker or headphones.</div>
+        <span class="card-tag">Explore →</span>
+      </a>
+      <a class="card" href="freestuff.html">
+        <div class="card-icon">🎁</div>
+        <div class="card-title">Free Stuff</div>
+        <div class="card-body">Free trials, samples, and no-cost deals — including free music streaming trials you can stack and rotate.</div>
+        <span class="card-tag">Explore →</span>
+      </a>
+      <a class="card" href="shop.html">
+        <div class="card-icon">📦</div>
+        <div class="card-title">Shop</div>
+        <div class="card-body">Budget audio gear, speakers, and tech picks that actually perform without the premium price tag.</div>
+        <span class="card-tag">Explore →</span>
+      </a>
+    </div>
+  </div>
+
+<div style="margin-bottom:3rem">
+  <p class="section-label">Broke Mode Picks</p>
+  <h2 class="section-title" style="margin-bottom:1.5rem">Worth Every Penny</h2>
+  <div class="product-grid">
+    <a class="product-card" href="https://www.amazon.com/s?k=bluetooth+earbuds+under+30&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+      <div class="product-price">~$22</div>
+      <div class="product-name">Bluetooth Earbuds Under 30</div>
+      <div class="product-desc">Great sound, surprisingly durable. The broke-mode audio essential that punches above its price.</div>
+      <div class="product-link">View on Amazon →</div>
+    </a>
+    <a class="product-card" href="https://www.amazon.com/s?k=portable+bluetooth+speaker&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+      <div class="product-price">~$28</div>
+      <div class="product-name">Portable Bluetooth Speaker</div>
+      <div class="product-desc">Loud enough to fill a room. Cheap enough not to stress if it gets bumped at a party.</div>
+      <div class="product-link">View on Amazon →</div>
+    </a>
+    <a class="product-card" href="https://www.amazon.com/s?k=phone+tripod+stand&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+      <div class="product-price">~$16</div>
+      <div class="product-name">Phone Tripod Stand</div>
+      <div class="product-desc">Perfect for recording, Zoom calls, or hands-free anything. Under $20 and genuinely useful.</div>
+      <div class="product-link">View on Amazon →</div>
+    </a>
+    <a class="product-card" href="https://www.amazon.com/s?k=compact+power+bank&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+      <div class="product-price">~$22</div>
+      <div class="product-name">Compact Power Bank</div>
+      <div class="product-desc">Keep your phone alive anywhere. Never miss a song, podcast, or playlist again.</div>
+      <div class="product-link">View on Amazon →</div>
+    </a>
+  </div>
+  <p style="font-size:0.75rem;color:#444;font-family:'Barlow Condensed',sans-serif;letter-spacing:0.06em;margin-top:0.8rem">As an Amazon Associate, BML earns from qualifying purchases.</p>
 </div>
+
+</div>
+
+<section class="email-strip">
+  <h2>Stay in the Loop</h2>
+  <p>Get updates, deals, and broke-mode strategy direct to your inbox.</p>
+  <form class="email-form" onsubmit="handleEmail(event)">
+    <input type="email" placeholder="your@email.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+  <p class="email-note" id="form-status">No spam. Unsubscribe any time.</p>
+</section>
 
 <footer>
   <div><div class="footer-brand">Broke Mode Life</div><div class="footer-tagline">Live Large on a Lean Budget</div></div>
   <div class="footer-links">
     <a href="terms.html">Terms</a><a href="privacy.html">Privacy</a>
     <a href="affiliate.html">Affiliate</a><a href="contact.html">Contact</a><a href="cookie.html">Cookies</a>
+    <a href="https://x.com/brokemodelife00" target="_blank" rel="noopener">𝕏 @BrokeModLife</a>
+    <a href="https://brokehouseco.etsy.com" target="_blank" rel="noopener">Etsy Shop</a>
   </div>
-  <p class="footer-copy">&copy; Broke Mode Life 2026 &mdash; All Rights Reserved</p>
+  <p class="footer-copy">© Broke Mode Life 2025 — All Rights Reserved</p>
 </footer>
+
 <script src="main.js"></script>
 <script>
-function refreshmusic() { loadAIContent('music-ai', 'Budget Music & Audio Tips', ''); }
-refreshmusic();
+const listenherePrompt = `You are a budget audio/music expert for BrokeModeLife.com. Generate 5 tips for getting great music and audio for free or cheap. Return ONLY valid JSON:
+{"title":"Broke Mode Listening Guide","intro":"Five ways to fill your ears without emptying your wallet.","items":[{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"},{"title":"tip","desc":"one action sentence"}],"tip":"Bold insight on free audio."}`;
+function refreshlistenhere() {
+  loadAIContent('listenhere-ai', 'Free Music Streaming & Budget Audio', listenherePrompt);
+}
+refreshlistenhere();
 </script>
-</body></html>
+</body>
+</html>

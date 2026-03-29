@@ -4,13 +4,40 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shop — Broke Mode Life</title>
-<meta name="description" content="Budget home goods, gadgets, and gear that actually works.">
+<meta name="description" content="Budget-approved gear, gadgets, and home essentials. Broke-mode vetted picks that won't empty your wallet.">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-486684955"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-486684955');</script>
+<style>
+.shop-cat-header {
+  display: flex; align-items: center; gap: 1rem;
+  margin: 3rem 0 1.5rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--border);
+}
+.shop-cat-header h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem; letter-spacing: 0.04em; color: var(--white);
+}
+.shop-cat-header span { font-size: 1.6rem; }
+.affiliate-note {
+  font-size: 0.75rem; color: #444;
+  font-family: 'Barlow Condensed', sans-serif;
+  letter-spacing: 0.06em;
+  margin-top: 1rem; margin-bottom: 3rem;
+}
+</style>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-486684955"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-486684955');
+  </script>
 </head>
-<body><nav>
+<body>
+
+<nav>
   <a class="nav-logo" href="index.html">BML</a>
   <ul class="nav-links">
     <li><a href="all_you_can_eat.html">Food</a></li>
@@ -18,111 +45,186 @@
     <li><a href="go_out_and_play.html">Fun</a></li>
     <li><a href="style.html">Style</a></li>
     <li><a href="travel.html">Travel</a></li>
-    <li><a href="listen_here.html">Music</a></li>
     <li><a href="freestuff.html">Free Stuff</a></li>
     <li><a href="shop.html" class="active">Shop</a></li>
     <li><a href="blog.html">Blog</a></li>
     <li><a href="index.html#email-section" class="nav-cta">Join Free</a></li>
   </ul>
   <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
-</nav><div class="page-hero fade-up">
-  <p class="eyebrow">Home Goods + Gadgets</p>
-  <h1>🛒 Shop Smart</h1>
-  <p>You do not need to spend $500 for a decent setup. Just broke-mode strategy and gear that actually works.</p>
-</div><div class="marquee-wrap"><div class="marquee-track"><span>Open Box Deals</span><span class="sep">·</span><span>Amazon Warehouse</span><span class="sep">·</span><span>Price Alerts</span><span class="sep">·</span><span>CamelCamelCamel</span><span class="sep">·</span><span>Read Reviews</span><span class="sep">·</span><span>Return Policy</span><span class="sep">·</span><span>Function Over Flash</span><span class="sep">·</span><span>Buy Less Better</span><span class="sep">·</span><span>Smart Gadgets</span><span class="sep">·</span><span>Open Box Deals</span><span class="sep">·</span><span>Amazon Warehouse</span><span class="sep">·</span><span>Price Alerts</span><span class="sep">·</span><span>CamelCamelCamel</span><span class="sep">·</span><span>Read Reviews</span><span class="sep">·</span><span>Return Policy</span><span class="sep">·</span><span>Function Over Flash</span><span class="sep">·</span><span>Buy Less Better</span><span class="sep">·</span><span>Smart Gadgets</span><span class="sep">·</span></div></div>
+</nav>
+
+<div class="page-hero fade-up">
+  <p class="eyebrow">Broke-Mode Vetted Picks</p>
+  <h1>📦 Shop</h1>
+  <p>Everything here passed the Broke Mode test: Does it work? Is it worth it? Would we buy it ourselves? If yes — it's here.</p>
+</div>
+
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>Tech</span><span class="sep">·</span><span>Home</span><span class="sep">·</span><span>Kitchen</span><span class="sep">·</span><span>Fitness</span><span class="sep">·</span><span>Travel</span><span class="sep">·</span><span>Style</span><span class="sep">·</span><span>Entertainment</span><span class="sep">·</span>
+    <span>Tech</span><span class="sep">·</span><span>Home</span><span class="sep">·</span><span>Kitchen</span><span class="sep">·</span><span>Fitness</span><span class="sep">·</span><span>Travel</span><span class="sep">·</span><span>Style</span><span class="sep">·</span><span>Entertainment</span><span class="sep">·</span>
+  </div>
+</div>
+
 <div class="main-content">
-<div style="margin-bottom:2rem">
-    <p class="section-label">AI-Powered &mdash; Updates Every Visit</p>
-    <h2 class="section-title">Smart Shopping Tips</h2>
-    <button class="btn-refresh" onclick="refreshshop()">&#8635; Refresh Content</button>
+
+  <!-- AI Shopping Tip -->
+  <div style="margin-bottom:2rem">
+    <p class="section-label">AI-Powered — Updates Every Visit</p>
+    <h2 class="section-title">Smart Shopping This Week</h2>
+    <button class="btn-refresh" onclick="refreshShop()">↻ Refresh Tips</button>
     <div id="shop-ai"></div>
-  </div>  <div style="margin-bottom:3rem">
-    <p class="section-label">The Code</p>
-    <h2 class="section-title" style="margin-bottom:1.5rem">Broke Mode Shopping Rules</h2>
-    <div class="ai-block">
-      <span class="ai-badge">&#10022; Always True</span>
-      <h3>Five Rules That Save Real Money Every Time You Shop</h3>
-      <ul style="margin:1rem 0;padding-left:1.2rem">
-        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Read 1-star reviews first</strong> — That is where the truth lives. If they all say broke in 2 weeks, believe them over the paid 5-star reviews every time.</li>
-        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">CamelCamelCamel before Amazon</strong> — Check price history before buying anything. Most items cycle on sale every 4 to 6 weeks. Wait and save 20 to 40 percent.</li>
-        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Amazon Warehouse is real</strong> — Open-box items at 20 to 40 percent off. Grade A condition usually means someone returned it unopened or barely used.</li>
-        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">The 72-hour rule on anything over $50</strong> — If you still want it after three days it is probably worth it. If you forgot about it, you did not need it at all.</li>
-        <li style="margin-bottom:0.8rem"><strong style="color:var(--white)">Return policy is part of the purchase</strong> — Only buy from sellers with easy no-questions returns. If it breaks or disappoints, send it back and protect every dollar.</li>
-      </ul>
-      <p style="color:var(--lime);margin-top:1.2rem">&#128161; The best purchase is the one you did not make impulsively. Patience is the most profitable shopping strategy you have.</p>
-    </div>
-  </div>  <div style="margin-bottom:3rem">
-    <p class="section-label">The Math</p>
-    <h2 class="section-title" style="margin-bottom:1.5rem">Best Budget Home Upgrades by ROI</h2>
-    <div class="ai-block">
-      <table style="width:100%;border-collapse:collapse">
-        <thead><tr><th style="padding:0.6rem 0.8rem;text-align:left;border-bottom:1px solid var(--border);font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--lime)">Item</th><th style="padding:0.6rem 0.8rem;text-align:left;border-bottom:1px solid var(--border);font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--lime)">Cost</th><th style="padding:0.6rem 0.8rem;text-align:left;border-bottom:1px solid var(--border);font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--lime)">What It Replaces</th></tr></thead>
-        <tbody><tr><td style="padding:0.6rem 0.8rem;border-bottom:1px solid var(--border);font-size:0.88rem;color:#bbb">LED Strip Lights</td><td style="padding:0.6rem 0.8rem;border-bottom:1px solid var(--border);font-size:0.88rem;color:#bbb">~$15</td><td style="padding:0.6rem 0.8rem;border-bottom:1px solid var(--border);font-size:0.88rem;color:#bbb">$80 floor lamp and ugly overhead light</td></tr>
-<tr><td style="padding:0.6rem 0.8rem;border-bottom:1px solid var(--border);font-size:0.88rem;color:#bbb">Blackout Curtains</td><td style="padding:0.6rem 0.8rem;border-bottom:1px solid var(--border);font-size:0.88rem;color:#bbb">~$28</td><td style="padding:0.6rem 0.8rem;border-bottom:1px solid var(--border);font-size:0.88rem;color:#bbb">$40/mo extra AC costs and bad sleep</td></tr>
-<tr><td style="padding:0.6rem 0.8rem;border-bottom:1px solid var(--border);font-size:0.88rem;color:#bbb">Compact Tool Kit</td><td style="padding:0.6rem 0.8rem;border-bottom:1px solid var(--border);font-size:0.88rem;color:#bbb">~$18</td><td style="padding:0.6rem 0.8rem;border-bottom:1px solid var(--border);font-size:0.88rem;color:#bbb">$80 handyman call for a simple fix</td></tr>
-<tr><td style="padding:0.6rem 0.8rem;border-bottom:1px solid var(--border);font-size:0.88rem;color:#bbb">Drawer Organizers</td><td style="padding:0.6rem 0.8rem;border-bottom:1px solid var(--border);font-size:0.88rem;color:#bbb">~$15</td><td style="padding:0.6rem 0.8rem;border-bottom:1px solid var(--border);font-size:0.88rem;color:#bbb">An hour of frustrated searching every day</td></tr>
-<tr><td style="padding:0.6rem 0.8rem;border-bottom:1px solid var(--border);font-size:0.88rem;color:#bbb">Magnetic Phone Mount</td><td style="padding:0.6rem 0.8rem;border-bottom:1px solid var(--border);font-size:0.88rem;color:#bbb">~$12</td><td style="padding:0.6rem 0.8rem;border-bottom:1px solid var(--border);font-size:0.88rem;color:#bbb">Dashboard chaos on every single drive</td></tr>
-<tr><td style="padding:0.6rem 0.8rem;font-size:0.88rem;color:#bbb">Power Bank</td><td style="padding:0.6rem 0.8rem;font-size:0.88rem;color:#bbb">~$22</td><td style="padding:0.6rem 0.8rem;font-size:0.88rem;color:#bbb">Dead phone in every inconvenient situation</td></tr>
-</tbody>
-      </table>
-    </div>
-  </div>  <div style="margin-bottom:3rem">
-    <p class="section-label">Broke Mode Picks</p>
-    <h2 class="section-title" style="margin-bottom:1.5rem">Worth Every Penny</h2>
-    <div class="product-grid">
-      <a class="product-card" href="https://www.amazon.com/s?k=led+strip+lights&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-        <div class="product-price">~$25</div>
-        <div class="product-name">LED Strip Lights</div>
-        <div class="product-desc">Transform any room for under $25. Adhesive, remote-controlled, uses almost no power.</div>
-        <div class="product-link">View on Amazon &rarr;</div>
-      </a>
-      <a class="product-card" href="https://www.amazon.com/s?k=compact+home+tool+kit&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-        <div class="product-price">~$18</div>
-        <div class="product-name">Compact Tool Kit</div>
-        <div class="product-desc">Fixes 90 percent of home problems. Every renter and homeowner needs one in the drawer.</div>
-        <div class="product-link">View on Amazon &rarr;</div>
-      </a>
-      <a class="product-card" href="https://www.amazon.com/s?k=compact+power+bank&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-        <div class="product-price">~$22</div>
-        <div class="product-name">Compact Power Bank</div>
-        <div class="product-desc">Two full phone charges in your pocket. Works anywhere, anytime, no excuses.</div>
-        <div class="product-link">View on Amazon &rarr;</div>
-      </a>
-      <a class="product-card" href="https://www.amazon.com/s?k=blackout+curtains&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-        <div class="product-price">~$28</div>
-        <div class="product-name">Blackout Curtains</div>
-        <div class="product-desc">Better sleep and lower energy bills in a single purchase.</div>
-        <div class="product-link">View on Amazon &rarr;</div>
-      </a>
-      <a class="product-card" href="https://www.amazon.com/s?k=magnetic+phone+mount&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-        <div class="product-price">~$12</div>
-        <div class="product-name">Magnetic Phone Mount</div>
-        <div class="product-desc">Car, desk, or wall. Once you use one you put them everywhere.</div>
-        <div class="product-link">View on Amazon &rarr;</div>
-      </a>
-      <a class="product-card" href="https://www.amazon.com/s?k=drawer+organizer+set&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
-        <div class="product-price">~$15</div>
-        <div class="product-name">Drawer Organizers Set</div>
-        <div class="product-desc">Feel like a functioning adult for $15. Transforms any junk drawer instantly.</div>
-        <div class="product-link">View on Amazon &rarr;</div>
-      </a>
-    </div>
-    <p style="font-size:0.75rem;color:#444;font-family:'Barlow Condensed',sans-serif;letter-spacing:0.06em;margin-top:0.8rem">As an Amazon Associate, BML earns from qualifying purchases.</p>
   </div>
 
+  <!-- TECH -->
+  <div class="shop-cat-header"><span>📱</span><h2>Tech Under $30</h2></div>
+  <div class="product-grid">
+    <a class="product-card" href="https://www.amazon.com/s?k=bluetooth+earbuds&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+      <div class="product-price">~$22</div>
+      <div class="product-name">Bluetooth Earbuds</div>
+      <div class="product-desc">Great sound, surprisingly durable. The broke-mode audio essential that punches way above its price.</div>
+      <div class="product-link">View on Amazon →</div>
+    </a>
+    <a class="product-card" href="https://www.amazon.com/s?k=budget+home+essentials&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+      <div class="product-price">~$28</div>
+      <div class="product-name">LED Strip Lights</div>
+      <div class="product-desc">Transform any room for under $15. The easiest glow-up your apartment will ever have.</div>
+      <div class="product-link">View on Amazon →</div>
+    </a>
+    <a class="product-card" href="https://www.amazon.com/s?k=bluetooth+earbuds&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+      <div class="product-price">~$24</div>
+      <div class="product-name">Compact Power Bank</div>
+      <div class="product-desc">Charge your phone twice over. Fits in your pocket. Never panic-charge again.</div>
+      <div class="product-link">View on Amazon →</div>
+    </a>
+    <a class="product-card" href="https://www.amazon.com/s?k=budget+home+essentials&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+      <div class="product-price">~$18</div>
+      <div class="product-name">Phone Tripod Stand</div>
+      <div class="product-desc">Perfect for content, Zoom calls, or just hands-free anything. Under $20 and genuinely useful.</div>
+      <div class="product-link">View on Amazon →</div>
+    </a>
+  </div>
+
+  <!-- HOME -->
+  <div class="shop-cat-header"><span>🏠</span><h2>Home Essentials</h2></div>
+  <div class="product-grid">
+    <a class="product-card" href="https://www.amazon.com/s?k=bluetooth+earbuds&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+      <div class="product-price">~$25</div>
+      <div class="product-name">Cast Iron Skillet</div>
+      <div class="product-desc">Lasts forever. Cooks everything. Costs $25. The single best kitchen investment you'll make broke.</div>
+      <div class="product-link">View on Amazon →</div>
+    </a>
+    <a class="product-card" href="https://www.amazon.com/s?k=budget+home+essentials&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+      <div class="product-price">~$18</div>
+      <div class="product-name">Compact Tool Kit</div>
+      <div class="product-desc">Fixes 90% of everything that breaks. Every apartment needs one. Zero excuses.</div>
+      <div class="product-link">View on Amazon →</div>
+    </a>
+    <a class="product-card" href="https://www.amazon.com/s?k=bluetooth+earbuds&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+      <div class="product-price">~$29</div>
+      <div class="product-name">Blackout Curtains</div>
+      <div class="product-desc">Better sleep AND lower energy bills. That's a broke-mode double win.</div>
+      <div class="product-link">View on Amazon →</div>
+    </a>
+    <a class="product-card" href="https://www.amazon.com/s?k=budget+home+essentials&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+      <div class="product-price">~$16</div>
+      <div class="product-name">Fabric Storage Bins (6-pack)</div>
+      <div class="product-desc">Instant declutter. Makes any space look intentional. Under $20 for all six.</div>
+      <div class="product-link">View on Amazon →</div>
+    </a>
+  </div>
+
+  <!-- DRINKS -->
+  <div class="shop-cat-header"><span>🥃</span><h2>Bar Cart Basics</h2></div>
+  <div class="product-grid">
+    <a class="product-card" href="https://www.amazon.com/s?k=bluetooth+earbuds&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+      <div class="product-price">~$32</div>
+      <div class="product-name">Turntable (Budget Pick)</div>
+      <div class="product-desc">Set the vibe. A turntable makes any gathering feel intentional and elevated. Under $35.</div>
+      <div class="product-link">View on Amazon →</div>
+    </a>
+    <a class="product-card" href="https://www.amazon.com/s?k=budget+home+essentials&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+      <div class="product-price">~$24</div>
+      <div class="product-name">Bourbon Glass Wood Set</div>
+      <div class="product-desc">Drink well even when you bought the cheap bourbon. Presentation is everything.</div>
+      <div class="product-link">View on Amazon →</div>
+    </a>
+    <a class="product-card" href="https://www.amazon.com/s?k=bluetooth+earbuds&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+      <div class="product-price">~$19</div>
+      <div class="product-name">Cocktail Shaker Set</div>
+      <div class="product-desc">Make bar-quality drinks at home. Pays for itself the first time you skip the bar tab.</div>
+      <div class="product-link">View on Amazon →</div>
+    </a>
+    <a class="product-card" href="https://www.amazon.com/s?k=budget+home+essentials&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+      <div class="product-price">~$26</div>
+      <div class="product-name">Portable Bluetooth Speaker</div>
+      <div class="product-desc">Loud enough to fill a room. Cheap enough not to stress if it gets bumped at a party.</div>
+      <div class="product-link">View on Amazon →</div>
+    </a>
+  </div>
+
+  <!-- FITNESS -->
+  <div class="shop-cat-header"><span>💪</span><h2>Budget Fitness</h2></div>
+  <div class="product-grid">
+    <a class="product-card" href="https://www.amazon.com/s?k=bluetooth+earbuds&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+      <div class="product-price">~$28</div>
+      <div class="product-name">Resistance Bands Set</div>
+      <div class="product-desc">Full gym in a bag. Cancel the membership. These 5 bands replace a rack of weights.</div>
+      <div class="product-link">View on Amazon →</div>
+    </a>
+    <a class="product-card" href="https://www.amazon.com/s?k=budget+home+essentials&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+      <div class="product-price">~$22</div>
+      <div class="product-name">Jump Rope (Speed)</div>
+      <div class="product-desc">Best cardio per dollar on the market. 15 minutes beats most gym sessions.</div>
+      <div class="product-link">View on Amazon →</div>
+    </a>
+    <a class="product-card" href="https://www.amazon.com/s?k=bluetooth+earbuds&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+      <div class="product-price">~$35</div>
+      <div class="product-name">Foam Roller</div>
+      <div class="product-desc">Recovery tool that actually works. Skip the $80 massage. Roll it out instead.</div>
+      <div class="product-link">View on Amazon →</div>
+    </a>
+    <a class="product-card" href="https://www.amazon.com/s?k=budget+home+essentials&tag=brokemodelife-20" target="_blank" rel="noopener sponsored">
+      <div class="product-price">~$18</div>
+      <div class="product-name">Yoga Mat (Non-slip)</div>
+      <div class="product-desc">Workout at home. No gym floor, no fee. Works for yoga, HIIT, stretching, all of it.</div>
+      <div class="product-link">View on Amazon →</div>
+    </a>
+  </div>
+
+  <p class="affiliate-note">* As an Amazon Associate, Broke Mode Life earns from qualifying purchases. Prices are approximate and may vary.</p>
+
 </div>
+
+<section class="email-strip">
+  <h2>Stay in the Loop</h2>
+  <p>New picks, deals, and broke-mode finds — straight to your inbox.</p>
+  <form class="email-form" onsubmit="handleEmail(event)">
+    <input type="email" placeholder="your@email.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+  <p class="email-note" id="form-status">No spam. Unsubscribe any time.</p>
+</section>
 
 <footer>
   <div><div class="footer-brand">Broke Mode Life</div><div class="footer-tagline">Live Large on a Lean Budget</div></div>
   <div class="footer-links">
     <a href="terms.html">Terms</a><a href="privacy.html">Privacy</a>
     <a href="affiliate.html">Affiliate</a><a href="contact.html">Contact</a><a href="cookie.html">Cookies</a>
+    <a href="https://x.com/brokemodelife00" target="_blank" rel="noopener">𝕏 @BrokeModLife</a>
+    <a href="https://brokehouseco.etsy.com" target="_blank" rel="noopener">Etsy Shop</a>
   </div>
-  <p class="footer-copy">&copy; Broke Mode Life 2026 &mdash; All Rights Reserved</p>
+  <p class="footer-copy">© Broke Mode Life 2025 — All Rights Reserved</p>
 </footer>
+
 <script src="main.js"></script>
 <script>
-function refreshshop() { loadAIContent('shop-ai', 'Smart Budget Shopping Tips', ''); }
-refreshshop();
+const shopPrompt = `You are a budget shopping expert for BrokeModeLife.com. Generate 5 smart shopping strategies for this week. Return ONLY valid JSON:
+{"title":"This Week's Smart Shopping Moves","intro":"Five ways to buy smarter and spend less right now.","items":[{"title":"strategy","desc":"one action sentence"},{"title":"strategy","desc":"one action sentence"},{"title":"strategy","desc":"one action sentence"},{"title":"strategy","desc":"one action sentence"},{"title":"strategy","desc":"one action sentence"}],"tip":"Bold insight about broke-mode shopping strategy."}`;
+function refreshShop() {
+  loadAIContent('shop-ai', 'Smart Shopping Strategies', shopPrompt);
+}
+refreshShop();
 </script>
-</body></html>
+</body>
+</html>
