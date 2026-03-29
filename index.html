@@ -107,17 +107,17 @@ nav {
 
 .nav-links {
   display: flex;
-  gap: 1.4rem;
+  gap: 0.8rem;
   list-style: none;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
 }
 
 .nav-links a {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.68rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--muted);
   text-decoration: none;
@@ -750,17 +750,19 @@ footer {
   .card-grid { grid-template-columns: repeat(2, 1fr) !important; }
   .product-grid { grid-template-columns: repeat(2, 1fr) !important; }
   .blog-grid { grid-template-columns: repeat(2, 1fr) !important; }
-  .cat-grid { grid-template-columns: repeat(5, 1fr) !important; }
+  
 }
 @media (max-width: 700px) {
   .card-grid { grid-template-columns: 1fr !important; }
   .product-grid { grid-template-columns: repeat(2, 1fr) !important; }
   .blog-grid { grid-template-columns: 1fr !important; }
-  .cat-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  
 }
 
 </style>
 <style>
+
+
 .hero {
   min-height: 100vh;
   display: grid;
@@ -811,13 +813,7 @@ footer {
 .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; color: var(--lime); line-height: 1; margin-bottom: 0.3rem; }
 .stat-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
 .stat-desc { font-size: 0.88rem; color: #999; margin-top: 0.5rem; line-height: 1.5; }
-.cat-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
-}
+
 .cat-item {
   background: var(--card-bg);
   padding: 1.8rem 1.5rem;
@@ -872,6 +868,21 @@ footer {
   .hero { grid-template-columns: 1fr; padding-top: 7rem; }
   .hero-right { display: none; }
   .manifesto-section { grid-template-columns: 1fr; padding: 4rem 1.5rem; gap: 3rem; }
+}
+
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  width: 100%;
+}
+.cat-grid .cat-item:last-child {
+  grid-column: auto;
+}
+@media (max-width: 900px) {
+  .cat-grid { grid-template-columns: repeat(2, 1fr); }
 }
 </style>
   <!-- Google Analytics -->
@@ -938,7 +949,7 @@ footer {
       <div><p class="section-label">Everything You Need</p><h2 class="section-title">Explore the Playbook</h2></div>
       <p style="color:#888;font-size:0.95rem;max-width:340px">Real tools. Real deals. Zero-fluff guidance across every area of life.</p>
     </div>
-    <div class="cat-grid">
+    <div class="cat-grid" style="display:grid!important;grid-template-columns:repeat(5,1fr)!important;gap:1px;background:var(--border);border:1px solid var(--border)">
       <a class="cat-item" href="freestuff.html"><span class="cat-icon">🎁</span><span class="cat-name">Free Stuff</span><span class="cat-arrow">→</span></a>
       <a class="cat-item" href="all_you_can_eat.html"><span class="cat-icon">🍽️</span><span class="cat-name">All You Can Eat</span><span class="cat-arrow">→</span></a>
       <a class="cat-item" href="apple_a_day.html"><span class="cat-icon">🍎</span><span class="cat-name">Apple a Day</span><span class="cat-arrow">→</span></a>
