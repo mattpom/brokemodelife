@@ -15,80 +15,46 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Check for draft articles
-        id: check-drafts
+      - name: Find and publish draft
         run: |
-          if [ -d "_drafts" ] && ls _drafts/*.html > /dev/null 2>&1; then
-            echo "has_drafts=true" >> $GITHUB_OUTPUT
-            DRAFT=$(ls _drafts/*.html | sort | head -1)
-            echo "draft_file=$DRAFT" >> $GITHUB_OUTPUT
-            echo "draft_name=$(basename $DRAFT)" >> $GITHUB_OUTPUT
-          else
-            echo "has_drafts=false" >> $GITHUB_OUTPUT
+          if ! ls _drafts/*.html > /dev/null 2>&1; then
+            echo "::warning::No drafts found in _drafts/ - add next article before scheduled run"
+            exit 0
           fi
 
-      - name: Publish draft
-        if: steps.check-drafts.outputs.has_drafts == 'true'
-        env:
-          DRAFT_FILE: ${{ steps.check-drafts.outputs.draft_file }}
-          DRAFT_NAME: ${{ steps.check-drafts.outputs.draft_name }}
-        run: |
-          cp "$DRAFT_FILE" "$DRAFT_NAME"
-          TITLE=$(grep -oP '(?<=<title>)[^<]+' "$DRAFT_NAME" | sed 's/ — Broke.*//')
-          TODAY=$(date +"%-B %-d, %Y")
+          DRAFT=$(ls _drafts/*.html | sort | head -1)
+          DRAFT_NAME=$(basename "$DRAFT")
+          echo "DRAFT_NAME=$DRAFT_NAME" >> $GITHUB_ENV
+
+          # Move to root
+          cp "$DRAFT" "$DRAFT_NAME"
+          rm "$DRAFT"
+
+          # Extract title
+          TITLE=$(grep -oP '(?<=<title>)[^<]+' "$DRAFT_NAME" | sed 's/ — Broke.*//' | sed "s/'/\'/g")
+          TODAY=$(date +"%B %-d, %Y")
           TODAY_ISO=$(date +"%Y-%m-%d")
-          echo "Publishing: $DRAFT_NAME | $TITLE | $TODAY"
-          rm "$DRAFT_FILE"
 
-      - name: Update index and archive
-        if: steps.check-drafts.outputs.has_drafts == 'true'
-        env:
-          DRAFT_NAME: ${{ steps.check-drafts.outputs.draft_name }}
-        run: |
-          python3 << 'PYEOF'
-import os, re
-from datetime import datetime
+          echo "Publishing: $DRAFT_NAME"
+          echo "Title: $TITLE"
+          echo "Date: $TODAY"
 
-draft_name = os.environ['DRAFT_NAME']
-with open(draft_name) as f:
-    raw = f.read()
+          # Build archive entry (single-line sed insert)
+          ENTRY="              <a href=\"$DRAFT_NAME\" class=\"archive-item\"><time datetime=\"$TODAY_ISO\">$TODAY<\/time><span class=\"archive-title\">$TITLE<\/span><span class=\"archive-arrow\">&rarr;<\/span><\/a>"
 
-title_match = re.search(r'<title>([^<]+)</title>', raw)
-title = re.sub(r' — .*', '', title_match.group(1)) if title_match else draft_name
-today = datetime.now().strftime('%B %-d, %Y')
-today_iso = datetime.now().strftime('%Y-%m-%d')
+          # Insert into archive.html after archive-list opening
+          if [ -f archive.html ]; then
+            sed -i "s|class=\"archive-list\"|class=\"archive-list\">\n$ENTRY\n<!--ARCHIVELIST|" archive.html
+          fi
 
-# Update blog.html
-if os.path.exists('blog.html'):
-    with open('blog.html') as f:
-        content = f.read()
-    new_card = f'        <a href="{draft_name}" class="bml-card">\n          <div class="bml-card__body">\n            <p class="bml-card__meta">{today}</p>\n            <h3 class="bml-card__title">{title}</h3>\n            <span class="bml-card__cta">Read \u2192</span>\n          </div>\n        </a>'
-    content = re.sub(r'(<section[^>]*class="bml-originals-section"[^>]*>.*?<div[^>]*class="bml-card-grid"[^>]*>\s*)(<a[^>]*class="bml-card"[^>]*>.*?</a>)', lambda m: m.group(1) + new_card, content, count=1, flags=re.DOTALL)
-    with open('blog.html', 'w') as f:
-        f.write(content)
+          # Update blog.html - inject new card at top of bml-originals-section
+          NEW_CARD="        <a href=\"$DRAFT_NAME\" class=\"bml-card\"><div class=\"bml-card__body\"><p class=\"bml-card__meta\">$TODAY<\/p><h3 class=\"bml-card__title\">$TITLE<\/h3><span class=\"bml-card__cta\">Read &rarr;<\/span><\/div><\/a>"
+          if [ -f blog.html ]; then
+            sed -i "s|class=\"bml-card-grid\"|class=\"bml-card-grid\">\n$NEW_CARD\n<!--CARDGRID|" blog.html
+          fi
 
-# Update archive.html
-if os.path.exists('archive.html'):
-    with open('archive.html') as f:
-        content = f.read()
-    entry = f'              <a href="{draft_name}" class="archive-item">\n                <time datetime="{today_iso}">{today}</time>\n                <span class="archive-title">{title}</span>\n                <span class="archive-arrow">\u2192</span>\n              </a>\n'
-    content = re.sub(r'(class="archive-list"[^>]*>\s*)', lambda m: m.group(1) + entry, content, count=1)
-    with open('archive.html', 'w') as f:
-        f.write(content)
-
-print(f'Published: {draft_name} | {title} | {today}')
-PYEOF
-
-      - name: Commit and push
-        if: steps.check-drafts.outputs.has_drafts == 'true'
-        run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "Bi-weekly publish: ${{ steps.check-drafts.outputs.draft_name }} [$(date +%Y-%m-%d)]"
+          git commit -m "Bi-weekly publish: $DRAFT_NAME [$TODAY_ISO]"
           git push
-
-      - name: No drafts warning
-        if: steps.check-drafts.outputs.has_drafts == 'false'
-        run: |
-          echo "::warning::No drafts in _drafts/ — add next article before scheduled run"
