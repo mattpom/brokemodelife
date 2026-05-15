@@ -18,103 +18,77 @@ jobs:
       - name: Check for draft articles
         id: check-drafts
         run: |
-          if [ -d "_drafts" ] && [ "$(ls -A _drafts/*.html 2>/dev/null)" ]; then
+          if [ -d "_drafts" ] && ls _drafts/*.html > /dev/null 2>&1; then
             echo "has_drafts=true" >> $GITHUB_OUTPUT
-            DRAFT=$(ls _drafts/*.html | head -1)
+            DRAFT=$(ls _drafts/*.html | sort | head -1)
             echo "draft_file=$DRAFT" >> $GITHUB_OUTPUT
             echo "draft_name=$(basename $DRAFT)" >> $GITHUB_OUTPUT
           else
             echo "has_drafts=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Publish draft article
+      - name: Publish draft
         if: steps.check-drafts.outputs.has_drafts == 'true'
+        env:
+          DRAFT_FILE: ${{ steps.check-drafts.outputs.draft_file }}
+          DRAFT_NAME: ${{ steps.check-drafts.outputs.draft_name }}
         run: |
-          DRAFT="${{ steps.check-drafts.outputs.draft_file }}"
-          DRAFT_NAME="${{ steps.check-drafts.outputs.draft_name }}"
-
-          cp "$DRAFT" "$DRAFT_NAME"
-
-          TITLE=$(grep -o '<title>[^<]*</title>' "$DRAFT_NAME" | sed 's/<[^>]*>//g' | sed 's/ — Broke.*$//')
-          TODAY=$(date +"%B %d, %Y")
+          cp "$DRAFT_FILE" "$DRAFT_NAME"
+          TITLE=$(grep -oP '(?<=<title>)[^<]+' "$DRAFT_NAME" | sed 's/ — Broke.*//')
+          TODAY=$(date +"%-B %-d, %Y")
           TODAY_ISO=$(date +"%Y-%m-%d")
+          echo "Publishing: $DRAFT_NAME | $TITLE | $TODAY"
+          rm "$DRAFT_FILE"
 
-          # Update blog.html - update first card in bml-originals-section
-          if [ -f "blog.html" ]; then
-            python3 - <<PYEOF
-import re
+      - name: Update index and archive
+        if: steps.check-drafts.outputs.has_drafts == 'true'
+        env:
+          DRAFT_NAME: ${{ steps.check-drafts.outputs.draft_name }}
+        run: |
+          python3 << 'PYEOF'
+import os, re
+from datetime import datetime
 
-with open('blog.html', 'r') as f:
-    content = f.read()
+draft_name = os.environ['DRAFT_NAME']
+with open(draft_name) as f:
+    raw = f.read()
 
-draft_name = "$DRAFT_NAME"
-title = "$TITLE"
-today = "$TODAY"
-today_iso = "$TODAY_ISO"
+title_match = re.search(r'<title>([^<]+)</title>', raw)
+title = re.sub(r' — .*', '', title_match.group(1)) if title_match else draft_name
+today = datetime.now().strftime('%B %-d, %Y')
+today_iso = datetime.now().strftime('%Y-%m-%d')
 
-new_card = f"""        <a href="{draft_name}" class="bml-card">
-          <div class="bml-card__body">
-            <p class="bml-card__meta">{today}</p>
-            <h3 class="bml-card__title">{title}</h3>
-            <span class="bml-card__cta">Read →</span>
-          </div>
-        </a>"""
+# Update blog.html
+if os.path.exists('blog.html'):
+    with open('blog.html') as f:
+        content = f.read()
+    new_card = f'        <a href="{draft_name}" class="bml-card">\n          <div class="bml-card__body">\n            <p class="bml-card__meta">{today}</p>\n            <h3 class="bml-card__title">{title}</h3>\n            <span class="bml-card__cta">Read \u2192</span>\n          </div>\n        </a>'
+    content = re.sub(r'(<section[^>]*class="bml-originals-section"[^>]*>.*?<div[^>]*class="bml-card-grid"[^>]*>\s*)(<a[^>]*class="bml-card"[^>]*>.*?</a>)', lambda m: m.group(1) + new_card, content, count=1, flags=re.DOTALL)
+    with open('blog.html', 'w') as f:
+        f.write(content)
 
-content = re.sub(
-    r'(<section[^>]*class="bml-originals-section"[^>]*>.*?<div[^>]*class="bml-card-grid"[^>]*>s*)(<a[^>]*class="bml-card"[^>]*>.*?</a>)',
-    r'\1' + new_card,
-    content, count=1, flags=re.DOTALL
-)
+# Update archive.html
+if os.path.exists('archive.html'):
+    with open('archive.html') as f:
+        content = f.read()
+    entry = f'              <a href="{draft_name}" class="archive-item">\n                <time datetime="{today_iso}">{today}</time>\n                <span class="archive-title">{title}</span>\n                <span class="archive-arrow">\u2192</span>\n              </a>\n'
+    content = re.sub(r'(class="archive-list"[^>]*>\s*)', lambda m: m.group(1) + entry, content, count=1)
+    with open('archive.html', 'w') as f:
+        f.write(content)
 
-with open('blog.html', 'w') as f:
-    f.write(content)
-
-print("blog.html updated")
+print(f'Published: {draft_name} | {title} | {today}')
 PYEOF
-          fi
 
-          # Update archive.html
-          if [ -f "archive.html" ]; then
-            python3 - <<PYEOF
-import re
-
-with open('archive.html', 'r') as f:
-    content = f.read()
-
-draft_name = "$DRAFT_NAME"
-title = "$TITLE"
-today = "$TODAY"
-today_iso = "$TODAY_ISO"
-
-new_entry = f"""              <a href="{draft_name}" class="archive-item">
-                <time datetime="{today_iso}">{today}</time>
-                <span class="archive-title">{title}</span>
-                <span class="archive-arrow">→</span>
-              </a>
-"""
-
-content = re.sub(r'(class="archive-list"[^>]*>s*)', r'\1' + new_entry, content, count=1)
-
-with open('archive.html', 'w') as f:
-    f.write(content)
-
-print("archive.html updated")
-PYEOF
-          fi
-
-          rm "$DRAFT"
-
-      - name: Commit and push changes
+      - name: Commit and push
         if: steps.check-drafts.outputs.has_drafts == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "Bi-weekly publish: ${{ steps.check-drafts.outputs.draft_name }} [$(date +'%Y-%m-%d')]"
+          git commit -m "Bi-weekly publish: ${{ steps.check-drafts.outputs.draft_name }} [$(date +%Y-%m-%d)]"
           git push
 
-      - name: No drafts notification
+      - name: No drafts warning
         if: steps.check-drafts.outputs.has_drafts == 'false'
         run: |
-          echo "::warning::No draft articles found in _drafts/ folder."
-          echo "::warning::Add your next article to the _drafts/ folder before the next scheduled run."
+          echo "::warning::No drafts in _drafts/ — add next article before scheduled run"
