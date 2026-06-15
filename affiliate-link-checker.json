@@ -1,0 +1,232 @@
+{
+  "meta": {
+    "description": "Affiliate link health checker for all 4 Mattpom Digital Ventures sites. Run weekly to verify Amazon /dp/ links resolve to valid product pages and affiliate tags are intact.",
+    "last_updated": "2026-06-15",
+    "affiliate_tags": {
+      "brokemodelife": "brokemodelife-20",
+      "dontbehangry": "dontbehangry-20",
+      "stoplookaround": "stoplookaround-20",
+      "finelivingguide": "finelivingguide-20"
+    },
+    "check_instructions": "For each link: verify HTTP status is 200, page title does not contain Page Not Found or 404, and URL contains the correct affiliate tag. Flag any /s?k= search links as errors - all links must use /dp/ASIN format.",
+    "run_frequency": "weekly"
+  },
+  "sites": {
+    "dontbehangry": {
+      "base_url": "https://dontbehangry.com",
+      "pages": [
+        {
+          "page": "shop.html",
+          "links": [
+            { "product": "Lodge Cast Iron Skillet", "asin": "B00006JSUA", "url": "https://www.amazon.com/dp/B00006JSUA?tag=dontbehangry-20" },
+            { "product": "ThermoWorks Instant Read Thermometer", "asin": "B01IHHLB3W", "url": "https://www.amazon.com/dp/B01IHHLB3W?tag=dontbehangry-20" },
+            { "product": "Microplane Classic Zester", "asin": "B00151WA06", "url": "https://www.amazon.com/dp/B00151WA06?tag=dontbehangry-20" },
+            { "product": "Maldon Sea Salt Flakes", "asin": "B00017028M", "url": "https://www.amazon.com/dp/B00017028M?tag=dontbehangry-20" },
+            { "product": "Le Creuset Dutch Oven", "asin": "B00006IV39", "url": "https://www.amazon.com/dp/B00006IV39?tag=dontbehangry-20" },
+            { "product": "Salt Fat Acid Heat", "asin": "1476753830", "url": "https://www.amazon.com/dp/1476753830?tag=dontbehangry-20" },
+            { "product": "The Food Lab", "asin": "0393081087", "url": "https://www.amazon.com/dp/0393081087?tag=dontbehangry-20" },
+            { "product": "Shun Classic Chef Knife", "asin": "B000FKZNKQ", "url": "https://www.amazon.com/dp/B000FKZNKQ?tag=dontbehangry-20" },
+            { "product": "Vitamix Blender", "asin": "B008H4SLV6", "url": "https://www.amazon.com/dp/B008H4SLV6?tag=dontbehangry-20" },
+            { "product": "Staub Cast Iron Braiser", "asin": "B00APSQZMO", "url": "https://www.amazon.com/dp/B00APSQZMO?tag=dontbehangry-20" },
+            { "product": "OXO Mandoline", "asin": "B0000CDVD2", "url": "https://www.amazon.com/dp/B0000CDVD2?tag=dontbehangry-20" },
+            { "product": "Wusthof Classic Bread Knife", "asin": "B00009ZK08", "url": "https://www.amazon.com/dp/B00009ZK08?tag=dontbehangry-20" },
+            { "product": "Benriner Japanese Mandoline", "asin": "B000BVFYI2", "url": "https://www.amazon.com/dp/B000BVFYI2?tag=dontbehangry-20" },
+            { "product": "Marble Mortar and Pestle", "asin": "B00WLQXSUE", "url": "https://www.amazon.com/dp/B00WLQXSUE?tag=dontbehangry-20" },
+            { "product": "OXO Salad Spinner", "asin": "B00004OCKL", "url": "https://www.amazon.com/dp/B00004OCKL?tag=dontbehangry-20" },
+            { "product": "Silpat Baking Mat", "asin": "B0000CXWXN", "url": "https://www.amazon.com/dp/B0000CXWXN?tag=dontbehangry-20" },
+            { "product": "Escali Kitchen Scale", "asin": "B0007GAWRS", "url": "https://www.amazon.com/dp/B0007GAWRS?tag=dontbehangry-20" },
+            { "product": "Nordic Ware Baking Sheets", "asin": "B0049C2S32", "url": "https://www.amazon.com/dp/B0049C2S32?tag=dontbehangry-20" },
+            { "product": "Joule Sous Vide", "asin": "B01M8M8I8K", "url": "https://www.amazon.com/dp/B01M8M8I8K?tag=dontbehangry-20" },
+            { "product": "Flavor Bible", "asin": "0316118400", "url": "https://www.amazon.com/dp/0316118400?tag=dontbehangry-20" },
+            { "product": "On Food and Cooking (Harold McGee)", "asin": "0684800012", "url": "https://www.amazon.com/dp/0684800012?tag=dontbehangry-20" },
+            { "product": "Plenty (Ottolenghi)", "asin": "1452100276", "url": "https://www.amazon.com/dp/1452100276?tag=dontbehangry-20" },
+            { "product": "Japanese Farm Food", "asin": "1449418295", "url": "https://www.amazon.com/dp/1449418295?tag=dontbehangry-20" },
+            { "product": "The Wok (Kenji)", "asin": "0393541215", "url": "https://www.amazon.com/dp/0393541215?tag=dontbehangry-20" },
+            { "product": "Jerusalem (Ottolenghi)", "asin": "1607743949", "url": "https://www.amazon.com/dp/1607743949?tag=dontbehangry-20" },
+            { "product": "Nose to Tail (Fergus Henderson)", "asin": "0062451782", "url": "https://www.amazon.com/dp/0062451782?tag=dontbehangry-20" }
+          ]
+        }
+      ]
+    },
+    "brokemodelife": {
+      "base_url": "https://brokemodelife.com",
+      "pages": [
+        {
+          "page": "style.html",
+          "links": [
+            { "product": "Levis 501 Original Jeans", "asin": "B000008MBI", "url": "https://www.amazon.com/dp/B000008MBI?tag=brokemodelife-20" },
+            { "product": "Hanes White V-Neck T-Shirts", "asin": "B01N5GKPQ5", "url": "https://www.amazon.com/dp/B01N5GKPQ5?tag=brokemodelife-20" },
+            { "product": "Fruit of the Loom Boxer Briefs", "asin": "B07MJGWK42", "url": "https://www.amazon.com/dp/B07MJGWK42?tag=brokemodelife-20" },
+            { "product": "Dickies Work Pants", "asin": "B000WE93MY", "url": "https://www.amazon.com/dp/B000WE93MY?tag=brokemodelife-20" }
+          ]
+        },
+        {
+          "page": "travel.html",
+          "links": [
+            { "product": "AmazonBasics Carry-On Spinner", "asin": "B073K14FRS", "url": "https://www.amazon.com/dp/B073K14FRS?tag=brokemodelife-20" },
+            { "product": "Eagle Creek Packing Cubes", "asin": "B00F9S8GF8", "url": "https://www.amazon.com/dp/B00F9S8GF8?tag=brokemodelife-20" },
+            { "product": "Travel Umbrella Compact", "asin": "B013AWXZZU", "url": "https://www.amazon.com/dp/B013AWXZZU?tag=brokemodelife-20" },
+            { "product": "TOZO Wireless Earbuds", "asin": "B07XJ8C8F5", "url": "https://www.amazon.com/dp/B07XJ8C8F5?tag=brokemodelife-20" }
+          ]
+        },
+        {
+          "page": "all_you_can_eat.html",
+          "links": [
+            { "product": "Instant Pot Duo 7-in-1", "asin": "B00FLYWNYQ", "url": "https://www.amazon.com/dp/B00FLYWNYQ?tag=brokemodelife-20" },
+            { "product": "Lodge Cast Iron Skillet 10.25", "asin": "B00006JSUA", "url": "https://www.amazon.com/dp/B00006JSUA?tag=brokemodelife-20" },
+            { "product": "Good Cheap Eats Cookbook", "asin": "1558328149", "url": "https://www.amazon.com/dp/1558328149?tag=brokemodelife-20" },
+            { "product": "Budget Bytes Cookbook", "asin": "1583335579", "url": "https://www.amazon.com/dp/1583335579?tag=brokemodelife-20" }
+          ]
+        },
+        {
+          "page": "apple_a_day.html",
+          "links": [
+            { "product": "Theragun Mini", "asin": "B09BJ67PPR", "url": "https://www.amazon.com/dp/B09BJ67PPR?tag=brokemodelife-20" },
+            { "product": "Lifestraw Personal Water Filter", "asin": "B006QF3TW4", "url": "https://www.amazon.com/dp/B006QF3TW4?tag=brokemodelife-20" },
+            { "product": "Hydro Flask 32oz", "asin": "B09BQP35ND", "url": "https://www.amazon.com/dp/B09BQP35ND?tag=brokemodelife-20" },
+            { "product": "TRX Suspension Trainer", "asin": "B008CSDLTQ", "url": "https://www.amazon.com/dp/B008CSDLTQ?tag=brokemodelife-20" }
+          ]
+        }
+      ]
+    },
+    "stoplookaround": {
+      "base_url": "https://stoplookaround.com",
+      "pages": [
+        {
+          "page": "shop.html",
+          "links": [
+            { "product": "Fujifilm Instax Mini 11", "asin": "B076VPC9SC", "url": "https://www.amazon.com/dp/B076VPC9SC?tag=stoplookaround-20" },
+            { "product": "Peak Design Travel Tripod", "asin": "B07PQXVWMZ", "url": "https://www.amazon.com/dp/B07PQXVWMZ?tag=stoplookaround-20" },
+            { "product": "Rick Steves Europe Book", "asin": "1641715073", "url": "https://www.amazon.com/dp/1641715073?tag=stoplookaround-20" },
+            { "product": "Lonely Planet Best in Travel", "asin": "178868066X", "url": "https://www.amazon.com/dp/178868066X?tag=stoplookaround-20" },
+            { "product": "Osprey Farpoint 40", "asin": "B003TNMJDO", "url": "https://www.amazon.com/dp/B003TNMJDO?tag=stoplookaround-20" },
+            { "product": "Bose QC45 Headphones", "asin": "B098FKXT8L", "url": "https://www.amazon.com/dp/B098FKXT8L?tag=stoplookaround-20" },
+            { "product": "AeroPress Go Coffee Maker", "asin": "B07YVL8SF3", "url": "https://www.amazon.com/dp/B07YVL8SF3?tag=stoplookaround-20" },
+            { "product": "Tom Bihn Daylight Pack", "asin": "B0057U5AQQ", "url": "https://www.amazon.com/dp/B0057U5AQQ?tag=stoplookaround-20" }
+          ]
+        },
+        {
+          "page": "feed-me.html",
+          "links": [
+            { "product": "AeroPress Original", "asin": "B0047BIWSK", "url": "https://www.amazon.com/dp/B0047BIWSK?tag=stoplookaround-20" },
+            { "product": "Jetboil Flash Camping Stove", "asin": "B001JDTEMQ", "url": "https://www.amazon.com/dp/B001JDTEMQ?tag=stoplookaround-20" },
+            { "product": "Sea to Summit X-Bowl", "asin": "B00EL85ZU0", "url": "https://www.amazon.com/dp/B00EL85ZU0?tag=stoplookaround-20" },
+            { "product": "Snow Peak Titanium Spork", "asin": "B0001MEQOC", "url": "https://www.amazon.com/dp/B0001MEQOC?tag=stoplookaround-20" }
+          ]
+        },
+        {
+          "page": "world-music.html",
+          "links": [
+            { "product": "Putumayo World Music Sampler", "asin": "B00000J1ER", "url": "https://www.amazon.com/dp/B00000J1ER?tag=stoplookaround-20" },
+            { "product": "Fela Kuti Box Set", "asin": "B000025YMS", "url": "https://www.amazon.com/dp/B000025YMS?tag=stoplookaround-20" },
+            { "product": "Buena Vista Social Club CD", "asin": "B000002OKL", "url": "https://www.amazon.com/dp/B000002OKL?tag=stoplookaround-20" },
+            { "product": "Ethiopiques Vol 4", "asin": "B000001HOM", "url": "https://www.amazon.com/dp/B000001HOM?tag=stoplookaround-20" },
+            { "product": "Sony WH-1000XM5", "asin": "B0CH2NZJ1Z", "url": "https://www.amazon.com/dp/B0CH2NZJ1Z?tag=stoplookaround-20" },
+            { "product": "Crosley Cruiser Vinyl Player", "asin": "B00JQFP3WM", "url": "https://www.amazon.com/dp/B00JQFP3WM?tag=stoplookaround-20" },
+            { "product": "World Music: The Rough Guide", "asin": "1858280176", "url": "https://www.amazon.com/dp/1858280176?tag=stoplookaround-20" },
+            { "product": "Global Beats World Music Book", "asin": "1843170418", "url": "https://www.amazon.com/dp/1843170418?tag=stoplookaround-20" }
+          ]
+        }
+      ]
+    },
+    "finelivingguide": {
+      "base_url": "https://finelivingguide.com",
+      "pages": [
+        {
+          "page": "shop.html",
+          "links": [
+            { "product": "Le Creuset 5.5qt Dutch Oven", "asin": "B00006IV39", "url": "https://www.amazon.com/dp/B00006IV39?tag=finelivingguide-20" },
+            { "product": "Theragun Pro", "asin": "B093V4SDNG", "url": "https://www.amazon.com/dp/B093V4SDNG?tag=finelivingguide-20" },
+            { "product": "Nespresso Vertuo Next", "asin": "B07T3QSVGX", "url": "https://www.amazon.com/dp/B07T3QSVGX?tag=finelivingguide-20" },
+            { "product": "Vitamix 5200 Blender", "asin": "B008H4SLV6", "url": "https://www.amazon.com/dp/B008H4SLV6?tag=finelivingguide-20" },
+            { "product": "Dyson V15 Detect Vacuum", "asin": "B092WJPLNN", "url": "https://www.amazon.com/dp/B092WJPLNN?tag=finelivingguide-20" }
+          ]
+        },
+        {
+          "page": "dining.html",
+          "links": [
+            { "product": "Staub 4qt Cast Iron Braiser", "asin": "B00APSQZMO", "url": "https://www.amazon.com/dp/B00APSQZMO?tag=finelivingguide-20" },
+            { "product": "Shun Classic Chef Knife", "asin": "B000FKZNKQ", "url": "https://www.amazon.com/dp/B000FKZNKQ?tag=finelivingguide-20" },
+            { "product": "Riedel Winewings Wine Glass", "asin": "B08CBDRNKZ", "url": "https://www.amazon.com/dp/B08CBDRNKZ?tag=finelivingguide-20" },
+            { "product": "Georg Jensen Sky Cutlery", "asin": "B000XRJGCY", "url": "https://www.amazon.com/dp/B000XRJGCY?tag=finelivingguide-20" }
+          ]
+        },
+        {
+          "page": "spirits.html",
+          "links": [
+            { "product": "Glencairn Whisky Glass Set of 4", "asin": "B000AUTUIA", "url": "https://www.amazon.com/dp/B000AUTUIA?tag=finelivingguide-20" },
+            { "product": "Cocktail Kingdom Ice Mold", "asin": "B00BXDPHZS", "url": "https://www.amazon.com/dp/B00BXDPHZS?tag=finelivingguide-20" },
+            { "product": "Cocktail Kingdom Shaking Tins", "asin": "B0052WRVR0", "url": "https://www.amazon.com/dp/B0052WRVR0?tag=finelivingguide-20" },
+            { "product": "Angostura Aromatic Bitters", "asin": "B000P6J7MW", "url": "https://www.amazon.com/dp/B000P6J7MW?tag=finelivingguide-20" }
+          ]
+        },
+        {
+          "page": "travel.html",
+          "links": [
+            { "product": "Rimowa Essential Cabin Luggage", "asin": "B07WQRNV3B", "url": "https://www.amazon.com/dp/B07WQRNV3B?tag=finelivingguide-20" },
+            { "product": "Bose QC45 Headphones", "asin": "B098FKXT8L", "url": "https://www.amazon.com/dp/B098FKXT8L?tag=finelivingguide-20" },
+            { "product": "Osprey Farpoint 40", "asin": "B003TNMJDO", "url": "https://www.amazon.com/dp/B003TNMJDO?tag=finelivingguide-20" },
+            { "product": "Patagonia Black Hole Duffel 55L", "asin": "B07BSMVWF8", "url": "https://www.amazon.com/dp/B07BSMVWF8?tag=finelivingguide-20" }
+          ]
+        },
+        {
+          "page": "wellness.html",
+          "links": [
+            { "product": "Theragun Pro Massage Gun", "asin": "B093V4SDNG", "url": "https://www.amazon.com/dp/B093V4SDNG?tag=finelivingguide-20" },
+            { "product": "Hydro Flask 32oz Wide Mouth", "asin": "B09BQP35ND", "url": "https://www.amazon.com/dp/B09BQP35ND?tag=finelivingguide-20" },
+            { "product": "Manduka PRO Yoga Mat", "asin": "B001O3MFK4", "url": "https://www.amazon.com/dp/B001O3MFK4?tag=finelivingguide-20" },
+            { "product": "Oura Ring Gen 3", "asin": "B09JPGGBLK", "url": "https://www.amazon.com/dp/B09JPGGBLK?tag=finelivingguide-20" }
+          ]
+        },
+        {
+          "page": "style.html",
+          "links": [
+            { "product": "Allen Edmonds Park Avenue Oxford", "asin": "B001AMSQVC", "url": "https://www.amazon.com/dp/B001AMSQVC?tag=finelivingguide-20" },
+            { "product": "Montblanc Meisterstuck Pen", "asin": "B00009Z3LU", "url": "https://www.amazon.com/dp/B00009Z3LU?tag=finelivingguide-20" },
+            { "product": "Tom Ford Tobacco Vanille", "asin": "B000HHJXPM", "url": "https://www.amazon.com/dp/B000HHJXPM?tag=finelivingguide-20" },
+            { "product": "Acne Studios Wool Scarf", "asin": "B09QG3QLXT", "url": "https://www.amazon.com/dp/B09QG3QLXT?tag=finelivingguide-20" }
+          ]
+        },
+        {
+          "page": "art.html",
+          "links": [
+            { "product": "Fujifilm Instax Mini 11", "asin": "B076VPC9SC", "url": "https://www.amazon.com/dp/B076VPC9SC?tag=finelivingguide-20" },
+            { "product": "Moleskine Classic Hardcover Notebook", "asin": "B015NG44LI", "url": "https://www.amazon.com/dp/B015NG44LI?tag=finelivingguide-20" },
+            { "product": "Prismacolor Premier 72 Pencils", "asin": "B00006IEEU", "url": "https://www.amazon.com/dp/B00006IEEU?tag=finelivingguide-20" },
+            { "product": "Art: The Whole Story", "asin": "0500288615", "url": "https://www.amazon.com/dp/0500288615?tag=finelivingguide-20" }
+          ]
+        },
+        {
+          "page": "interiors.html",
+          "links": [
+            { "product": "Marble Coffee Table Tray", "asin": "B00C5P7OZE", "url": "https://www.amazon.com/dp/B00C5P7OZE?tag=finelivingguide-20" },
+            { "product": "Muuto E27 Pendant Lamp", "asin": "B078W9YSV3", "url": "https://www.amazon.com/dp/B078W9YSV3?tag=finelivingguide-20" },
+            { "product": "Aesop Reverence Room Spray", "asin": "B07BTHKG78", "url": "https://www.amazon.com/dp/B07BTHKG78?tag=finelivingguide-20" },
+            { "product": "Interior Design Handbook", "asin": "1984860445", "url": "https://www.amazon.com/dp/1984860445?tag=finelivingguide-20" }
+          ]
+        }
+      ]
+    }
+  },
+  "validation_rules": {
+    "required_url_format": "/dp/ASIN",
+    "forbidden_url_format": "/s?k=",
+    "required_tags": {
+      "dontbehangry.com": "dontbehangry-20",
+      "brokemodelife.com": "brokemodelife-20",
+      "stoplookaround.com": "stoplookaround-20",
+      "finelivingguide.com": "finelivingguide-20"
+    },
+    "expected_http_status": 200,
+    "flag_if_title_contains": ["Page Not Found", "404", "Dog", "Sorry"]
+  },
+  "how_to_run": {
+    "make_com": "Create a scenario: JSON Parse this file > Iterator over sites > pages > links > HTTP GET each url > check status=200 and title not in flag list > send email alert on any failure",
+    "manual_spot_check": [
+      "https://www.amazon.com/dp/B00006JSUA?tag=dontbehangry-20",
+      "https://www.amazon.com/dp/B07XJ8C8F5?tag=brokemodelife-20",
+      "https://www.amazon.com/dp/B076VPC9SC?tag=stoplookaround-20",
+      "https://www.amazon.com/dp/B00006IV39?tag=finelivingguide-20"
+    ]
+  }
+}
