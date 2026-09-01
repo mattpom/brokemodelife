@@ -1,58 +1,352 @@
 {
   "meta": {
-    "description": "Affiliate link health checker - flat links array for Make.com Iterator. Run weekly.",
-    "last_updated": "2026-06-15",
+    "description": "Affiliate link health checker - durable tracked search links for Make.com Iterator.",
+    "last_updated": "2026-09-01",
     "run_frequency": "weekly"
   },
   "links": [
-    { "site": "dontbehangry", "page": "shop.html", "product": "Lodge Cast Iron Skillet", "tag": "dontbehangry-20", "url": "https://www.amazon.com/dp/B00006JSUA?tag=dontbehangry-20" },
-    { "site": "dontbehangry", "page": "shop.html", "product": "ThermoWorks Thermometer", "tag": "dontbehangry-20", "url": "https://www.amazon.com/dp/B01IHHLB3W?tag=dontbehangry-20" },
-    { "site": "dontbehangry", "page": "shop.html", "product": "Microplane Classic Zester", "tag": "dontbehangry-20", "url": "https://www.amazon.com/dp/B00151WA06?tag=dontbehangry-20" },
-    { "site": "dontbehangry", "page": "shop.html", "product": "Maldon Sea Salt Flakes", "tag": "dontbehangry-20", "url": "https://www.amazon.com/dp/B00017028M?tag=dontbehangry-20" },
-          { "site": "dontbehangry", "page": "shop.html", "product": "Le Creuset Dutch Oven", "tag": "dontbehangry-20", "url": "https://www.amazon.com/dp/B00VWMFLQI?tag=dontbehangry-20" },
-    { "site": "dontbehangry", "page": "shop.html", "product": "Salt Fat Acid Heat", "tag": "dontbehangry-20", "url": "https://www.amazon.com/dp/1476753830?tag=dontbehangry-20" },
-    { "site": "dontbehangry", "page": "shop.html", "product": "The Food Lab", "tag": "dontbehangry-20", "url": "https://www.amazon.com/dp/0393081087?tag=dontbehangry-20" },
-    { "site": "dontbehangry", "page": "shop.html", "product": "Shun Classic Chef Knife", "tag": "dontbehangry-20", "url": "https://www.amazon.com/dp/B000FKZNKQ?tag=dontbehangry-20" },
-    { "site": "dontbehangry", "page": "shop.html", "product": "Vitamix Blender", "tag": "dontbehangry-20", "url": "https://www.amazon.com/dp/B00045LV6E?tag=dontbehangry-20" },
-    { "site": "dontbehangry", "page": "shop.html", "product": "OXO Mandoline", "tag": "dontbehangry-20", "url": "https://www.amazon.com/dp/B0000CDVD2?tag=dontbehangry-20" },
-    { "site": "dontbehangry", "page": "shop.html", "product": "Wusthof Bread Knife", "tag": "dontbehangry-20", "url": "https://www.amazon.com/dp/B000092K08?tag=dontbehangry-20" },
-    { "site": "dontbehangry", "page": "shop.html", "product": "Instant Pot Duo 7-in-1", "tag": "dontbehangry-20", "url": "https://www.amazon.com/dp/B00FLYWNYQ?tag=dontbehangry-20" },
-    { "site": "dontbehangry", "page": "shop.html", "product": "Made In Stainless Frying Pan", "tag": "dontbehangry-20", "url": "https://www.amazon.com/dp/B07RHFVVZ9?tag=dontbehangry-20" },
-    { "site": "dontbehangry", "page": "shop.html", "product": "All-Clad D3 Saucepan", "tag": "dontbehangry-20", "url": "https://www.amazon.com/dp/B00005AL4L?tag=dontbehangry-20" },
-    { "site": "dontbehangry", "page": "shop.html", "product": "Breville Smart Oven Air", "tag": "dontbehangry-20", "url": "https://www.amazon.com/dp/B0044XDA3S?tag=dontbehangry-20" },
-    { "site": "brokemodelife", "page": "shop.html", "product": "Kindle Paperwhite", "tag": "brokemodelife-20", "url": "https://www.amazon.com/dp/B08KTZ8249?tag=brokemodelife-20" },
-    { "site": "brokemodelife", "page": "shop.html", "product": "Anker PowerCore Portable Charger", "tag": "brokemodelife-20", "url": "https://www.amazon.com/dp/B0C6XKY2HM?tag=brokemodelife-20" },
-    { "site": "brokemodelife", "page": "shop.html", "product": "Hydro Flask Water Bottle", "tag": "brokemodelife-20", "url": "https://www.amazon.com/dp/B01ACAXEFC?tag=brokemodelife-20" },
-    { "site": "brokemodelife", "page": "shop.html", "product": "Blue Light Blocking Glasses", "tag": "brokemodelife-20", "url": "https://www.amazon.com/dp/B07PZR3PVB?tag=brokemodelife-20" },
-    { "site": "brokemodelife", "page": "shop.html", "product": "Moleskine Notebook", "tag": "brokemodelife-20", "url": "https://www.amazon.com/dp/B07CMR42MG?tag=brokemodelife-20" },
-    { "site": "brokemodelife", "page": "food.html", "product": "Instant Pot Duo 7-in-1", "tag": "brokemodelife-20", "url": "https://www.amazon.com/dp/B00FLYWNYQ?tag=brokemodelife-20" },
-    { "site": "brokemodelife", "page": "food.html", "product": "Basmati Rice 10lb", "tag": "brokemodelife-20", "url": "https://www.amazon.com/dp/B07N5QH1MG?tag=brokemodelife-20" },
-    { "site": "brokemodelife", "page": "food.html", "product": "Cast Iron Skillet", "tag": "brokemodelife-20", "url": "https://www.amazon.com/dp/B00006JSUA?tag=brokemodelife-20" },
-    { "site": "brokemodelife", "page": "style.html", "product": "Levi 501 Original Jeans", "tag": "brokemodelife-20", "url": "https://www.amazon.com/dp/B0014UH3IK?tag=brokemodelife-20" },
-    { "site": "brokemodelife", "page": "style.html", "product": "White Hanes T-Shirts 6-Pack", "tag": "brokemodelife-20", "url": "https://www.amazon.com/dp/B01N3O6IJ4?tag=brokemodelife-20" },
-    { "site": "brokemodelife", "page": "style.html", "product": "New Balance 574 Sneakers", "tag": "brokemodelife-20", "url": "https://www.amazon.com/dp/B002L5I08O?tag=brokemodelife-20" },
-    { "site": "brokemodelife", "page": "travel.html", "product": "Osprey Farpoint 40 Backpack", "tag": "brokemodelife-20", "url": "https://www.amazon.com/dp/B00K73DXME?tag=brokemodelife-20" },
-    { "site": "brokemodelife", "page": "travel.html", "product": "Eagle Creek Packing Cubes", "tag": "brokemodelife-20", "url": "https://www.amazon.com/dp/B008IKJKNQ?tag=brokemodelife-20" },
-    { "site": "brokemodelife", "page": "travel.html", "product": "Bose QuietComfort 45", "tag": "brokemodelife-20", "url": "https://www.amazon.com/dp/B098FKXT8L?tag=brokemodelife-20" },
-    { "site": "brokemodelife", "page": "health.html", "product": "Resistance Bands Set", "tag": "brokemodelife-20", "url": "https://www.amazon.com/dp/B01AVDVHTI?tag=brokemodelife-20" },
-    { "site": "brokemodelife", "page": "health.html", "product": "Foam Roller", "tag": "brokemodelife-20", "url": "https://www.amazon.com/dp/B00EKM87JM?tag=brokemodelife-20" },
-    { "site": "stoplookaround", "page": "travel-gear.html", "product": "Osprey Farpoint 40", "tag": "stoplookaround-20", "url": "https://www.amazon.com/dp/B00K73DXME?tag=stoplookaround-20" },
-    { "site": "stoplookaround", "page": "travel-gear.html", "product": "Anker USB-C Hub", "tag": "stoplookaround-20", "url": "https://www.amazon.com/dp/B07YZQ48BV?tag=stoplookaround-20" },
-    { "site": "stoplookaround", "page": "travel-gear.html", "product": "Bose QuietComfort 45", "tag": "stoplookaround-20", "url": "https://www.amazon.com/dp/B098FKXT8L?tag=stoplookaround-20" },
-    { "site": "stoplookaround", "page": "travel-gear.html", "product": "Lonely Planet World Atlas", "tag": "stoplookaround-20", "url": "https://www.amazon.com/dp/1788682025?tag=stoplookaround-20" },
-    { "site": "stoplookaround", "page": "cameras.html", "product": "Sony ZV-E10 Mirrorless Camera", "tag": "stoplookaround-20", "url": "https://www.amazon.com/dp/B09BBTB9XG?tag=stoplookaround-20" },
-    { "site": "stoplookaround", "page": "cameras.html", "product": "GoPro HERO11 Black", "tag": "stoplookaround-20", "url": "https://www.amazon.com/dp/B0B1VQ5YTD?tag=stoplookaround-20" },
-    { "site": "stoplookaround", "page": "cameras.html", "product": "DJI Mini 3 Pro Drone", "tag": "stoplookaround-20", "url": "https://www.amazon.com/dp/B0BGZH3K6Q?tag=stoplookaround-20" },
-    { "site": "stoplookaround", "page": "music.html", "product": "Yamaha P-125 Digital Piano", "tag": "stoplookaround-20", "url": "https://www.amazon.com/dp/B07BW7KTBW?tag=stoplookaround-20" },
-    { "site": "stoplookaround", "page": "music.html", "product": "Fender Player Stratocaster", "tag": "stoplookaround-20", "url": "https://www.amazon.com/dp/B07B39X5W1?tag=stoplookaround-20" },
-          { "site": "finelivingguide", "page": "dining.html", "product": "Le Creuset Dutch Oven", "tag": "finelivingguide-20", "url": "https://www.amazon.com/dp/B00VWMFLQI?tag=finelivingguide-20" },
-    { "site": "finelivingguide", "page": "dining.html", "product": "All-Clad D5 Stainless Cookware", "tag": "finelivingguide-20", "url": "https://www.amazon.com/dp/B000N501BK?tag=finelivingguide-20" },
-    { "site": "finelivingguide", "page": "dining.html", "product": "Wusthof Classic 8-Inch Chef Knife", "tag": "finelivingguide-20", "url": "https://www.amazon.com/dp/B00009ZK08?tag=finelivingguide-20" },
-    { "site": "finelivingguide", "page": "dining.html", "product": "Riedel Extreme Cabernet Wine Glasses", "tag": "finelivingguide-20", "url": "https://www.amazon.com/dp/B000XR7G72?tag=finelivingguide-20" },
-    { "site": "finelivingguide", "page": "cribs.html", "product": "Dyson V15 Detect Vacuum", "tag": "finelivingguide-20", "url": "https://www.amazon.com/dp/B08WWFN8J5?tag=finelivingguide-20" },
-    { "site": "finelivingguide", "page": "cribs.html", "product": "Nest Learning Thermostat", "tag": "finelivingguide-20", "url": "https://www.amazon.com/dp/B0131RG6VK?tag=finelivingguide-20" },
-    { "site": "finelivingguide", "page": "cribs.html", "product": "Saatva Classic Mattress", "tag": "finelivingguide-20", "url": "https://www.amazon.com/dp/B07BKGCHH8?tag=finelivingguide-20" },
-    { "site": "finelivingguide", "page": "style.html", "product": "Ray-Ban Aviator Sunglasses", "tag": "finelivingguide-20", "url": "https://www.amazon.com/dp/B001O7SFAW?tag=finelivingguide-20" },
-    { "site": "finelivingguide", "page": "style.html", "product": "Montblanc Meisterstuck Pen", "tag": "finelivingguide-20", "url": "https://www.amazon.com/dp/B000V0IZ8Y?tag=finelivingguide-20" }
+    {
+      "site": "dontbehangry",
+      "page": "shop.html",
+      "product": "Lodge Cast Iron Skillet",
+      "tag": "dontbehangry-20",
+      "url": "https://www.amazon.com/s?k=Lodge+Cast+Iron+Skillet&tag=dontbehangry-20"
+    },
+    {
+      "site": "dontbehangry",
+      "page": "shop.html",
+      "product": "ThermoWorks Thermometer",
+      "tag": "dontbehangry-20",
+      "url": "https://www.amazon.com/s?k=ThermoWorks+Thermometer&tag=dontbehangry-20"
+    },
+    {
+      "site": "dontbehangry",
+      "page": "shop.html",
+      "product": "Microplane Classic Zester",
+      "tag": "dontbehangry-20",
+      "url": "https://www.amazon.com/s?k=Microplane+Classic+Zester&tag=dontbehangry-20"
+    },
+    {
+      "site": "dontbehangry",
+      "page": "shop.html",
+      "product": "Maldon Sea Salt Flakes",
+      "tag": "dontbehangry-20",
+      "url": "https://www.amazon.com/s?k=Maldon+Sea+Salt+Flakes&tag=dontbehangry-20"
+    },
+    {
+      "site": "dontbehangry",
+      "page": "shop.html",
+      "product": "Le Creuset Dutch Oven",
+      "tag": "dontbehangry-20",
+      "url": "https://www.amazon.com/s?k=Le+Creuset+Dutch+Oven&tag=dontbehangry-20"
+    },
+    {
+      "site": "dontbehangry",
+      "page": "shop.html",
+      "product": "Salt Fat Acid Heat",
+      "tag": "dontbehangry-20",
+      "url": "https://www.amazon.com/s?k=Salt+Fat+Acid+Heat&tag=dontbehangry-20"
+    },
+    {
+      "site": "dontbehangry",
+      "page": "shop.html",
+      "product": "The Food Lab",
+      "tag": "dontbehangry-20",
+      "url": "https://www.amazon.com/s?k=The+Food+Lab&tag=dontbehangry-20"
+    },
+    {
+      "site": "dontbehangry",
+      "page": "shop.html",
+      "product": "Shun Classic Chef Knife",
+      "tag": "dontbehangry-20",
+      "url": "https://www.amazon.com/s?k=Shun+Classic+Chef+Knife&tag=dontbehangry-20"
+    },
+    {
+      "site": "dontbehangry",
+      "page": "shop.html",
+      "product": "Vitamix Blender",
+      "tag": "dontbehangry-20",
+      "url": "https://www.amazon.com/s?k=Vitamix+Blender&tag=dontbehangry-20"
+    },
+    {
+      "site": "dontbehangry",
+      "page": "shop.html",
+      "product": "OXO Mandoline",
+      "tag": "dontbehangry-20",
+      "url": "https://www.amazon.com/s?k=OXO+Mandoline&tag=dontbehangry-20"
+    },
+    {
+      "site": "dontbehangry",
+      "page": "shop.html",
+      "product": "Wusthof Bread Knife",
+      "tag": "dontbehangry-20",
+      "url": "https://www.amazon.com/s?k=Wusthof+Bread+Knife&tag=dontbehangry-20"
+    },
+    {
+      "site": "dontbehangry",
+      "page": "shop.html",
+      "product": "Instant Pot Duo 7-in-1",
+      "tag": "dontbehangry-20",
+      "url": "https://www.amazon.com/s?k=Instant+Pot+Duo+7-in-1&tag=dontbehangry-20"
+    },
+    {
+      "site": "dontbehangry",
+      "page": "shop.html",
+      "product": "Made In Stainless Frying Pan",
+      "tag": "dontbehangry-20",
+      "url": "https://www.amazon.com/s?k=Made+In+Stainless+Frying+Pan&tag=dontbehangry-20"
+    },
+    {
+      "site": "dontbehangry",
+      "page": "shop.html",
+      "product": "All-Clad D3 Saucepan",
+      "tag": "dontbehangry-20",
+      "url": "https://www.amazon.com/s?k=All-Clad+D3+Saucepan&tag=dontbehangry-20"
+    },
+    {
+      "site": "dontbehangry",
+      "page": "shop.html",
+      "product": "Breville Smart Oven Air",
+      "tag": "dontbehangry-20",
+      "url": "https://www.amazon.com/s?k=Breville+Smart+Oven+Air&tag=dontbehangry-20"
+    },
+    {
+      "site": "brokemodelife",
+      "page": "shop.html",
+      "product": "Kindle Paperwhite",
+      "tag": "brokemodelife-20",
+      "url": "https://www.amazon.com/s?k=Kindle+Paperwhite&tag=brokemodelife-20"
+    },
+    {
+      "site": "brokemodelife",
+      "page": "shop.html",
+      "product": "Anker PowerCore Portable Charger",
+      "tag": "brokemodelife-20",
+      "url": "https://www.amazon.com/s?k=Anker+PowerCore+Portable+Charger&tag=brokemodelife-20"
+    },
+    {
+      "site": "brokemodelife",
+      "page": "shop.html",
+      "product": "Hydro Flask Water Bottle",
+      "tag": "brokemodelife-20",
+      "url": "https://www.amazon.com/s?k=Hydro+Flask+Water+Bottle&tag=brokemodelife-20"
+    },
+    {
+      "site": "brokemodelife",
+      "page": "shop.html",
+      "product": "Blue Light Blocking Glasses",
+      "tag": "brokemodelife-20",
+      "url": "https://www.amazon.com/s?k=Blue+Light+Blocking+Glasses&tag=brokemodelife-20"
+    },
+    {
+      "site": "brokemodelife",
+      "page": "shop.html",
+      "product": "Moleskine Notebook",
+      "tag": "brokemodelife-20",
+      "url": "https://www.amazon.com/s?k=Moleskine+Notebook&tag=brokemodelife-20"
+    },
+    {
+      "site": "brokemodelife",
+      "page": "food.html",
+      "product": "Instant Pot Duo 7-in-1",
+      "tag": "brokemodelife-20",
+      "url": "https://www.amazon.com/s?k=Instant+Pot+Duo+7-in-1&tag=brokemodelife-20"
+    },
+    {
+      "site": "brokemodelife",
+      "page": "food.html",
+      "product": "Basmati Rice 10lb",
+      "tag": "brokemodelife-20",
+      "url": "https://www.amazon.com/s?k=Basmati+Rice+10lb&tag=brokemodelife-20"
+    },
+    {
+      "site": "brokemodelife",
+      "page": "food.html",
+      "product": "Cast Iron Skillet",
+      "tag": "brokemodelife-20",
+      "url": "https://www.amazon.com/s?k=Cast+Iron+Skillet&tag=brokemodelife-20"
+    },
+    {
+      "site": "brokemodelife",
+      "page": "style.html",
+      "product": "Levi 501 Original Jeans",
+      "tag": "brokemodelife-20",
+      "url": "https://www.amazon.com/s?k=Levi+501+Original+Jeans&tag=brokemodelife-20"
+    },
+    {
+      "site": "brokemodelife",
+      "page": "style.html",
+      "product": "White Hanes T-Shirts 6-Pack",
+      "tag": "brokemodelife-20",
+      "url": "https://www.amazon.com/s?k=White+Hanes+T-Shirts+6-Pack&tag=brokemodelife-20"
+    },
+    {
+      "site": "brokemodelife",
+      "page": "style.html",
+      "product": "New Balance 574 Sneakers",
+      "tag": "brokemodelife-20",
+      "url": "https://www.amazon.com/s?k=New+Balance+574+Sneakers&tag=brokemodelife-20"
+    },
+    {
+      "site": "brokemodelife",
+      "page": "travel.html",
+      "product": "Osprey Farpoint 40 Backpack",
+      "tag": "brokemodelife-20",
+      "url": "https://www.amazon.com/s?k=Osprey+Farpoint+40+Backpack&tag=brokemodelife-20"
+    },
+    {
+      "site": "brokemodelife",
+      "page": "travel.html",
+      "product": "Eagle Creek Packing Cubes",
+      "tag": "brokemodelife-20",
+      "url": "https://www.amazon.com/s?k=Eagle+Creek+Packing+Cubes&tag=brokemodelife-20"
+    },
+    {
+      "site": "brokemodelife",
+      "page": "travel.html",
+      "product": "Bose QuietComfort 45",
+      "tag": "brokemodelife-20",
+      "url": "https://www.amazon.com/s?k=Bose+QuietComfort+45&tag=brokemodelife-20"
+    },
+    {
+      "site": "brokemodelife",
+      "page": "health.html",
+      "product": "Resistance Bands Set",
+      "tag": "brokemodelife-20",
+      "url": "https://www.amazon.com/s?k=Resistance+Bands+Set&tag=brokemodelife-20"
+    },
+    {
+      "site": "brokemodelife",
+      "page": "health.html",
+      "product": "Foam Roller",
+      "tag": "brokemodelife-20",
+      "url": "https://www.amazon.com/s?k=Foam+Roller&tag=brokemodelife-20"
+    },
+    {
+      "site": "stoplookaround",
+      "page": "travel-gear.html",
+      "product": "Osprey Farpoint 40",
+      "tag": "stoplookaround-20",
+      "url": "https://www.amazon.com/s?k=Osprey+Farpoint+40&tag=stoplookaround-20"
+    },
+    {
+      "site": "stoplookaround",
+      "page": "travel-gear.html",
+      "product": "Anker USB-C Hub",
+      "tag": "stoplookaround-20",
+      "url": "https://www.amazon.com/s?k=Anker+USB-C+Hub&tag=stoplookaround-20"
+    },
+    {
+      "site": "stoplookaround",
+      "page": "travel-gear.html",
+      "product": "Bose QuietComfort 45",
+      "tag": "stoplookaround-20",
+      "url": "https://www.amazon.com/s?k=Bose+QuietComfort+45&tag=stoplookaround-20"
+    },
+    {
+      "site": "stoplookaround",
+      "page": "travel-gear.html",
+      "product": "Lonely Planet World Atlas",
+      "tag": "stoplookaround-20",
+      "url": "https://www.amazon.com/s?k=Lonely+Planet+World+Atlas&tag=stoplookaround-20"
+    },
+    {
+      "site": "stoplookaround",
+      "page": "cameras.html",
+      "product": "Sony ZV-E10 Mirrorless Camera",
+      "tag": "stoplookaround-20",
+      "url": "https://www.amazon.com/s?k=Sony+ZV-E10+Mirrorless+Camera&tag=stoplookaround-20"
+    },
+    {
+      "site": "stoplookaround",
+      "page": "cameras.html",
+      "product": "GoPro HERO11 Black",
+      "tag": "stoplookaround-20",
+      "url": "https://www.amazon.com/s?k=GoPro+HERO11+Black&tag=stoplookaround-20"
+    },
+    {
+      "site": "stoplookaround",
+      "page": "cameras.html",
+      "product": "DJI Mini 3 Pro Drone",
+      "tag": "stoplookaround-20",
+      "url": "https://www.amazon.com/s?k=DJI+Mini+3+Pro+Drone&tag=stoplookaround-20"
+    },
+    {
+      "site": "stoplookaround",
+      "page": "music.html",
+      "product": "Yamaha P-125 Digital Piano",
+      "tag": "stoplookaround-20",
+      "url": "https://www.amazon.com/s?k=Yamaha+P-125+Digital+Piano&tag=stoplookaround-20"
+    },
+    {
+      "site": "stoplookaround",
+      "page": "music.html",
+      "product": "Fender Player Stratocaster",
+      "tag": "stoplookaround-20",
+      "url": "https://www.amazon.com/s?k=Fender+Player+Stratocaster&tag=stoplookaround-20"
+    },
+    {
+      "site": "finelivingguide",
+      "page": "dining.html",
+      "product": "Le Creuset Dutch Oven",
+      "tag": "finelivingguide-20",
+      "url": "https://www.amazon.com/s?k=Le+Creuset+Dutch+Oven&tag=finelivingguide-20"
+    },
+    {
+      "site": "finelivingguide",
+      "page": "dining.html",
+      "product": "All-Clad D5 Stainless Cookware",
+      "tag": "finelivingguide-20",
+      "url": "https://www.amazon.com/s?k=All-Clad+D5+Stainless+Cookware&tag=finelivingguide-20"
+    },
+    {
+      "site": "finelivingguide",
+      "page": "dining.html",
+      "product": "Wusthof Classic 8-Inch Chef Knife",
+      "tag": "finelivingguide-20",
+      "url": "https://www.amazon.com/s?k=Wusthof+Classic+8-Inch+Chef+Knife&tag=finelivingguide-20"
+    },
+    {
+      "site": "finelivingguide",
+      "page": "dining.html",
+      "product": "Riedel Extreme Cabernet Wine Glasses",
+      "tag": "finelivingguide-20",
+      "url": "https://www.amazon.com/s?k=Riedel+Extreme+Cabernet+Wine+Glasses&tag=finelivingguide-20"
+    },
+    {
+      "site": "finelivingguide",
+      "page": "cribs.html",
+      "product": "Dyson V15 Detect Vacuum",
+      "tag": "finelivingguide-20",
+      "url": "https://www.amazon.com/s?k=Dyson+V15+Detect+Vacuum&tag=finelivingguide-20"
+    },
+    {
+      "site": "finelivingguide",
+      "page": "cribs.html",
+      "product": "Nest Learning Thermostat",
+      "tag": "finelivingguide-20",
+      "url": "https://www.amazon.com/s?k=Nest+Learning+Thermostat&tag=finelivingguide-20"
+    },
+    {
+      "site": "finelivingguide",
+      "page": "cribs.html",
+      "product": "Saatva Classic Mattress",
+      "tag": "finelivingguide-20",
+      "url": "https://www.amazon.com/s?k=Saatva+Classic+Mattress&tag=finelivingguide-20"
+    },
+    {
+      "site": "finelivingguide",
+      "page": "style.html",
+      "product": "Ray-Ban Aviator Sunglasses",
+      "tag": "finelivingguide-20",
+      "url": "https://www.amazon.com/s?k=Ray-Ban+Aviator+Sunglasses&tag=finelivingguide-20"
+    },
+    {
+      "site": "finelivingguide",
+      "page": "style.html",
+      "product": "Montblanc Meisterstuck Pen",
+      "tag": "finelivingguide-20",
+      "url": "https://www.amazon.com/s?k=Montblanc+Meisterstuck+Pen&tag=finelivingguide-20"
+    }
   ]
 }
